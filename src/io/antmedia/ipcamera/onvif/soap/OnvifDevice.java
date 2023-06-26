@@ -61,12 +61,14 @@ public class OnvifDevice {
 	 *            Username you need to login
 	 * @param password
 	 *            User's password to login
+	 * @param sslEnabled
+	 * 			  If it's enabled protocol use https as server device uri
 	 * @throws ConnectException
 	 *             Exception gets thrown, if device isn't accessible or invalid
 	 *             and doesn't answer to SOAP messages
 	 * @throws SOAPException 
 	 */
-	public OnvifDevice(String hostIp, String user, String password) throws ConnectException, SOAPException {
+	public OnvifDevice(String hostIp, String user, String password, boolean sslEnabled) throws ConnectException, SOAPException {
 		this.logger = new Logger();
 
 		this.HOST_IP = hostIp;
@@ -75,7 +77,8 @@ public class OnvifDevice {
 			throw new ConnectException("Host not available.");
 		}
 
-		this.serverDeviceUri = "http://" + HOST_IP + "/onvif/device_service";
+		String protocol = sslEnabled ? "https://" : "http://";
+		this.serverDeviceUri = protocol + HOST_IP + "/onvif/device_service";
 
 		this.username = user;
 		this.password = password;
@@ -102,7 +105,7 @@ public class OnvifDevice {
 	 * @throws SOAPException 
 	 */
 	public OnvifDevice(String hostIp) throws ConnectException, SOAPException {
-		this(hostIp, null, null);
+		this(hostIp, null, null, false);
 	}
 
 	/**
@@ -156,6 +159,9 @@ public class OnvifDevice {
 		if (localDeviceUri.startsWith("http://")) {
 			originalIp = localDeviceUri.replace("http://", "");
 			originalIp = originalIp.substring(0, originalIp.indexOf('/'));
+		} else if (localDeviceUri.startsWith("https://")) {
+			originalIp = localDeviceUri.replace("https://", "");
+			originalIp = originalIp.substring(0, originalIp.indexOf('/'));
 		}
 		else {
 			logger.error("Unknown/Not implemented local procotol!");
@@ -185,6 +191,8 @@ public class OnvifDevice {
 	public String replaceLocalIpWithProxyIp(String original) {
 		if (original.startsWith("http:///")) {
 			original.replace("http:///", "http://"+HOST_IP);
+		} else if (original.startsWith("https:///")) {
+			original.replace("https:///", "https://"+HOST_IP);
 		}
 		
 		if (isProxy) {
