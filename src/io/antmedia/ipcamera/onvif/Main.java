@@ -37,7 +37,7 @@ public class Main {
 		System.out.println("Connect to camera, please wait ...");
 		OnvifDevice cam;
 		try {
-			cam = new OnvifDevice(cameraAddress, user, password, false);
+			cam = new OnvifDevice(cameraAddress, user, password);
 		}
 		catch (ConnectException | SOAPException e1) {
 			System.err.println("No connection to camera, please try again.");

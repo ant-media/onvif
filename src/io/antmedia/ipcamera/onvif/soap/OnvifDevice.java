@@ -61,14 +61,12 @@ public class OnvifDevice {
 	 *            Username you need to login
 	 * @param password
 	 *            User's password to login
-	 * @param sslEnabled
-	 * 			  If it's enabled protocol use https as server device uri
 	 * @throws ConnectException
 	 *             Exception gets thrown, if device isn't accessible or invalid
 	 *             and doesn't answer to SOAP messages
 	 * @throws SOAPException 
 	 */
-	public OnvifDevice(String hostIp, String user, String password, boolean sslEnabled) throws ConnectException, SOAPException {
+	public OnvifDevice(String hostIp, String user, String password) throws ConnectException, SOAPException {
 		this.logger = new Logger();
 
 		this.HOST_IP = hostIp;
@@ -77,7 +75,8 @@ public class OnvifDevice {
 			throw new ConnectException("Host not available.");
 		}
 
-		String protocol = sslEnabled ? "https://" : "http://";
+		// Check if protocol is given
+		String protocol = HOST_IP.startsWith("http") ? "" : "http://";
 		this.serverDeviceUri = protocol + HOST_IP + "/onvif/device_service";
 
 		this.username = user;
@@ -105,7 +104,7 @@ public class OnvifDevice {
 	 * @throws SOAPException 
 	 */
 	public OnvifDevice(String hostIp) throws ConnectException, SOAPException {
-		this(hostIp, null, null, false);
+		this(hostIp, null, null);
 	}
 
 	/**
