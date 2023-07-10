@@ -75,7 +75,9 @@ public class OnvifDevice {
 			throw new ConnectException("Host not available.");
 		}
 
-		this.serverDeviceUri = "http://" + HOST_IP + "/onvif/device_service";
+		// Check if protocol is given
+		String protocol = HOST_IP.startsWith("http") ? "" : "http://";
+		this.serverDeviceUri = protocol + HOST_IP + "/onvif/device_service";
 
 		this.username = user;
 		this.password = password;
@@ -156,6 +158,9 @@ public class OnvifDevice {
 		if (localDeviceUri.startsWith("http://")) {
 			originalIp = localDeviceUri.replace("http://", "");
 			originalIp = originalIp.substring(0, originalIp.indexOf('/'));
+		} else if (localDeviceUri.startsWith("https://")) {
+			originalIp = localDeviceUri.replace("https://", "");
+			originalIp = originalIp.substring(0, originalIp.indexOf('/'));
 		}
 		else {
 			logger.error("Unknown/Not implemented local procotol!");
@@ -185,6 +190,8 @@ public class OnvifDevice {
 	public String replaceLocalIpWithProxyIp(String original) {
 		if (original.startsWith("http:///")) {
 			original.replace("http:///", "http://"+HOST_IP);
+		} else if (original.startsWith("https:///")) {
+			original.replace("https:///", "https://"+HOST_IP);
 		}
 		
 		if (isProxy) {
