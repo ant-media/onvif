@@ -1,5 +1,6 @@
 package io.antmedia.ipcamera.onvif.soap;
 
+import java.awt.datatransfer.StringSelection;
 import java.io.IOException;
 import java.net.ConnectException;
 import java.net.InetSocketAddress;
@@ -18,6 +19,7 @@ import java.util.TimeZone;
 import javax.xml.soap.SOAPException;
 
 import org.apache.commons.codec.binary.Base64;
+import org.apache.commons.codec.binary.StringUtils;
 import org.onvif.ver10.schema.Capabilities;
 
 import io.antmedia.ipcamera.onvif.log.Logger;
@@ -32,7 +34,7 @@ import io.antmedia.ipcamera.onvif.soap.devices.PtzDevices;
  * 
  */
 public class OnvifDevice {
-	private final String HOST_IP;
+	private final String cameraIPAddress;
 	private String originalIp;
 
 	private boolean isProxy;
@@ -54,9 +56,10 @@ public class OnvifDevice {
 	 * Initializes an Onvif device, e.g. a Network Video Transmitter (NVT) with
 	 * logindata.
 	 * 
-	 * @param hostIp
-	 *            The IP address of your device, you can also add a port but
-	 *            noch protocol (e.g. http://)
+	 * @param hostIp or url
+	 *            The IP or URL address of your device, you can also add a port.
+	 *            You can give 192.168.1.43 or 192.168.1.43:8080 or 192.168.1.43:443
+	 *            
 	 * @param user
 	 *            Username you need to login
 	 * @param password
@@ -66,18 +69,24 @@ public class OnvifDevice {
 	 *             and doesn't answer to SOAP messages
 	 * @throws SOAPException 
 	 */
-	public OnvifDevice(String hostIp, String user, String password) throws ConnectException, SOAPException {
+	public OnvifDevice(String hostIp, String protocol, String user, String password) throws ConnectException, SOAPException {
 		this.logger = new Logger();
 
-		this.HOST_IP = hostIp;
+		this.cameraIPAddress = hostIp;
 
-		if (!isOnline()) {
+		// Check if protocol is given use the protocol, if not use the http
+		
+		if (protocol == null || protocol.isEmpty()) 
+		{
+			protocol = "http";
+		}
+		
+		//remove the protocol if exist
+		if (!isOnline(cameraIPAddress)) {
 			throw new ConnectException("Host not available.");
 		}
 
-		// Check if protocol is given
-		String protocol = HOST_IP.startsWith("http") ? "" : "http://";
-		this.serverDeviceUri = protocol + HOST_IP + "/onvif/device_service";
+		this.serverDeviceUri = protocol + "://" + cameraIPAddress + "/onvif/device_service";
 
 		this.username = user;
 		this.password = password;
@@ -89,6 +98,10 @@ public class OnvifDevice {
 		this.imagingDevices = new ImagingDevices(this);
 		
 		init();
+	}
+	
+	public OnvifDevice(String hostIp, String user, String password) throws ConnectException, SOAPException  {
+		this(hostIp, null, user, password);
 	}
 
 	/**
@@ -104,20 +117,22 @@ public class OnvifDevice {
 	 * @throws SOAPException 
 	 */
 	public OnvifDevice(String hostIp) throws ConnectException, SOAPException {
-		this(hostIp, null, null);
+		this(hostIp, null, null, null);
 	}
 
 	/**
 	 * Internal function to check, if device is available and answers to ping
 	 * requests.
 	 */
-	private boolean isOnline() {
-		String port = HOST_IP.contains(":") ? HOST_IP.substring(HOST_IP.indexOf(':') + 1) : "80";
-		String ip = HOST_IP.contains(":") ? HOST_IP.substring(0, HOST_IP.indexOf(':')) : HOST_IP;
+	private boolean isOnline(String deviceAddress) {
+		
+		
+		String port = deviceAddress.contains(":") ? deviceAddress.substring(deviceAddress.indexOf(':') + 1) : "80";
+		String ip = deviceAddress.contains(":") ? deviceAddress.substring(0, deviceAddress.indexOf(':')) : deviceAddress;
 		
 		Socket socket = null;
 		try {
-			SocketAddress sockaddr = new InetSocketAddress(ip, new Integer(port));
+			SocketAddress sockaddr = new InetSocketAddress(ip, Integer.parseInt(port));
 			socket = new Socket();
 
 			socket.connect(sockaddr, 5000);
@@ -166,7 +181,7 @@ public class OnvifDevice {
 			logger.error("Unknown/Not implemented local procotol!");
 		}
 			
-		if (!originalIp.equals(HOST_IP)) {
+		if (!originalIp.equals(cameraIPAddress)) {
 			isProxy = true;
 		}
 
@@ -189,13 +204,13 @@ public class OnvifDevice {
 
 	public String replaceLocalIpWithProxyIp(String original) {
 		if (original.startsWith("http:///")) {
-			original.replace("http:///", "http://"+HOST_IP);
+			original.replace("http:///", "http://"+cameraIPAddress);
 		} else if (original.startsWith("https:///")) {
-			original.replace("https:///", "https://"+HOST_IP);
+			original.replace("https:///", "https://"+cameraIPAddress);
 		}
 		
 		if (isProxy) {
-			return original.replace(originalIp, HOST_IP);
+			return original.replace(originalIp, cameraIPAddress);
 		}
 		return original;
 	}
