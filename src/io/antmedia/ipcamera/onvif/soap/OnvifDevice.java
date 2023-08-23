@@ -75,14 +75,18 @@ public class OnvifDevice {
 		this.cameraIPAddress = hostIp;
 
 		// Check if protocol is given use the protocol, if not use the http
-		
+		int defaultPort = 80;
 		if (protocol == null || protocol.isEmpty()) 
 		{
 			protocol = "http";
 		}
+		else if (protocol.startsWith("https")) {
+			defaultPort = 443;
+		}
+		
 		
 		//remove the protocol if exist
-		if (!isOnline(cameraIPAddress)) {
+		if (!isOnline(cameraIPAddress, defaultPort)) {
 			throw new ConnectException("Host not available.");
 		}
 
@@ -124,10 +128,11 @@ public class OnvifDevice {
 	 * Internal function to check, if device is available and answers to ping
 	 * requests.
 	 */
-	private boolean isOnline(String deviceAddress) {
+	private boolean isOnline(String deviceAddress, int defaultPort) {
 		
+		//port https use
 		
-		String port = deviceAddress.contains(":") ? deviceAddress.substring(deviceAddress.indexOf(':') + 1) : "80";
+		String port = deviceAddress.contains(":") ? deviceAddress.substring(deviceAddress.indexOf(':') + 1) : String.valueOf(defaultPort);
 		String ip = deviceAddress.contains(":") ? deviceAddress.substring(0, deviceAddress.indexOf(':')) : deviceAddress;
 		
 		Socket socket = null;
