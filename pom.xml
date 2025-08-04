@@ -13,7 +13,7 @@
 	<parent>
 		<groupId>io.antmedia</groupId>
 		<artifactId>parent</artifactId>
-		<version>2.7.1-SNAPSHOT</version>
+		<version>2.15.0</version>
 	</parent>
 
 	<issueManagement>
@@ -48,6 +48,18 @@
 		<connection>https://gitlab.com/Ant-Media/onvif.git</connection>
 		<developerConnection>https://gitlab.com/Ant-Media/onvif.git</developerConnection>
 	</scm>
+        <repositories>
+        <repository>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <id>central</id>
+            <name>Central Repository</name>
+            <url>https://repo1.apache.org/maven2</url>
+        </repository>
+       
+    </repositories>
+<!--
 	<distributionManagement>
 		<snapshotRepository>
 			<id>ossrh</id>
@@ -58,9 +70,20 @@
 			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
 		</repository>
 	</distributionManagement>
-	<build>
+-->	<build>
 		<sourceDirectory>src</sourceDirectory>
 		<plugins>
+                          <plugin>
+	          <groupId>org.sonatype.central</groupId>
+	          <artifactId>central-publishing-maven-plugin</artifactId>
+	          <version>${central-publishing-maven-plugin.version}</version>
+	          <extensions>true</extensions>
+	          <configuration>
+	            <publishingServerId>central</publishingServerId>
+	            <autoPublish>true</autoPublish>
+            	<waitUntil>published</waitUntil>
+	          </configuration>
+	        </plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
@@ -81,16 +104,7 @@
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 			</plugin>
-			<plugin>
-				<groupId>org.sonatype.plugins</groupId>
-				<artifactId>nexus-staging-maven-plugin</artifactId>
-				<extensions>true</extensions>
-				<configuration>
-					<serverId>ossrh</serverId>
-					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
-					<autoReleaseAfterClose>true</autoReleaseAfterClose>
-				</configuration>
-			</plugin>
+	
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-gpg-plugin</artifactId>
