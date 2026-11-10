@@ -1,10 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2016.03.16 um 01:52:47 PM CET 
-//
-
 
 package org.onvif.ver10.events.wsdl;
 
@@ -12,41 +5,43 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.xml.namespace.QName;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlAnyElement;
 import jakarta.xml.bind.annotation.XmlAttribute;
 import jakarta.xml.bind.annotation.XmlType;
-import javax.xml.namespace.QName;
 import org.w3c.dom.Element;
 
 
 /**
- * <p>Java-Klasse f�r Capabilities complex type.
- * 
- * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
- * &lt;complexType name="Capabilities">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="WSSubscriptionPolicySupport" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="WSPullPointSupport" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="WSPausableSubscriptionManagerInterfaceSupport" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="MaxNotificationProducers" type="{http://www.w3.org/2001/XMLSchema}int" />
- *       &lt;attribute name="MaxPullPoints" type="{http://www.w3.org/2001/XMLSchema}int" />
- *       &lt;attribute name="PersistentNotificationStorage" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;anyAttribute processContents='lax'/>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * <p>Java class for Capabilities complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
+ * <complexType name="Capabilities">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
+ *       </sequence>
+ *       <attribute name="WSSubscriptionPolicySupport" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <attribute name="WSPausableSubscriptionManagerInterfaceSupport" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <attribute name="MaxNotificationProducers" type="{http://www.w3.org/2001/XMLSchema}int" />
+ *       <attribute name="MaxPullPoints" type="{http://www.w3.org/2001/XMLSchema}int" />
+ *       <attribute name="PersistentNotificationStorage" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <attribute name="EventBrokerProtocols" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *       <attribute name="MaxEventBrokers" type="{http://www.w3.org/2001/XMLSchema}int" />
+ *       <attribute name="MetadataOverMQTT" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Capabilities", propOrder = {
@@ -56,206 +51,301 @@ public class Capabilities {
 
     @XmlAnyElement(lax = true)
     protected List<Object> any;
+    /**
+     * Indicates that the WS Subscription policy is supported.
+     *
+     */
     @XmlAttribute(name = "WSSubscriptionPolicySupport")
     protected Boolean wsSubscriptionPolicySupport;
-    @XmlAttribute(name = "WSPullPointSupport")
-    protected Boolean wsPullPointSupport;
+    /**
+     * Indicates that the WS Pausable Subscription Manager Interface is supported.
+     *
+     */
     @XmlAttribute(name = "WSPausableSubscriptionManagerInterfaceSupport")
     protected Boolean wsPausableSubscriptionManagerInterfaceSupport;
+    /**
+     * Maximum number of supported notification producers as defined by WS-BaseNotification.
+     *
+     */
     @XmlAttribute(name = "MaxNotificationProducers")
     protected Integer maxNotificationProducers;
+    /**
+     * Maximum supported number of notification pull points.
+     *
+     */
     @XmlAttribute(name = "MaxPullPoints")
     protected Integer maxPullPoints;
+    /**
+     * Indication if the device supports persistent notification storage.
+     *
+     */
     @XmlAttribute(name = "PersistentNotificationStorage")
     protected Boolean persistentNotificationStorage;
+    /**
+     * A space separated list of supported event broker protocols as defined by the tev:EventBrokerProtocol datatype.
+     *
+     */
+    @XmlAttribute(name = "EventBrokerProtocols")
+    protected String eventBrokerProtocols;
+    /**
+     * Maxiumum number of event broker configurations that can be added to the device.
+     *
+     */
+    @XmlAttribute(name = "MaxEventBrokers")
+    protected Integer maxEventBrokers;
+    /**
+     * Indicates that metadata streaming over MQTT is supported
+     *
+     */
+    @XmlAttribute(name = "MetadataOverMQTT")
+    protected Boolean metadataOverMQTT;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
      * Gets the value of the any property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     *
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
-     * 
+     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
+     *
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAny().add(newItem);
+     * getAny().add(newItem);
      * </pre>
-     * 
-     * 
+     *
+     *
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link Object }
      * {@link Element }
-     * 
-     * 
+     * </p>
+     *
+     *
+     * @return
+     *     The value of the any property.
      */
     public List<Object> getAny() {
         if (any == null) {
-            any = new ArrayList<Object>();
+            any = new ArrayList<>();
         }
         return this.any;
     }
 
     /**
-     * Ruft den Wert der wsSubscriptionPolicySupport-Eigenschaft ab.
-     * 
+     * Indicates that the WS Subscription policy is supported.
+     *
      * @return
      *     possible object is
      *     {@link Boolean }
-     *     
+     *
      */
     public Boolean isWSSubscriptionPolicySupport() {
         return wsSubscriptionPolicySupport;
     }
 
     /**
-     * Legt den Wert der wsSubscriptionPolicySupport-Eigenschaft fest.
-     * 
+     * Sets the value of the wsSubscriptionPolicySupport property.
+     *
      * @param value
      *     allowed object is
      *     {@link Boolean }
-     *     
+     *
+     * @see #isWSSubscriptionPolicySupport()
      */
     public void setWSSubscriptionPolicySupport(Boolean value) {
         this.wsSubscriptionPolicySupport = value;
     }
 
     /**
-     * Ruft den Wert der wsPullPointSupport-Eigenschaft ab.
-     * 
+     * Indicates that the WS Pausable Subscription Manager Interface is supported.
+     *
      * @return
      *     possible object is
      *     {@link Boolean }
-     *     
-     */
-    public Boolean isWSPullPointSupport() {
-        return wsPullPointSupport;
-    }
-
-    /**
-     * Legt den Wert der wsPullPointSupport-Eigenschaft fest.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setWSPullPointSupport(Boolean value) {
-        this.wsPullPointSupport = value;
-    }
-
-    /**
-     * Ruft den Wert der wsPausableSubscriptionManagerInterfaceSupport-Eigenschaft ab.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     *
      */
     public Boolean isWSPausableSubscriptionManagerInterfaceSupport() {
         return wsPausableSubscriptionManagerInterfaceSupport;
     }
 
     /**
-     * Legt den Wert der wsPausableSubscriptionManagerInterfaceSupport-Eigenschaft fest.
-     * 
+     * Sets the value of the wsPausableSubscriptionManagerInterfaceSupport property.
+     *
      * @param value
      *     allowed object is
      *     {@link Boolean }
-     *     
+     *
+     * @see #isWSPausableSubscriptionManagerInterfaceSupport()
      */
     public void setWSPausableSubscriptionManagerInterfaceSupport(Boolean value) {
         this.wsPausableSubscriptionManagerInterfaceSupport = value;
     }
 
     /**
-     * Ruft den Wert der maxNotificationProducers-Eigenschaft ab.
-     * 
+     * Maximum number of supported notification producers as defined by WS-BaseNotification.
+     *
      * @return
      *     possible object is
      *     {@link Integer }
-     *     
+     *
      */
     public Integer getMaxNotificationProducers() {
         return maxNotificationProducers;
     }
 
     /**
-     * Legt den Wert der maxNotificationProducers-Eigenschaft fest.
-     * 
+     * Sets the value of the maxNotificationProducers property.
+     *
      * @param value
      *     allowed object is
      *     {@link Integer }
-     *     
+     *
+     * @see #getMaxNotificationProducers()
      */
     public void setMaxNotificationProducers(Integer value) {
         this.maxNotificationProducers = value;
     }
 
     /**
-     * Ruft den Wert der maxPullPoints-Eigenschaft ab.
-     * 
+     * Maximum supported number of notification pull points.
+     *
      * @return
      *     possible object is
      *     {@link Integer }
-     *     
+     *
      */
     public Integer getMaxPullPoints() {
         return maxPullPoints;
     }
 
     /**
-     * Legt den Wert der maxPullPoints-Eigenschaft fest.
-     * 
+     * Sets the value of the maxPullPoints property.
+     *
      * @param value
      *     allowed object is
      *     {@link Integer }
-     *     
+     *
+     * @see #getMaxPullPoints()
      */
     public void setMaxPullPoints(Integer value) {
         this.maxPullPoints = value;
     }
 
     /**
-     * Ruft den Wert der persistentNotificationStorage-Eigenschaft ab.
-     * 
+     * Indication if the device supports persistent notification storage.
+     *
      * @return
      *     possible object is
      *     {@link Boolean }
-     *     
+     *
      */
     public Boolean isPersistentNotificationStorage() {
         return persistentNotificationStorage;
     }
 
     /**
-     * Legt den Wert der persistentNotificationStorage-Eigenschaft fest.
-     * 
+     * Sets the value of the persistentNotificationStorage property.
+     *
      * @param value
      *     allowed object is
      *     {@link Boolean }
-     *     
+     *
+     * @see #isPersistentNotificationStorage()
      */
     public void setPersistentNotificationStorage(Boolean value) {
         this.persistentNotificationStorage = value;
     }
 
     /**
+     * A space separated list of supported event broker protocols as defined by the tev:EventBrokerProtocol datatype.
+     *
+     * @return
+     *     possible object is
+     *     {@link String }
+     *
+     */
+    public String getEventBrokerProtocols() {
+        return eventBrokerProtocols;
+    }
+
+    /**
+     * Sets the value of the eventBrokerProtocols property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *
+     * @see #getEventBrokerProtocols()
+     */
+    public void setEventBrokerProtocols(String value) {
+        this.eventBrokerProtocols = value;
+    }
+
+    /**
+     * Maxiumum number of event broker configurations that can be added to the device.
+     *
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *
+     */
+    public Integer getMaxEventBrokers() {
+        return maxEventBrokers;
+    }
+
+    /**
+     * Sets the value of the maxEventBrokers property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *
+     * @see #getMaxEventBrokers()
+     */
+    public void setMaxEventBrokers(Integer value) {
+        this.maxEventBrokers = value;
+    }
+
+    /**
+     * Indicates that metadata streaming over MQTT is supported
+     *
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *
+     */
+    public Boolean isMetadataOverMQTT() {
+        return metadataOverMQTT;
+    }
+
+    /**
+     * Sets the value of the metadataOverMQTT property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *
+     * @see #isMetadataOverMQTT()
+     */
+    public void setMetadataOverMQTT(Boolean value) {
+        this.metadataOverMQTT = value;
+    }
+
+    /**
      * Gets a map that contains attributes that aren't bound to any typed property on this class.
-     * 
+     *
      * <p>
-     * the map is keyed by the name of the attribute and 
+     * the map is keyed by the name of the attribute and
      * the value is the string value of the attribute.
-     * 
+     *
      * the map returned by this method is live, and you can add new attribute
      * by updating the map directly. Because of this design, there's no setter.
-     * 
-     * 
+     *
+     *
      * @return
      *     always non-null
      */

@@ -1,10 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2016.02.05 um 06:25:30 PM CET 
-//
-
 
 package org.onvif.ver20.media.wsdl;
 
@@ -18,24 +11,24 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java-Klasse f�r anonymous complex type.
- * 
- * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="ProfileToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/>
- *         &lt;element name="Configuration" type="{http://www.onvif.org/ver20/media/wsdl}ConfigurationRef" maxOccurs="unbounded"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * <p>Java class for anonymous complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="ProfileToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/>
+ *         <element name="Configuration" type="{http://www.onvif.org/ver20/media/wsdl}ConfigurationRef" maxOccurs="unbounded"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -45,60 +38,74 @@ import jakarta.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "RemoveConfiguration")
 public class RemoveConfiguration {
 
+    /**
+     * This element contains a  reference to the media profile from which the configuration shall be removed.
+     *
+     */
     @XmlElement(name = "ProfileToken", required = true)
     protected String profileToken;
+    /**
+     * List of configurations to be removed. The types shall be provided in the order defined by tr2:ConfigurationEnumeration. Tokens appearing in the configuration list shall be ignored. Presence of the "All" type shall result in an empty profile.
+     *
+     */
     @XmlElement(name = "Configuration", required = true)
     protected List<ConfigurationRef> configuration;
 
     /**
-     * Ruft den Wert der profileToken-Eigenschaft ab.
-     * 
+     * This element contains a  reference to the media profile from which the configuration shall be removed.
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getProfileToken() {
         return profileToken;
     }
 
     /**
-     * Legt den Wert der profileToken-Eigenschaft fest.
-     * 
+     * Sets the value of the profileToken property.
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
+     * @see #getProfileToken()
      */
     public void setProfileToken(String value) {
         this.profileToken = value;
     }
 
     /**
+     * List of configurations to be removed. The types shall be provided in the order defined by tr2:ConfigurationEnumeration. Tokens appearing in the configuration list shall be ignored. Presence of the "All" type shall result in an empty profile.
+     *
      * Gets the value of the configuration property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     *
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the configuration property.
-     * 
+     * This is why there is not a <CODE>set</CODE> method for the configuration property.</p>
+     *
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getConfiguration().add(newItem);
+     * getConfiguration().add(newItem);
      * </pre>
-     * 
-     * 
+     *
+     *
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link ConfigurationRef }
-     * 
-     * 
+     * </p>
+     *
+     *
+     * @return
+     *     The value of the configuration property.
      */
     public List<ConfigurationRef> getConfiguration() {
         if (configuration == null) {
-            configuration = new ArrayList<ConfigurationRef>();
+            configuration = new ArrayList<>();
         }
         return this.configuration;
     }

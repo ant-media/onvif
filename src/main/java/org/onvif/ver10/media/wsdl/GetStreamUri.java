@@ -1,9 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.19 um 02:35:56 PM CET 
-//
 
 package org.onvif.ver10.media.wsdl;
 
@@ -14,14 +8,13 @@ import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
 import org.onvif.ver10.schema.StreamSetup;
 
+
 /**
- * <p>
- * Java-Klasse f�r anonymous complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ * <p>Java class for anonymous complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType>
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -32,60 +25,79 @@ import org.onvif.ver10.schema.StreamSetup;
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = { "streamSetup", "profileToken" })
+@XmlType(name = "", propOrder = {
+    "streamSetup",
+    "profileToken"
+})
 @XmlRootElement(name = "GetStreamUri")
 public class GetStreamUri {
 
-	@XmlElement(name = "StreamSetup", required = true)
-	protected StreamSetup streamSetup;
-	@XmlElement(name = "ProfileToken", required = true)
-	protected String profileToken;
+    /**
+     * Stream Setup that should be used with the uri.
+     *
+     */
+    @XmlElement(name = "StreamSetup", required = true)
+    protected StreamSetup streamSetup;
+    /**
+     * The ProfileToken element indicates the media profile to use and will define the configuration of the content of the stream.
+     *
+     */
+    @XmlElement(name = "ProfileToken", required = true)
+    protected String profileToken;
 
-	/**
-	 * Ruft den Wert der streamSetup-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link StreamSetup }
-	 * 
-	 */
-	public StreamSetup getStreamSetup() {
-		return streamSetup;
-	}
+    /**
+     * Stream Setup that should be used with the uri.
+     *
+     * @return
+     *     possible object is
+     *     {@link StreamSetup }
+     *
+     */
+    public StreamSetup getStreamSetup() {
+        return streamSetup;
+    }
 
-	/**
-	 * Legt den Wert der streamSetup-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link StreamSetup }
-	 * 
-	 */
-	public void setStreamSetup(StreamSetup value) {
-		this.streamSetup = value;
-	}
+    /**
+     * Sets the value of the streamSetup property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link StreamSetup }
+     *
+     * @see #getStreamSetup()
+     */
+    public void setStreamSetup(StreamSetup value) {
+        this.streamSetup = value;
+    }
 
-	/**
-	 * Ruft den Wert der profileToken-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getProfileToken() {
-		return profileToken;
-	}
+    /**
+     * The ProfileToken element indicates the media profile to use and will define the configuration of the content of the stream.
+     *
+     * @return
+     *     possible object is
+     *     {@link String }
+     *
+     */
+    public String getProfileToken() {
+        return profileToken;
+    }
 
-	/**
-	 * Legt den Wert der profileToken-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setProfileToken(String value) {
-		this.profileToken = value;
-	}
+    /**
+     * Sets the value of the profileToken property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *
+     * @see #getProfileToken()
+     */
+    public void setProfileToken(String value) {
+        this.profileToken = value;
+    }
 
 }

@@ -1,27 +1,21 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.04 um 12:22:03 PM CET 
-//
 
 package org.onvif.ver10.schema;
 
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
+
 /**
- * <p>
- * Java-Klasse f�r NetworkInterfaceInfo complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ * <p>Java class for NetworkInterfaceInfo complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType name="NetworkInterfaceInfo">
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -33,83 +27,112 @@ import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "NetworkInterfaceInfo", propOrder = { "name", "hwAddress", "mtu" })
+@XmlType(name = "NetworkInterfaceInfo", propOrder = {
+    "name",
+    "hwAddress",
+    "mtu"
+})
 public class NetworkInterfaceInfo {
 
-	@XmlElement(name = "Name")
-	protected String name;
-	@XmlElement(name = "HwAddress", required = true)
-	@XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-	protected String hwAddress;
-	@XmlElement(name = "MTU")
-	protected Integer mtu;
+    /**
+     * Network interface name, for example eth0.
+     *
+     */
+    @XmlElement(name = "Name")
+    protected String name;
+    /**
+     * Network interface MAC address.
+     *
+     */
+    @XmlElement(name = "HwAddress", required = true)
+    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
+    @XmlSchemaType(name = "token")
+    protected String hwAddress;
+    /**
+     * Maximum transmission unit.
+     *
+     */
+    @XmlElement(name = "MTU")
+    protected Integer mtu;
 
-	/**
-	 * Ruft den Wert der name-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getName() {
-		return name;
-	}
+    /**
+     * Network interface name, for example eth0.
+     *
+     * @return
+     *     possible object is
+     *     {@link String }
+     *
+     */
+    public String getName() {
+        return name;
+    }
 
-	/**
-	 * Legt den Wert der name-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setName(String value) {
-		this.name = value;
-	}
+    /**
+     * Sets the value of the name property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *
+     * @see #getName()
+     */
+    public void setName(String value) {
+        this.name = value;
+    }
 
-	/**
-	 * Ruft den Wert der hwAddress-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getHwAddress() {
-		return hwAddress;
-	}
+    /**
+     * Network interface MAC address.
+     *
+     * @return
+     *     possible object is
+     *     {@link String }
+     *
+     */
+    public String getHwAddress() {
+        return hwAddress;
+    }
 
-	/**
-	 * Legt den Wert der hwAddress-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setHwAddress(String value) {
-		this.hwAddress = value;
-	}
+    /**
+     * Sets the value of the hwAddress property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *
+     * @see #getHwAddress()
+     */
+    public void setHwAddress(String value) {
+        this.hwAddress = value;
+    }
 
-	/**
-	 * Ruft den Wert der mtu-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link Integer }
-	 * 
-	 */
-	public Integer getMTU() {
-		return mtu;
-	}
+    /**
+     * Maximum transmission unit.
+     *
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *
+     */
+    public Integer getMTU() {
+        return mtu;
+    }
 
-	/**
-	 * Legt den Wert der mtu-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Integer }
-	 * 
-	 */
-	public void setMTU(Integer value) {
-		this.mtu = value;
-	}
+    /**
+     * Sets the value of the mtu property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *
+     * @see #getMTU()
+     */
+    public void setMTU(Integer value) {
+        this.mtu = value;
+    }
 
 }

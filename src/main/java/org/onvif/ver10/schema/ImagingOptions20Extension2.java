@@ -1,9 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.04 um 12:22:03 PM CET 
-//
 
 package org.onvif.ver10.schema;
 
@@ -12,14 +6,13 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
 
+
 /**
- * <p>
- * Java-Klasse f�r ImagingOptions20Extension2 complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ * <p>Java class for ImagingOptions20Extension2 complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType name="ImagingOptions20Extension2">
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -30,59 +23,73 @@ import jakarta.xml.bind.annotation.XmlType;
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ImagingOptions20Extension2", propOrder = { "irCutFilterAutoAdjustment", "extension" })
+@XmlType(name = "ImagingOptions20Extension2", propOrder = {
+    "irCutFilterAutoAdjustment",
+    "extension"
+})
 public class ImagingOptions20Extension2 {
 
-	@XmlElement(name = "IrCutFilterAutoAdjustment")
-	protected IrCutFilterAutoAdjustmentOptions irCutFilterAutoAdjustment;
-	@XmlElement(name = "Extension")
-	protected ImagingOptions20Extension3 extension;
+    /**
+     * Options of parameters for adjustment of Ir cut filter auto mode.
+     *
+     */
+    @XmlElement(name = "IrCutFilterAutoAdjustment")
+    protected IrCutFilterAutoAdjustmentOptions irCutFilterAutoAdjustment;
+    @XmlElement(name = "Extension")
+    protected ImagingOptions20Extension3 extension;
 
-	/**
-	 * Ruft den Wert der irCutFilterAutoAdjustment-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link IrCutFilterAutoAdjustmentOptions }
-	 * 
-	 */
-	public IrCutFilterAutoAdjustmentOptions getIrCutFilterAutoAdjustment() {
-		return irCutFilterAutoAdjustment;
-	}
+    /**
+     * Options of parameters for adjustment of Ir cut filter auto mode.
+     *
+     * @return
+     *     possible object is
+     *     {@link IrCutFilterAutoAdjustmentOptions }
+     *
+     */
+    public IrCutFilterAutoAdjustmentOptions getIrCutFilterAutoAdjustment() {
+        return irCutFilterAutoAdjustment;
+    }
 
-	/**
-	 * Legt den Wert der irCutFilterAutoAdjustment-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link IrCutFilterAutoAdjustmentOptions }
-	 * 
-	 */
-	public void setIrCutFilterAutoAdjustment(IrCutFilterAutoAdjustmentOptions value) {
-		this.irCutFilterAutoAdjustment = value;
-	}
+    /**
+     * Sets the value of the irCutFilterAutoAdjustment property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link IrCutFilterAutoAdjustmentOptions }
+     *
+     * @see #getIrCutFilterAutoAdjustment()
+     */
+    public void setIrCutFilterAutoAdjustment(IrCutFilterAutoAdjustmentOptions value) {
+        this.irCutFilterAutoAdjustment = value;
+    }
 
-	/**
-	 * Ruft den Wert der extension-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link ImagingOptions20Extension3 }
-	 * 
-	 */
-	public ImagingOptions20Extension3 getExtension() {
-		return extension;
-	}
+    /**
+     * Gets the value of the extension property.
+     *
+     * @return
+     *     possible object is
+     *     {@link ImagingOptions20Extension3 }
+     *
+     */
+    public ImagingOptions20Extension3 getExtension() {
+        return extension;
+    }
 
-	/**
-	 * Legt den Wert der extension-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link ImagingOptions20Extension3 }
-	 * 
-	 */
-	public void setExtension(ImagingOptions20Extension3 value) {
-		this.extension = value;
-	}
+    /**
+     * Sets the value of the extension property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link ImagingOptions20Extension3 }
+     *
+     */
+    public void setExtension(ImagingOptions20Extension3 value) {
+        this.extension = value;
+    }
 
 }

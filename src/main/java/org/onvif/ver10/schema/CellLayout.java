@@ -1,9 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.04 um 12:22:03 PM CET 
-//
 
 package org.onvif.ver10.schema;
 
@@ -12,6 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.xml.namespace.QName;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAnyAttribute;
@@ -19,17 +14,15 @@ import jakarta.xml.bind.annotation.XmlAnyElement;
 import jakarta.xml.bind.annotation.XmlAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
-import javax.xml.namespace.QName;
 import org.w3c.dom.Element;
 
+
 /**
- * <p>
- * Java-Klasse f�r CellLayout complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ * <p>Java class for CellLayout complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType name="CellLayout">
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -43,128 +36,164 @@ import org.w3c.dom.Element;
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "CellLayout", propOrder = { "transformation", "any" })
+@XmlType(name = "CellLayout", propOrder = {
+    "transformation",
+    "any"
+})
 public class CellLayout {
 
-	@XmlElement(name = "Transformation", required = true)
-	protected Transformation transformation;
-	@XmlAnyElement(lax = true)
-	protected List<java.lang.Object> any;
-	@XmlAttribute(name = "Columns", required = true)
-	protected BigInteger columns;
-	@XmlAttribute(name = "Rows", required = true)
-	protected BigInteger rows;
-	@XmlAnyAttribute
-	private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    /**
+     * Mapping of the cell grid to the Video frame. The cell grid is starting from the upper left corner and x dimension is going from left to right and the y dimension from up to down.
+     *
+     */
+    @XmlElement(name = "Transformation", required = true)
+    protected Transformation transformation;
+    @XmlAnyElement(lax = true)
+    protected List<java.lang.Object> any;
+    /**
+     * Number of columns of the cell grid (x dimension)
+     *
+     */
+    @XmlAttribute(name = "Columns", required = true)
+    protected BigInteger columns;
+    /**
+     * Number of rows of the cell grid (y dimension)
+     *
+     */
+    @XmlAttribute(name = "Rows", required = true)
+    protected BigInteger rows;
+    @XmlAnyAttribute
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
-	/**
-	 * Ruft den Wert der transformation-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link Transformation }
-	 * 
-	 */
-	public Transformation getTransformation() {
-		return transformation;
-	}
+    /**
+     * Mapping of the cell grid to the Video frame. The cell grid is starting from the upper left corner and x dimension is going from left to right and the y dimension from up to down.
+     *
+     * @return
+     *     possible object is
+     *     {@link Transformation }
+     *
+     */
+    public Transformation getTransformation() {
+        return transformation;
+    }
 
-	/**
-	 * Legt den Wert der transformation-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Transformation }
-	 * 
-	 */
-	public void setTransformation(Transformation value) {
-		this.transformation = value;
-	}
+    /**
+     * Sets the value of the transformation property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Transformation }
+     *
+     * @see #getTransformation()
+     */
+    public void setTransformation(Transformation value) {
+        this.transformation = value;
+    }
 
-	/**
-	 * Gets the value of the any property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a snapshot. Therefore any modification you make to the returned list will be present inside the JAXB object.
-	 * This is why there is not a <CODE>set</CODE> method for the any property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getAny().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list {@link Element } {@link java.lang.Object }
-	 * 
-	 * 
-	 */
-	public List<java.lang.Object> getAny() {
-		if (any == null) {
-			any = new ArrayList<java.lang.Object>();
-		}
-		return this.any;
-	}
+    /**
+     * Gets the value of the any property.
+     *
+     * <p>This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * </p>
+     * <pre>
+     * getAny().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link java.lang.Object }
+     * {@link Element }
+     * </p>
+     *
+     *
+     * @return
+     *     The value of the any property.
+     */
+    public List<java.lang.Object> getAny() {
+        if (any == null) {
+            any = new ArrayList<>();
+        }
+        return this.any;
+    }
 
-	/**
-	 * Ruft den Wert der columns-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link BigInteger }
-	 * 
-	 */
-	public BigInteger getColumns() {
-		return columns;
-	}
+    /**
+     * Number of columns of the cell grid (x dimension)
+     *
+     * @return
+     *     possible object is
+     *     {@link BigInteger }
+     *
+     */
+    public BigInteger getColumns() {
+        return columns;
+    }
 
-	/**
-	 * Legt den Wert der columns-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link BigInteger }
-	 * 
-	 */
-	public void setColumns(BigInteger value) {
-		this.columns = value;
-	}
+    /**
+     * Sets the value of the columns property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link BigInteger }
+     *
+     * @see #getColumns()
+     */
+    public void setColumns(BigInteger value) {
+        this.columns = value;
+    }
 
-	/**
-	 * Ruft den Wert der rows-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link BigInteger }
-	 * 
-	 */
-	public BigInteger getRows() {
-		return rows;
-	}
+    /**
+     * Number of rows of the cell grid (y dimension)
+     *
+     * @return
+     *     possible object is
+     *     {@link BigInteger }
+     *
+     */
+    public BigInteger getRows() {
+        return rows;
+    }
 
-	/**
-	 * Legt den Wert der rows-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link BigInteger }
-	 * 
-	 */
-	public void setRows(BigInteger value) {
-		this.rows = value;
-	}
+    /**
+     * Sets the value of the rows property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link BigInteger }
+     *
+     * @see #getRows()
+     */
+    public void setRows(BigInteger value) {
+        this.rows = value;
+    }
 
-	/**
-	 * Gets a map that contains attributes that aren't bound to any typed property on this class.
-	 * 
-	 * <p>
-	 * the map is keyed by the name of the attribute and the value is the string value of the attribute.
-	 * 
-	 * the map returned by this method is live, and you can add new attribute by updating the map directly. Because of this design, there's no setter.
-	 * 
-	 * 
-	 * @return always non-null
-	 */
-	public Map<QName, String> getOtherAttributes() {
-		return otherAttributes;
-	}
+    /**
+     * Gets a map that contains attributes that aren't bound to any typed property on this class.
+     *
+     * <p>
+     * the map is keyed by the name of the attribute and
+     * the value is the string value of the attribute.
+     *
+     * the map returned by this method is live, and you can add new attribute
+     * by updating the map directly. Because of this design, there's no setter.
+     *
+     *
+     * @return
+     *     always non-null
+     */
+    public Map<QName, String> getOtherAttributes() {
+        return otherAttributes;
+    }
 
 }

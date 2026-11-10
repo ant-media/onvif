@@ -1,25 +1,19 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.04 um 12:22:03 PM CET 
-//
 
 package org.onvif.ver10.schema;
 
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 
+
 /**
- * <p>
- * Java-Klasse f�r PTZMoveStatus complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ * <p>Java class for PTZMoveStatus complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType name="PTZMoveStatus">
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -30,59 +24,70 @@ import jakarta.xml.bind.annotation.XmlType;
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "PTZMoveStatus", propOrder = { "panTilt", "zoom" })
+@XmlType(name = "PTZMoveStatus", propOrder = {
+    "panTilt",
+    "zoom"
+})
 public class PTZMoveStatus {
 
-	@XmlElement(name = "PanTilt")
-	protected MoveStatus panTilt;
-	@XmlElement(name = "Zoom")
-	protected MoveStatus zoom;
+    @XmlElement(name = "PanTilt")
+    @XmlSchemaType(name = "string")
+    protected MoveStatus panTilt;
+    @XmlElement(name = "Zoom")
+    @XmlSchemaType(name = "string")
+    protected MoveStatus zoom;
 
-	/**
-	 * Ruft den Wert der panTilt-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link MoveStatus }
-	 * 
-	 */
-	public MoveStatus getPanTilt() {
-		return panTilt;
-	}
+    /**
+     * Gets the value of the panTilt property.
+     *
+     * @return
+     *     possible object is
+     *     {@link MoveStatus }
+     *
+     */
+    public MoveStatus getPanTilt() {
+        return panTilt;
+    }
 
-	/**
-	 * Legt den Wert der panTilt-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link MoveStatus }
-	 * 
-	 */
-	public void setPanTilt(MoveStatus value) {
-		this.panTilt = value;
-	}
+    /**
+     * Sets the value of the panTilt property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link MoveStatus }
+     *
+     */
+    public void setPanTilt(MoveStatus value) {
+        this.panTilt = value;
+    }
 
-	/**
-	 * Ruft den Wert der zoom-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link MoveStatus }
-	 * 
-	 */
-	public MoveStatus getZoom() {
-		return zoom;
-	}
+    /**
+     * Gets the value of the zoom property.
+     *
+     * @return
+     *     possible object is
+     *     {@link MoveStatus }
+     *
+     */
+    public MoveStatus getZoom() {
+        return zoom;
+    }
 
-	/**
-	 * Legt den Wert der zoom-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link MoveStatus }
-	 * 
-	 */
-	public void setZoom(MoveStatus value) {
-		this.zoom = value;
-	}
+    /**
+     * Sets the value of the zoom property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link MoveStatus }
+     *
+     */
+    public void setZoom(MoveStatus value) {
+        this.zoom = value;
+    }
 
 }

@@ -1,9 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.19 um 02:35:56 PM CET 
-//
 
 package org.onvif.ver10.media.wsdl;
 
@@ -13,14 +7,13 @@ import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
 
+
 /**
- * <p>
- * Java-Klasse f�r anonymous complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ * <p>Java class for anonymous complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType>
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -31,60 +24,79 @@ import jakarta.xml.bind.annotation.XmlType;
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = { "configurationToken", "profileToken" })
+@XmlType(name = "", propOrder = {
+    "configurationToken",
+    "profileToken"
+})
 @XmlRootElement(name = "GetVideoSourceConfigurationOptions")
 public class GetVideoSourceConfigurationOptions {
 
-	@XmlElement(name = "ConfigurationToken")
-	protected String configurationToken;
-	@XmlElement(name = "ProfileToken")
-	protected String profileToken;
+    /**
+     * Optional video source configurationToken that specifies an existing configuration that the options are intended for.
+     *
+     */
+    @XmlElement(name = "ConfigurationToken")
+    protected String configurationToken;
+    /**
+     * Optional ProfileToken that specifies an existing media profile that the options shall be compatible with.
+     *
+     */
+    @XmlElement(name = "ProfileToken")
+    protected String profileToken;
 
-	/**
-	 * Ruft den Wert der configurationToken-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getConfigurationToken() {
-		return configurationToken;
-	}
+    /**
+     * Optional video source configurationToken that specifies an existing configuration that the options are intended for.
+     *
+     * @return
+     *     possible object is
+     *     {@link String }
+     *
+     */
+    public String getConfigurationToken() {
+        return configurationToken;
+    }
 
-	/**
-	 * Legt den Wert der configurationToken-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setConfigurationToken(String value) {
-		this.configurationToken = value;
-	}
+    /**
+     * Sets the value of the configurationToken property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *
+     * @see #getConfigurationToken()
+     */
+    public void setConfigurationToken(String value) {
+        this.configurationToken = value;
+    }
 
-	/**
-	 * Ruft den Wert der profileToken-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getProfileToken() {
-		return profileToken;
-	}
+    /**
+     * Optional ProfileToken that specifies an existing media profile that the options shall be compatible with.
+     *
+     * @return
+     *     possible object is
+     *     {@link String }
+     *
+     */
+    public String getProfileToken() {
+        return profileToken;
+    }
 
-	/**
-	 * Legt den Wert der profileToken-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setProfileToken(String value) {
-		this.profileToken = value;
-	}
+    /**
+     * Sets the value of the profileToken property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *
+     * @see #getProfileToken()
+     */
+    public void setProfileToken(String value) {
+        this.profileToken = value;
+    }
 
 }

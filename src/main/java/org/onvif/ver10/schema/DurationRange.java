@@ -1,28 +1,21 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.04 um 12:22:03 PM CET 
-//
 
 package org.onvif.ver10.schema;
 
+import javax.xml.datatype.Duration;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
-import javax.xml.datatype.Duration;
+
 
 /**
  * Range of duration greater equal Min duration and less equal Max duration.
- * 
- * <p>
- * Java-Klasse f�r DurationRange complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ *
+ * <p>Java class for DurationRange complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType name="DurationRange">
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -33,59 +26,68 @@ import javax.xml.datatype.Duration;
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "DurationRange", propOrder = { "min", "max" })
+@XmlType(name = "DurationRange", propOrder = {
+    "min",
+    "max"
+})
 public class DurationRange {
 
-	@XmlElement(name = "Min", required = true)
-	protected Duration min;
-	@XmlElement(name = "Max", required = true)
-	protected Duration max;
+    @XmlElement(name = "Min", required = true)
+    protected Duration min;
+    @XmlElement(name = "Max", required = true)
+    protected Duration max;
 
-	/**
-	 * Ruft den Wert der min-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link Duration }
-	 * 
-	 */
-	public Duration getMin() {
-		return min;
-	}
+    /**
+     * Gets the value of the min property.
+     *
+     * @return
+     *     possible object is
+     *     {@link Duration }
+     *
+     */
+    public Duration getMin() {
+        return min;
+    }
 
-	/**
-	 * Legt den Wert der min-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Duration }
-	 * 
-	 */
-	public void setMin(Duration value) {
-		this.min = value;
-	}
+    /**
+     * Sets the value of the min property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Duration }
+     *
+     */
+    public void setMin(Duration value) {
+        this.min = value;
+    }
 
-	/**
-	 * Ruft den Wert der max-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link Duration }
-	 * 
-	 */
-	public Duration getMax() {
-		return max;
-	}
+    /**
+     * Gets the value of the max property.
+     *
+     * @return
+     *     possible object is
+     *     {@link Duration }
+     *
+     */
+    public Duration getMax() {
+        return max;
+    }
 
-	/**
-	 * Legt den Wert der max-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Duration }
-	 * 
-	 */
-	public void setMax(Duration value) {
-		this.max = value;
-	}
+    /**
+     * Sets the value of the max property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Duration }
+     *
+     */
+    public void setMax(Duration value) {
+        this.max = value;
+    }
 
 }

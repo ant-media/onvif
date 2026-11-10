@@ -1,27 +1,20 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.04 um 12:22:03 PM CET 
-//
 
 package org.onvif.ver10.schema;
 
+import javax.xml.namespace.QName;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
-import javax.xml.namespace.QName;
+
 
 /**
- * <p>
- * Java-Klasse f�r Config complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ * <p>Java class for Config complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType name="Config">
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -33,82 +26,108 @@ import javax.xml.namespace.QName;
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Config", propOrder = { "parameters" })
+@XmlType(name = "Config", propOrder = {
+    "parameters"
+})
 public class Config {
 
-	@XmlElement(name = "Parameters", required = true)
-	protected ItemList parameters;
-	@XmlAttribute(name = "Name", required = true)
-	protected String name;
-	@XmlAttribute(name = "Type", required = true)
-	protected QName type;
+    /**
+     * List of configuration parameters as defined in the corresponding description.
+     *
+     */
+    @XmlElement(name = "Parameters", required = true)
+    protected ItemList parameters;
+    /**
+     * Name of the configuration.
+     *
+     */
+    @XmlAttribute(name = "Name", required = true)
+    protected String name;
+    /**
+     * The Type attribute specifies the type of rule and shall be equal to value of one of Name attributes of ConfigDescription elements returned by GetSupportedRules and GetSupportedAnalyticsModules command.
+     *
+     */
+    @XmlAttribute(name = "Type", required = true)
+    protected QName type;
 
-	/**
-	 * Ruft den Wert der parameters-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link ItemList }
-	 * 
-	 */
-	public ItemList getParameters() {
-		return parameters;
-	}
+    /**
+     * List of configuration parameters as defined in the corresponding description.
+     *
+     * @return
+     *     possible object is
+     *     {@link ItemList }
+     *
+     */
+    public ItemList getParameters() {
+        return parameters;
+    }
 
-	/**
-	 * Legt den Wert der parameters-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link ItemList }
-	 * 
-	 */
-	public void setParameters(ItemList value) {
-		this.parameters = value;
-	}
+    /**
+     * Sets the value of the parameters property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link ItemList }
+     *
+     * @see #getParameters()
+     */
+    public void setParameters(ItemList value) {
+        this.parameters = value;
+    }
 
-	/**
-	 * Ruft den Wert der name-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getName() {
-		return name;
-	}
+    /**
+     * Name of the configuration.
+     *
+     * @return
+     *     possible object is
+     *     {@link String }
+     *
+     */
+    public String getName() {
+        return name;
+    }
 
-	/**
-	 * Legt den Wert der name-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setName(String value) {
-		this.name = value;
-	}
+    /**
+     * Sets the value of the name property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *
+     * @see #getName()
+     */
+    public void setName(String value) {
+        this.name = value;
+    }
 
-	/**
-	 * Ruft den Wert der type-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link QName }
-	 * 
-	 */
-	public QName getType() {
-		return type;
-	}
+    /**
+     * The Type attribute specifies the type of rule and shall be equal to value of one of Name attributes of ConfigDescription elements returned by GetSupportedRules and GetSupportedAnalyticsModules command.
+     *
+     * @return
+     *     possible object is
+     *     {@link QName }
+     *
+     */
+    public QName getType() {
+        return type;
+    }
 
-	/**
-	 * Legt den Wert der type-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link QName }
-	 * 
-	 */
-	public void setType(QName value) {
-		this.type = value;
-	}
+    /**
+     * Sets the value of the type property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link QName }
+     *
+     * @see #getType()
+     */
+    public void setType(QName value) {
+        this.type = value;
+    }
 
 }

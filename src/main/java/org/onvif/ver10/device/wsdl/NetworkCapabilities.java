@@ -1,29 +1,22 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.04 um 12:22:03 PM CET 
-//
 
 package org.onvif.ver10.device.wsdl;
 
 import java.util.HashMap;
 import java.util.Map;
+import javax.xml.namespace.QName;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlAttribute;
 import jakarta.xml.bind.annotation.XmlType;
-import javax.xml.namespace.QName;
+
 
 /**
- * <p>
- * Java-Klasse f�r NetworkCapabilities complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ * <p>Java class for NetworkCapabilities complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType name="NetworkCapabilities">
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -40,237 +33,312 @@ import javax.xml.namespace.QName;
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "NetworkCapabilities")
 public class NetworkCapabilities {
 
-	@XmlAttribute(name = "IPFilter")
-	protected Boolean ipFilter;
-	@XmlAttribute(name = "ZeroConfiguration")
-	protected Boolean zeroConfiguration;
-	@XmlAttribute(name = "IPVersion6")
-	protected Boolean ipVersion6;
-	@XmlAttribute(name = "DynDNS")
-	protected Boolean dynDNS;
-	@XmlAttribute(name = "Dot11Configuration")
-	protected Boolean dot11Configuration;
-	@XmlAttribute(name = "Dot1XConfigurations")
-	protected Integer dot1XConfigurations;
-	@XmlAttribute(name = "HostnameFromDHCP")
-	protected Boolean hostnameFromDHCP;
-	@XmlAttribute(name = "NTP")
-	protected Integer ntp;
-	@XmlAttribute(name = "DHCPv6")
-	protected Boolean dhcPv6;
-	@XmlAnyAttribute
-	private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    /**
+     * Indicates support for IP filtering.
+     *
+     */
+    @XmlAttribute(name = "IPFilter")
+    protected Boolean ipFilter;
+    /**
+     * Indicates support for zeroconf.
+     *
+     */
+    @XmlAttribute(name = "ZeroConfiguration")
+    protected Boolean zeroConfiguration;
+    /**
+     * Indicates support for IPv6.
+     *
+     */
+    @XmlAttribute(name = "IPVersion6")
+    protected Boolean ipVersion6;
+    /**
+     * Indicates support for dynamic DNS configuration.
+     *
+     */
+    @XmlAttribute(name = "DynDNS")
+    protected Boolean dynDNS;
+    /**
+     * Indicates support for IEEE 802.11 configuration.
+     *
+     */
+    @XmlAttribute(name = "Dot11Configuration")
+    protected Boolean dot11Configuration;
+    /**
+     * Indicates the maximum number of Dot1X configurations supported by the device
+     *
+     */
+    @XmlAttribute(name = "Dot1XConfigurations")
+    protected Integer dot1XConfigurations;
+    /**
+     * Indicates support for retrieval of hostname from DHCP.
+     *
+     */
+    @XmlAttribute(name = "HostnameFromDHCP")
+    protected Boolean hostnameFromDHCP;
+    /**
+     * Maximum number of NTP servers supported by the devices SetNTP command.
+     *
+     */
+    @XmlAttribute(name = "NTP")
+    protected Integer ntp;
+    /**
+     * Indicates support for Stateful IPv6 DHCP.
+     *
+     */
+    @XmlAttribute(name = "DHCPv6")
+    protected Boolean dhcPv6;
+    @XmlAnyAttribute
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
-	/**
-	 * Ruft den Wert der ipFilter-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link Boolean }
-	 * 
-	 */
-	public Boolean isIPFilter() {
-		return ipFilter;
-	}
+    /**
+     * Indicates support for IP filtering.
+     *
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *
+     */
+    public Boolean isIPFilter() {
+        return ipFilter;
+    }
 
-	/**
-	 * Legt den Wert der ipFilter-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Boolean }
-	 * 
-	 */
-	public void setIPFilter(Boolean value) {
-		this.ipFilter = value;
-	}
+    /**
+     * Sets the value of the ipFilter property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *
+     * @see #isIPFilter()
+     */
+    public void setIPFilter(Boolean value) {
+        this.ipFilter = value;
+    }
 
-	/**
-	 * Ruft den Wert der zeroConfiguration-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link Boolean }
-	 * 
-	 */
-	public Boolean isZeroConfiguration() {
-		return zeroConfiguration;
-	}
+    /**
+     * Indicates support for zeroconf.
+     *
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *
+     */
+    public Boolean isZeroConfiguration() {
+        return zeroConfiguration;
+    }
 
-	/**
-	 * Legt den Wert der zeroConfiguration-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Boolean }
-	 * 
-	 */
-	public void setZeroConfiguration(Boolean value) {
-		this.zeroConfiguration = value;
-	}
+    /**
+     * Sets the value of the zeroConfiguration property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *
+     * @see #isZeroConfiguration()
+     */
+    public void setZeroConfiguration(Boolean value) {
+        this.zeroConfiguration = value;
+    }
 
-	/**
-	 * Ruft den Wert der ipVersion6-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link Boolean }
-	 * 
-	 */
-	public Boolean isIPVersion6() {
-		return ipVersion6;
-	}
+    /**
+     * Indicates support for IPv6.
+     *
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *
+     */
+    public Boolean isIPVersion6() {
+        return ipVersion6;
+    }
 
-	/**
-	 * Legt den Wert der ipVersion6-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Boolean }
-	 * 
-	 */
-	public void setIPVersion6(Boolean value) {
-		this.ipVersion6 = value;
-	}
+    /**
+     * Sets the value of the ipVersion6 property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *
+     * @see #isIPVersion6()
+     */
+    public void setIPVersion6(Boolean value) {
+        this.ipVersion6 = value;
+    }
 
-	/**
-	 * Ruft den Wert der dynDNS-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link Boolean }
-	 * 
-	 */
-	public Boolean isDynDNS() {
-		return dynDNS;
-	}
+    /**
+     * Indicates support for dynamic DNS configuration.
+     *
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *
+     */
+    public Boolean isDynDNS() {
+        return dynDNS;
+    }
 
-	/**
-	 * Legt den Wert der dynDNS-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Boolean }
-	 * 
-	 */
-	public void setDynDNS(Boolean value) {
-		this.dynDNS = value;
-	}
+    /**
+     * Sets the value of the dynDNS property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *
+     * @see #isDynDNS()
+     */
+    public void setDynDNS(Boolean value) {
+        this.dynDNS = value;
+    }
 
-	/**
-	 * Ruft den Wert der dot11Configuration-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link Boolean }
-	 * 
-	 */
-	public Boolean isDot11Configuration() {
-		return dot11Configuration;
-	}
+    /**
+     * Indicates support for IEEE 802.11 configuration.
+     *
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *
+     */
+    public Boolean isDot11Configuration() {
+        return dot11Configuration;
+    }
 
-	/**
-	 * Legt den Wert der dot11Configuration-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Boolean }
-	 * 
-	 */
-	public void setDot11Configuration(Boolean value) {
-		this.dot11Configuration = value;
-	}
+    /**
+     * Sets the value of the dot11Configuration property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *
+     * @see #isDot11Configuration()
+     */
+    public void setDot11Configuration(Boolean value) {
+        this.dot11Configuration = value;
+    }
 
-	/**
-	 * Ruft den Wert der dot1XConfigurations-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link Integer }
-	 * 
-	 */
-	public Integer getDot1XConfigurations() {
-		return dot1XConfigurations;
-	}
+    /**
+     * Indicates the maximum number of Dot1X configurations supported by the device
+     *
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *
+     */
+    public Integer getDot1XConfigurations() {
+        return dot1XConfigurations;
+    }
 
-	/**
-	 * Legt den Wert der dot1XConfigurations-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Integer }
-	 * 
-	 */
-	public void setDot1XConfigurations(Integer value) {
-		this.dot1XConfigurations = value;
-	}
+    /**
+     * Sets the value of the dot1XConfigurations property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *
+     * @see #getDot1XConfigurations()
+     */
+    public void setDot1XConfigurations(Integer value) {
+        this.dot1XConfigurations = value;
+    }
 
-	/**
-	 * Ruft den Wert der hostnameFromDHCP-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link Boolean }
-	 * 
-	 */
-	public Boolean isHostnameFromDHCP() {
-		return hostnameFromDHCP;
-	}
+    /**
+     * Indicates support for retrieval of hostname from DHCP.
+     *
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *
+     */
+    public Boolean isHostnameFromDHCP() {
+        return hostnameFromDHCP;
+    }
 
-	/**
-	 * Legt den Wert der hostnameFromDHCP-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Boolean }
-	 * 
-	 */
-	public void setHostnameFromDHCP(Boolean value) {
-		this.hostnameFromDHCP = value;
-	}
+    /**
+     * Sets the value of the hostnameFromDHCP property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *
+     * @see #isHostnameFromDHCP()
+     */
+    public void setHostnameFromDHCP(Boolean value) {
+        this.hostnameFromDHCP = value;
+    }
 
-	/**
-	 * Ruft den Wert der ntp-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link Integer }
-	 * 
-	 */
-	public Integer getNTP() {
-		return ntp;
-	}
+    /**
+     * Maximum number of NTP servers supported by the devices SetNTP command.
+     *
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *
+     */
+    public Integer getNTP() {
+        return ntp;
+    }
 
-	/**
-	 * Legt den Wert der ntp-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Integer }
-	 * 
-	 */
-	public void setNTP(Integer value) {
-		this.ntp = value;
-	}
+    /**
+     * Sets the value of the ntp property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *
+     * @see #getNTP()
+     */
+    public void setNTP(Integer value) {
+        this.ntp = value;
+    }
 
-	/**
-	 * Ruft den Wert der dhcPv6-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link Boolean }
-	 * 
-	 */
-	public Boolean isDHCPv6() {
-		return dhcPv6;
-	}
+    /**
+     * Indicates support for Stateful IPv6 DHCP.
+     *
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *
+     */
+    public Boolean isDHCPv6() {
+        return dhcPv6;
+    }
 
-	/**
-	 * Legt den Wert der dhcPv6-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Boolean }
-	 * 
-	 */
-	public void setDHCPv6(Boolean value) {
-		this.dhcPv6 = value;
-	}
+    /**
+     * Sets the value of the dhcPv6 property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *
+     * @see #isDHCPv6()
+     */
+    public void setDHCPv6(Boolean value) {
+        this.dhcPv6 = value;
+    }
 
-	/**
-	 * Gets a map that contains attributes that aren't bound to any typed property on this class.
-	 * 
-	 * <p>
-	 * the map is keyed by the name of the attribute and the value is the string value of the attribute.
-	 * 
-	 * the map returned by this method is live, and you can add new attribute by updating the map directly. Because of this design, there's no setter.
-	 * 
-	 * 
-	 * @return always non-null
-	 */
-	public Map<QName, String> getOtherAttributes() {
-		return otherAttributes;
-	}
+    /**
+     * Gets a map that contains attributes that aren't bound to any typed property on this class.
+     *
+     * <p>
+     * the map is keyed by the name of the attribute and
+     * the value is the string value of the attribute.
+     *
+     * the map returned by this method is live, and you can add new attribute
+     * by updating the map directly. Because of this design, there's no setter.
+     *
+     *
+     * @return
+     *     always non-null
+     */
+    public Map<QName, String> getOtherAttributes() {
+        return otherAttributes;
+    }
 
 }

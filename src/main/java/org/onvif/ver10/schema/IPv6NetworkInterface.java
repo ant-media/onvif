@@ -1,9 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.04 um 12:22:03 PM CET 
-//
 
 package org.onvif.ver10.schema;
 
@@ -12,14 +6,13 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
 
+
 /**
- * <p>
- * Java-Klasse f�r IPv6NetworkInterface complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ * <p>Java class for IPv6NetworkInterface complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType name="IPv6NetworkInterface">
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -30,54 +23,69 @@ import jakarta.xml.bind.annotation.XmlType;
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "IPv6NetworkInterface", propOrder = { "enabled", "config" })
+@XmlType(name = "IPv6NetworkInterface", propOrder = {
+    "enabled",
+    "config"
+})
 public class IPv6NetworkInterface {
 
-	@XmlElement(name = "Enabled")
-	protected boolean enabled;
-	@XmlElement(name = "Config")
-	protected IPv6Configuration config;
+    /**
+     * Indicates whether or not IPv6 is enabled.
+     *
+     */
+    @XmlElement(name = "Enabled")
+    protected boolean enabled;
+    /**
+     * IPv6 configuration.
+     *
+     */
+    @XmlElement(name = "Config")
+    protected IPv6Configuration config;
 
-	/**
-	 * Ruft den Wert der enabled-Eigenschaft ab.
-	 * 
-	 */
-	public boolean isEnabled() {
-		return enabled;
-	}
+    /**
+     * Indicates whether or not IPv6 is enabled.
+     *
+     */
+    public boolean isEnabled() {
+        return enabled;
+    }
 
-	/**
-	 * Legt den Wert der enabled-Eigenschaft fest.
-	 * 
-	 */
-	public void setEnabled(boolean value) {
-		this.enabled = value;
-	}
+    /**
+     * Sets the value of the enabled property.
+     *
+     */
+    public void setEnabled(boolean value) {
+        this.enabled = value;
+    }
 
-	/**
-	 * Ruft den Wert der config-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link IPv6Configuration }
-	 * 
-	 */
-	public IPv6Configuration getConfig() {
-		return config;
-	}
+    /**
+     * IPv6 configuration.
+     *
+     * @return
+     *     possible object is
+     *     {@link IPv6Configuration }
+     *
+     */
+    public IPv6Configuration getConfig() {
+        return config;
+    }
 
-	/**
-	 * Legt den Wert der config-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link IPv6Configuration }
-	 * 
-	 */
-	public void setConfig(IPv6Configuration value) {
-		this.config = value;
-	}
+    /**
+     * Sets the value of the config property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link IPv6Configuration }
+     *
+     * @see #getConfig()
+     */
+    public void setConfig(IPv6Configuration value) {
+        this.config = value;
+    }
 
 }

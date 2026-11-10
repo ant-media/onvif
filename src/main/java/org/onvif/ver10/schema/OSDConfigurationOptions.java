@@ -1,9 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.04 um 12:22:03 PM CET 
-//
 
 package org.onvif.ver10.schema;
 
@@ -11,21 +5,21 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.xml.namespace.QName;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
-import javax.xml.namespace.QName;
+
 
 /**
- * <p>
- * Java-Klasse f�r OSDConfigurationOptions complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ * <p>Java class for OSDConfigurationOptions complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType name="OSDConfigurationOptions">
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -41,180 +35,254 @@ import javax.xml.namespace.QName;
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "OSDConfigurationOptions", propOrder = { "maximumNumberOfOSDs", "type", "positionOption", "textOption", "imageOption", "extension" })
+@XmlType(name = "OSDConfigurationOptions", propOrder = {
+    "maximumNumberOfOSDs",
+    "type",
+    "positionOption",
+    "textOption",
+    "imageOption",
+    "extension"
+})
 public class OSDConfigurationOptions {
 
-	@XmlElement(name = "MaximumNumberOfOSDs", required = true)
-	protected MaximumNumberOfOSDs maximumNumberOfOSDs;
-	@XmlElement(name = "Type", required = true)
-	protected List<OSDType> type;
-	@XmlElement(name = "PositionOption", required = true)
-	protected List<String> positionOption;
-	@XmlElement(name = "TextOption")
-	protected OSDTextOptions textOption;
-	@XmlElement(name = "ImageOption")
-	protected OSDImgOptions imageOption;
-	@XmlElement(name = "Extension")
-	protected OSDConfigurationOptionsExtension extension;
-	@XmlAnyAttribute
-	private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    /**
+     * The maximum number of OSD configurations supported for the specified video source configuration. If the configuration does not support OSDs, this value shall be zero and the Type and PositionOption elements are ignored. If a device limits the number of instances by OSDType, it shall indicate the supported number for each type via the related attribute.
+     *
+     */
+    @XmlElement(name = "MaximumNumberOfOSDs", required = true)
+    protected MaximumNumberOfOSDs maximumNumberOfOSDs;
+    /**
+     * List supported type of OSD configuration. When a device indicates the supported number for each types in MaximumNumberOfOSDs, related type shall be presented. A device shall return Option element relating to listed type.
+     *
+     */
+    @XmlElement(name = "Type", required = true)
+    @XmlSchemaType(name = "string")
+    protected List<OSDType> type;
+    /**
+     * List available OSD position type. Following are the pre-defined:
+     * <pre>
+     * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;ul xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope" xmlns:tt="http://www.onvif.org/ver10/schema" xmlns:wsnt="http://docs.oasis-open.org/wsn/b-2" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xop="http://www.w3.org/2004/08/xop/include" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;&lt;li&gt;UpperLeft&lt;/li&gt;
+     * 						&lt;li&gt;UpperRight&lt;/li&gt;
+     * 						&lt;li&gt;LowerLeft&lt;/li&gt;
+     * 						&lt;li&gt;LowerRight&lt;/li&gt;
+     * 						&lt;li&gt;Custom&lt;/li&gt;&lt;/ul&gt;
+     * </pre>
+     *
+     */
+    @XmlElement(name = "PositionOption", required = true)
+    protected List<String> positionOption;
+    /**
+     * Option of the OSD text configuration. This element shall be returned if the device is signaling the support for Text.
+     *
+     */
+    @XmlElement(name = "TextOption")
+    protected OSDTextOptions textOption;
+    /**
+     * Option of the OSD image configuration. This element shall be returned if the device is signaling the support for Image.
+     *
+     */
+    @XmlElement(name = "ImageOption")
+    protected OSDImgOptions imageOption;
+    @XmlElement(name = "Extension")
+    protected OSDConfigurationOptionsExtension extension;
+    @XmlAnyAttribute
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
-	/**
-	 * Ruft den Wert der maximumNumberOfOSDs-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link MaximumNumberOfOSDs }
-	 * 
-	 */
-	public MaximumNumberOfOSDs getMaximumNumberOfOSDs() {
-		return maximumNumberOfOSDs;
-	}
+    /**
+     * The maximum number of OSD configurations supported for the specified video source configuration. If the configuration does not support OSDs, this value shall be zero and the Type and PositionOption elements are ignored. If a device limits the number of instances by OSDType, it shall indicate the supported number for each type via the related attribute.
+     *
+     * @return
+     *     possible object is
+     *     {@link MaximumNumberOfOSDs }
+     *
+     */
+    public MaximumNumberOfOSDs getMaximumNumberOfOSDs() {
+        return maximumNumberOfOSDs;
+    }
 
-	/**
-	 * Legt den Wert der maximumNumberOfOSDs-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link MaximumNumberOfOSDs }
-	 * 
-	 */
-	public void setMaximumNumberOfOSDs(MaximumNumberOfOSDs value) {
-		this.maximumNumberOfOSDs = value;
-	}
+    /**
+     * Sets the value of the maximumNumberOfOSDs property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link MaximumNumberOfOSDs }
+     *
+     * @see #getMaximumNumberOfOSDs()
+     */
+    public void setMaximumNumberOfOSDs(MaximumNumberOfOSDs value) {
+        this.maximumNumberOfOSDs = value;
+    }
 
-	/**
-	 * Gets the value of the type property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a snapshot. Therefore any modification you make to the returned list will be present inside the JAXB object.
-	 * This is why there is not a <CODE>set</CODE> method for the type property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getType().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list {@link OSDType }
-	 * 
-	 * 
-	 */
-	public List<OSDType> getType() {
-		if (type == null) {
-			type = new ArrayList<OSDType>();
-		}
-		return this.type;
-	}
+    /**
+     * List supported type of OSD configuration. When a device indicates the supported number for each types in MaximumNumberOfOSDs, related type shall be presented. A device shall return Option element relating to listed type.
+     *
+     * Gets the value of the type property.
+     *
+     * <p>This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the type property.</p>
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * </p>
+     * <pre>
+     * getType().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link OSDType }
+     * </p>
+     *
+     *
+     * @return
+     *     The value of the type property.
+     */
+    public List<OSDType> getType() {
+        if (type == null) {
+            type = new ArrayList<>();
+        }
+        return this.type;
+    }
 
-	/**
-	 * Gets the value of the positionOption property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a snapshot. Therefore any modification you make to the returned list will be present inside the JAXB object.
-	 * This is why there is not a <CODE>set</CODE> method for the positionOption property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getPositionOption().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list {@link String }
-	 * 
-	 * 
-	 */
-	public List<String> getPositionOption() {
-		if (positionOption == null) {
-			positionOption = new ArrayList<String>();
-		}
-		return this.positionOption;
-	}
+    /**
+     * List available OSD position type. Following are the pre-defined:
+     * <pre>
+     * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;ul xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope" xmlns:tt="http://www.onvif.org/ver10/schema" xmlns:wsnt="http://docs.oasis-open.org/wsn/b-2" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xop="http://www.w3.org/2004/08/xop/include" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;&lt;li&gt;UpperLeft&lt;/li&gt;
+     * 						&lt;li&gt;UpperRight&lt;/li&gt;
+     * 						&lt;li&gt;LowerLeft&lt;/li&gt;
+     * 						&lt;li&gt;LowerRight&lt;/li&gt;
+     * 						&lt;li&gt;Custom&lt;/li&gt;&lt;/ul&gt;
+     * </pre>
+     *
+     * Gets the value of the positionOption property.
+     *
+     * <p>This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the positionOption property.</p>
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * </p>
+     * <pre>
+     * getPositionOption().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link String }
+     * </p>
+     *
+     *
+     * @return
+     *     The value of the positionOption property.
+     */
+    public List<String> getPositionOption() {
+        if (positionOption == null) {
+            positionOption = new ArrayList<>();
+        }
+        return this.positionOption;
+    }
 
-	/**
-	 * Ruft den Wert der textOption-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link OSDTextOptions }
-	 * 
-	 */
-	public OSDTextOptions getTextOption() {
-		return textOption;
-	}
+    /**
+     * Option of the OSD text configuration. This element shall be returned if the device is signaling the support for Text.
+     *
+     * @return
+     *     possible object is
+     *     {@link OSDTextOptions }
+     *
+     */
+    public OSDTextOptions getTextOption() {
+        return textOption;
+    }
 
-	/**
-	 * Legt den Wert der textOption-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link OSDTextOptions }
-	 * 
-	 */
-	public void setTextOption(OSDTextOptions value) {
-		this.textOption = value;
-	}
+    /**
+     * Sets the value of the textOption property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link OSDTextOptions }
+     *
+     * @see #getTextOption()
+     */
+    public void setTextOption(OSDTextOptions value) {
+        this.textOption = value;
+    }
 
-	/**
-	 * Ruft den Wert der imageOption-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link OSDImgOptions }
-	 * 
-	 */
-	public OSDImgOptions getImageOption() {
-		return imageOption;
-	}
+    /**
+     * Option of the OSD image configuration. This element shall be returned if the device is signaling the support for Image.
+     *
+     * @return
+     *     possible object is
+     *     {@link OSDImgOptions }
+     *
+     */
+    public OSDImgOptions getImageOption() {
+        return imageOption;
+    }
 
-	/**
-	 * Legt den Wert der imageOption-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link OSDImgOptions }
-	 * 
-	 */
-	public void setImageOption(OSDImgOptions value) {
-		this.imageOption = value;
-	}
+    /**
+     * Sets the value of the imageOption property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link OSDImgOptions }
+     *
+     * @see #getImageOption()
+     */
+    public void setImageOption(OSDImgOptions value) {
+        this.imageOption = value;
+    }
 
-	/**
-	 * Ruft den Wert der extension-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link OSDConfigurationOptionsExtension }
-	 * 
-	 */
-	public OSDConfigurationOptionsExtension getExtension() {
-		return extension;
-	}
+    /**
+     * Gets the value of the extension property.
+     *
+     * @return
+     *     possible object is
+     *     {@link OSDConfigurationOptionsExtension }
+     *
+     */
+    public OSDConfigurationOptionsExtension getExtension() {
+        return extension;
+    }
 
-	/**
-	 * Legt den Wert der extension-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link OSDConfigurationOptionsExtension }
-	 * 
-	 */
-	public void setExtension(OSDConfigurationOptionsExtension value) {
-		this.extension = value;
-	}
+    /**
+     * Sets the value of the extension property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link OSDConfigurationOptionsExtension }
+     *
+     */
+    public void setExtension(OSDConfigurationOptionsExtension value) {
+        this.extension = value;
+    }
 
-	/**
-	 * Gets a map that contains attributes that aren't bound to any typed property on this class.
-	 * 
-	 * <p>
-	 * the map is keyed by the name of the attribute and the value is the string value of the attribute.
-	 * 
-	 * the map returned by this method is live, and you can add new attribute by updating the map directly. Because of this design, there's no setter.
-	 * 
-	 * 
-	 * @return always non-null
-	 */
-	public Map<QName, String> getOtherAttributes() {
-		return otherAttributes;
-	}
+    /**
+     * Gets a map that contains attributes that aren't bound to any typed property on this class.
+     *
+     * <p>
+     * the map is keyed by the name of the attribute and
+     * the value is the string value of the attribute.
+     *
+     * the map returned by this method is live, and you can add new attribute
+     * by updating the map directly. Because of this design, there's no setter.
+     *
+     *
+     * @return
+     *     always non-null
+     */
+    public Map<QName, String> getOtherAttributes() {
+        return otherAttributes;
+    }
 
 }

@@ -1,10 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2016.02.05 um 06:25:30 PM CET 
-//
-
 
 package org.onvif.ver10.schema;
 
@@ -17,24 +10,24 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java-Klasse f�r MetadataConfigurationOptionsExtension complex type.
- * 
- * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
- * &lt;complexType name="MetadataConfigurationOptionsExtension">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="CompressionType" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}MetadataConfigurationOptionsExtension2" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * <p>Java class for MetadataConfigurationOptionsExtension complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
+ * <complexType name="MetadataConfigurationOptionsExtension">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="CompressionType" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}MetadataConfigurationOptionsExtension2" minOccurs="0"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "MetadataConfigurationOptionsExtension", propOrder = {
@@ -43,59 +36,68 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class MetadataConfigurationOptionsExtension {
 
+    /**
+     * List of supported metadata compression type. Its options shall be chosen from tt:MetadataCompressionType.
+     *
+     */
     @XmlElement(name = "CompressionType")
     protected List<String> compressionType;
     @XmlElement(name = "Extension")
     protected MetadataConfigurationOptionsExtension2 extension;
 
     /**
+     * List of supported metadata compression type. Its options shall be chosen from tt:MetadataCompressionType.
+     *
      * Gets the value of the compressionType property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     *
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the compressionType property.
-     * 
+     * This is why there is not a <CODE>set</CODE> method for the compressionType property.</p>
+     *
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getCompressionType().add(newItem);
+     * getCompressionType().add(newItem);
      * </pre>
-     * 
-     * 
+     *
+     *
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link String }
-     * 
-     * 
+     * </p>
+     *
+     *
+     * @return
+     *     The value of the compressionType property.
      */
     public List<String> getCompressionType() {
         if (compressionType == null) {
-            compressionType = new ArrayList<String>();
+            compressionType = new ArrayList<>();
         }
         return this.compressionType;
     }
 
     /**
-     * Ruft den Wert der extension-Eigenschaft ab.
-     * 
+     * Gets the value of the extension property.
+     *
      * @return
      *     possible object is
      *     {@link MetadataConfigurationOptionsExtension2 }
-     *     
+     *
      */
     public MetadataConfigurationOptionsExtension2 getExtension() {
         return extension;
     }
 
     /**
-     * Legt den Wert der extension-Eigenschaft fest.
-     * 
+     * Sets the value of the extension property.
+     *
      * @param value
      *     allowed object is
      *     {@link MetadataConfigurationOptionsExtension2 }
-     *     
+     *
      */
     public void setExtension(MetadataConfigurationOptionsExtension2 value) {
         this.extension = value;

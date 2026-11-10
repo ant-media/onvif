@@ -1,9 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.17 um 11:33:29 AM CET 
-//
 
 package org.onvif.ver20.ptz.wsdl;
 
@@ -13,14 +7,13 @@ import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
 
+
 /**
- * <p>
- * Java-Klasse f�r anonymous complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ * <p>Java class for anonymous complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType>
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -31,60 +24,69 @@ import jakarta.xml.bind.annotation.XmlType;
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = { "profileToken", "presetTourToken" })
+@XmlType(name = "", propOrder = {
+    "profileToken",
+    "presetTourToken"
+})
 @XmlRootElement(name = "GetPresetTourOptions")
 public class GetPresetTourOptions {
 
-	@XmlElement(name = "ProfileToken", required = true)
-	protected String profileToken;
-	@XmlElement(name = "PresetTourToken")
-	protected String presetTourToken;
+    @XmlElement(name = "ProfileToken", required = true)
+    protected String profileToken;
+    @XmlElement(name = "PresetTourToken")
+    protected String presetTourToken;
 
-	/**
-	 * Ruft den Wert der profileToken-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getProfileToken() {
-		return profileToken;
-	}
+    /**
+     * Gets the value of the profileToken property.
+     *
+     * @return
+     *     possible object is
+     *     {@link String }
+     *
+     */
+    public String getProfileToken() {
+        return profileToken;
+    }
 
-	/**
-	 * Legt den Wert der profileToken-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setProfileToken(String value) {
-		this.profileToken = value;
-	}
+    /**
+     * Sets the value of the profileToken property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *
+     */
+    public void setProfileToken(String value) {
+        this.profileToken = value;
+    }
 
-	/**
-	 * Ruft den Wert der presetTourToken-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getPresetTourToken() {
-		return presetTourToken;
-	}
+    /**
+     * Gets the value of the presetTourToken property.
+     *
+     * @return
+     *     possible object is
+     *     {@link String }
+     *
+     */
+    public String getPresetTourToken() {
+        return presetTourToken;
+    }
 
-	/**
-	 * Legt den Wert der presetTourToken-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setPresetTourToken(String value) {
-		this.presetTourToken = value;
-	}
+    /**
+     * Sets the value of the presetTourToken property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *
+     */
+    public void setPresetTourToken(String value) {
+        this.presetTourToken = value;
+    }
 
 }

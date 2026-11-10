@@ -1,9 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.17 um 11:33:29 AM CET 
-//
 
 package org.onvif.ver20.ptz.wsdl;
 
@@ -14,14 +8,13 @@ import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
 import org.onvif.ver10.schema.PTZConfiguration;
 
+
 /**
- * <p>
- * Java-Klasse f�r anonymous complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ * <p>Java class for anonymous complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType>
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -31,37 +24,47 @@ import org.onvif.ver10.schema.PTZConfiguration;
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = { "ptzConfiguration" })
+@XmlType(name = "", propOrder = {
+    "ptzConfiguration"
+})
 @XmlRootElement(name = "GetConfigurationResponse")
 public class GetConfigurationResponse {
 
-	@XmlElement(name = "PTZConfiguration", required = true)
-	protected PTZConfiguration ptzConfiguration;
+    /**
+     * A requested PTZConfiguration.
+     *
+     */
+    @XmlElement(name = "PTZConfiguration", required = true)
+    protected PTZConfiguration ptzConfiguration;
 
-	/**
-	 * Ruft den Wert der ptzConfiguration-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link PTZConfiguration }
-	 * 
-	 */
-	public PTZConfiguration getPTZConfiguration() {
-		return ptzConfiguration;
-	}
+    /**
+     * A requested PTZConfiguration.
+     *
+     * @return
+     *     possible object is
+     *     {@link PTZConfiguration }
+     *
+     */
+    public PTZConfiguration getPTZConfiguration() {
+        return ptzConfiguration;
+    }
 
-	/**
-	 * Legt den Wert der ptzConfiguration-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link PTZConfiguration }
-	 * 
-	 */
-	public void setPTZConfiguration(PTZConfiguration value) {
-		this.ptzConfiguration = value;
-	}
+    /**
+     * Sets the value of the ptzConfiguration property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link PTZConfiguration }
+     *
+     * @see #getPTZConfiguration()
+     */
+    public void setPTZConfiguration(PTZConfiguration value) {
+        this.ptzConfiguration = value;
+    }
 
 }

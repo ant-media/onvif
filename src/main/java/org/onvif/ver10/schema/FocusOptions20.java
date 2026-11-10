@@ -1,9 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.04 um 12:22:03 PM CET 
-//
 
 package org.onvif.ver10.schema;
 
@@ -12,16 +6,16 @@ import java.util.List;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 
+
 /**
- * <p>
- * Java-Klasse f�r FocusOptions20 complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ * <p>Java class for FocusOptions20 complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType name="FocusOptions20">
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -35,134 +29,193 @@ import jakarta.xml.bind.annotation.XmlType;
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "FocusOptions20", propOrder = { "autoFocusModes", "defaultSpeed", "nearLimit", "farLimit", "extension" })
+@XmlType(name = "FocusOptions20", propOrder = {
+    "autoFocusModes",
+    "defaultSpeed",
+    "nearLimit",
+    "farLimit",
+    "extension"
+})
 public class FocusOptions20 {
 
-	@XmlElement(name = "AutoFocusModes")
-	protected List<AutoFocusMode> autoFocusModes;
-	@XmlElement(name = "DefaultSpeed")
-	protected FloatRange defaultSpeed;
-	@XmlElement(name = "NearLimit")
-	protected FloatRange nearLimit;
-	@XmlElement(name = "FarLimit")
-	protected FloatRange farLimit;
-	@XmlElement(name = "Extension")
-	protected FocusOptions20Extension extension;
+    /**
+     * Supported modes for auto focus.
+     *
+     * <pre>
+     * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;ul xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope" xmlns:tt="http://www.onvif.org/ver10/schema" xmlns:wsnt="http://docs.oasis-open.org/wsn/b-2" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xop="http://www.w3.org/2004/08/xop/include" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+     * 						&lt;li&gt;AUTO - The device supports automatic focus adjustment.&lt;/li&gt;
+     * 						&lt;li&gt;MANUAL - The device supports manual focus adjustment.&lt;/li&gt;
+     * 						&lt;/ul&gt;
+     * </pre>
+     *
+     */
+    @XmlElement(name = "AutoFocusModes")
+    @XmlSchemaType(name = "string")
+    protected List<AutoFocusMode> autoFocusModes;
+    /**
+     * Valid range of DefaultSpeed.
+     *
+     */
+    @XmlElement(name = "DefaultSpeed")
+    protected FloatRange defaultSpeed;
+    /**
+     * Valid range of NearLimit.
+     *
+     */
+    @XmlElement(name = "NearLimit")
+    protected FloatRange nearLimit;
+    /**
+     * Valid range of FarLimit.
+     *
+     */
+    @XmlElement(name = "FarLimit")
+    protected FloatRange farLimit;
+    @XmlElement(name = "Extension")
+    protected FocusOptions20Extension extension;
 
-	/**
-	 * Gets the value of the autoFocusModes property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a snapshot. Therefore any modification you make to the returned list will be present inside the JAXB object.
-	 * This is why there is not a <CODE>set</CODE> method for the autoFocusModes property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getAutoFocusModes().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list {@link AutoFocusMode }
-	 * 
-	 * 
-	 */
-	public List<AutoFocusMode> getAutoFocusModes() {
-		if (autoFocusModes == null) {
-			autoFocusModes = new ArrayList<AutoFocusMode>();
-		}
-		return this.autoFocusModes;
-	}
+    /**
+     * Supported modes for auto focus.
+     *
+     * <pre>
+     * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;ul xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope" xmlns:tt="http://www.onvif.org/ver10/schema" xmlns:wsnt="http://docs.oasis-open.org/wsn/b-2" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xop="http://www.w3.org/2004/08/xop/include" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+     * 						&lt;li&gt;AUTO - The device supports automatic focus adjustment.&lt;/li&gt;
+     * 						&lt;li&gt;MANUAL - The device supports manual focus adjustment.&lt;/li&gt;
+     * 						&lt;/ul&gt;
+     * </pre>
+     *
+     * Gets the value of the autoFocusModes property.
+     *
+     * <p>This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the autoFocusModes property.</p>
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * </p>
+     * <pre>
+     * getAutoFocusModes().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link AutoFocusMode }
+     * </p>
+     *
+     *
+     * @return
+     *     The value of the autoFocusModes property.
+     */
+    public List<AutoFocusMode> getAutoFocusModes() {
+        if (autoFocusModes == null) {
+            autoFocusModes = new ArrayList<>();
+        }
+        return this.autoFocusModes;
+    }
 
-	/**
-	 * Ruft den Wert der defaultSpeed-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link FloatRange }
-	 * 
-	 */
-	public FloatRange getDefaultSpeed() {
-		return defaultSpeed;
-	}
+    /**
+     * Valid range of DefaultSpeed.
+     *
+     * @return
+     *     possible object is
+     *     {@link FloatRange }
+     *
+     */
+    public FloatRange getDefaultSpeed() {
+        return defaultSpeed;
+    }
 
-	/**
-	 * Legt den Wert der defaultSpeed-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link FloatRange }
-	 * 
-	 */
-	public void setDefaultSpeed(FloatRange value) {
-		this.defaultSpeed = value;
-	}
+    /**
+     * Sets the value of the defaultSpeed property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link FloatRange }
+     *
+     * @see #getDefaultSpeed()
+     */
+    public void setDefaultSpeed(FloatRange value) {
+        this.defaultSpeed = value;
+    }
 
-	/**
-	 * Ruft den Wert der nearLimit-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link FloatRange }
-	 * 
-	 */
-	public FloatRange getNearLimit() {
-		return nearLimit;
-	}
+    /**
+     * Valid range of NearLimit.
+     *
+     * @return
+     *     possible object is
+     *     {@link FloatRange }
+     *
+     */
+    public FloatRange getNearLimit() {
+        return nearLimit;
+    }
 
-	/**
-	 * Legt den Wert der nearLimit-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link FloatRange }
-	 * 
-	 */
-	public void setNearLimit(FloatRange value) {
-		this.nearLimit = value;
-	}
+    /**
+     * Sets the value of the nearLimit property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link FloatRange }
+     *
+     * @see #getNearLimit()
+     */
+    public void setNearLimit(FloatRange value) {
+        this.nearLimit = value;
+    }
 
-	/**
-	 * Ruft den Wert der farLimit-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link FloatRange }
-	 * 
-	 */
-	public FloatRange getFarLimit() {
-		return farLimit;
-	}
+    /**
+     * Valid range of FarLimit.
+     *
+     * @return
+     *     possible object is
+     *     {@link FloatRange }
+     *
+     */
+    public FloatRange getFarLimit() {
+        return farLimit;
+    }
 
-	/**
-	 * Legt den Wert der farLimit-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link FloatRange }
-	 * 
-	 */
-	public void setFarLimit(FloatRange value) {
-		this.farLimit = value;
-	}
+    /**
+     * Sets the value of the farLimit property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link FloatRange }
+     *
+     * @see #getFarLimit()
+     */
+    public void setFarLimit(FloatRange value) {
+        this.farLimit = value;
+    }
 
-	/**
-	 * Ruft den Wert der extension-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link FocusOptions20Extension }
-	 * 
-	 */
-	public FocusOptions20Extension getExtension() {
-		return extension;
-	}
+    /**
+     * Gets the value of the extension property.
+     *
+     * @return
+     *     possible object is
+     *     {@link FocusOptions20Extension }
+     *
+     */
+    public FocusOptions20Extension getExtension() {
+        return extension;
+    }
 
-	/**
-	 * Legt den Wert der extension-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link FocusOptions20Extension }
-	 * 
-	 */
-	public void setExtension(FocusOptions20Extension value) {
-		this.extension = value;
-	}
+    /**
+     * Sets the value of the extension property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link FocusOptions20Extension }
+     *
+     */
+    public void setExtension(FocusOptions20Extension value) {
+        this.extension = value;
+    }
 
 }

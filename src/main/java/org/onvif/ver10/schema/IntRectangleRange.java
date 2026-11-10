@@ -1,9 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.04 um 12:22:03 PM CET 
-//
 
 package org.onvif.ver10.schema;
 
@@ -12,16 +6,15 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
 
+
 /**
  * Range of a rectangle. The rectangle itself is defined by lower left corner position and size. Units are pixel.
- * 
- * <p>
- * Java-Klasse f�r IntRectangleRange complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ *
+ * <p>Java class for IntRectangleRange complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType name="IntRectangleRange">
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -34,105 +27,142 @@ import jakarta.xml.bind.annotation.XmlType;
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "IntRectangleRange", propOrder = { "xRange", "yRange", "widthRange", "heightRange" })
+@XmlType(name = "IntRectangleRange", propOrder = {
+    "xRange",
+    "yRange",
+    "widthRange",
+    "heightRange"
+})
 public class IntRectangleRange {
 
-	@XmlElement(name = "XRange", required = true)
-	protected IntRange xRange;
-	@XmlElement(name = "YRange", required = true)
-	protected IntRange yRange;
-	@XmlElement(name = "WidthRange", required = true)
-	protected IntRange widthRange;
-	@XmlElement(name = "HeightRange", required = true)
-	protected IntRange heightRange;
+    /**
+     * Range of X-axis.
+     *
+     */
+    @XmlElement(name = "XRange", required = true)
+    protected IntRange xRange;
+    /**
+     * Range of Y-axis.
+     *
+     */
+    @XmlElement(name = "YRange", required = true)
+    protected IntRange yRange;
+    /**
+     * Range of width.
+     *
+     */
+    @XmlElement(name = "WidthRange", required = true)
+    protected IntRange widthRange;
+    /**
+     * Range of height.
+     *
+     */
+    @XmlElement(name = "HeightRange", required = true)
+    protected IntRange heightRange;
 
-	/**
-	 * Ruft den Wert der xRange-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link IntRange }
-	 * 
-	 */
-	public IntRange getXRange() {
-		return xRange;
-	}
+    /**
+     * Range of X-axis.
+     *
+     * @return
+     *     possible object is
+     *     {@link IntRange }
+     *
+     */
+    public IntRange getXRange() {
+        return xRange;
+    }
 
-	/**
-	 * Legt den Wert der xRange-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link IntRange }
-	 * 
-	 */
-	public void setXRange(IntRange value) {
-		this.xRange = value;
-	}
+    /**
+     * Sets the value of the xRange property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link IntRange }
+     *
+     * @see #getXRange()
+     */
+    public void setXRange(IntRange value) {
+        this.xRange = value;
+    }
 
-	/**
-	 * Ruft den Wert der yRange-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link IntRange }
-	 * 
-	 */
-	public IntRange getYRange() {
-		return yRange;
-	}
+    /**
+     * Range of Y-axis.
+     *
+     * @return
+     *     possible object is
+     *     {@link IntRange }
+     *
+     */
+    public IntRange getYRange() {
+        return yRange;
+    }
 
-	/**
-	 * Legt den Wert der yRange-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link IntRange }
-	 * 
-	 */
-	public void setYRange(IntRange value) {
-		this.yRange = value;
-	}
+    /**
+     * Sets the value of the yRange property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link IntRange }
+     *
+     * @see #getYRange()
+     */
+    public void setYRange(IntRange value) {
+        this.yRange = value;
+    }
 
-	/**
-	 * Ruft den Wert der widthRange-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link IntRange }
-	 * 
-	 */
-	public IntRange getWidthRange() {
-		return widthRange;
-	}
+    /**
+     * Range of width.
+     *
+     * @return
+     *     possible object is
+     *     {@link IntRange }
+     *
+     */
+    public IntRange getWidthRange() {
+        return widthRange;
+    }
 
-	/**
-	 * Legt den Wert der widthRange-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link IntRange }
-	 * 
-	 */
-	public void setWidthRange(IntRange value) {
-		this.widthRange = value;
-	}
+    /**
+     * Sets the value of the widthRange property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link IntRange }
+     *
+     * @see #getWidthRange()
+     */
+    public void setWidthRange(IntRange value) {
+        this.widthRange = value;
+    }
 
-	/**
-	 * Ruft den Wert der heightRange-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link IntRange }
-	 * 
-	 */
-	public IntRange getHeightRange() {
-		return heightRange;
-	}
+    /**
+     * Range of height.
+     *
+     * @return
+     *     possible object is
+     *     {@link IntRange }
+     *
+     */
+    public IntRange getHeightRange() {
+        return heightRange;
+    }
 
-	/**
-	 * Legt den Wert der heightRange-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link IntRange }
-	 * 
-	 */
-	public void setHeightRange(IntRange value) {
-		this.heightRange = value;
-	}
+    /**
+     * Sets the value of the heightRange property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link IntRange }
+     *
+     * @see #getHeightRange()
+     */
+    public void setHeightRange(IntRange value) {
+        this.heightRange = value;
+    }
 
 }

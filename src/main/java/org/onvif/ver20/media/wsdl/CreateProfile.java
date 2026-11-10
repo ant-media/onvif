@@ -1,10 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2016.02.05 um 06:25:30 PM CET 
-//
-
 
 package org.onvif.ver20.media.wsdl;
 
@@ -18,24 +11,24 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java-Klasse f�r anonymous complex type.
- * 
- * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Name" type="{http://www.onvif.org/ver10/schema}Name"/>
- *         &lt;element name="Configuration" type="{http://www.onvif.org/ver20/media/wsdl}ConfigurationRef" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * <p>Java class for anonymous complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Name" type="{http://www.onvif.org/ver10/schema}Name"/>
+ *         <element name="Configuration" type="{http://www.onvif.org/ver20/media/wsdl}ConfigurationRef" maxOccurs="unbounded" minOccurs="0"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -45,60 +38,74 @@ import jakarta.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "CreateProfile")
 public class CreateProfile {
 
+    /**
+     * friendly name of the profile to be created
+     *
+     */
     @XmlElement(name = "Name", required = true)
     protected String name;
+    /**
+     * Optional set of configurations to be assigned to the profile. List entries with tr2:ConfigurationEnumeration value "All" shall be ignored.
+     *
+     */
     @XmlElement(name = "Configuration")
     protected List<ConfigurationRef> configuration;
 
     /**
-     * Ruft den Wert der name-Eigenschaft ab.
-     * 
+     * friendly name of the profile to be created
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getName() {
         return name;
     }
 
     /**
-     * Legt den Wert der name-Eigenschaft fest.
-     * 
+     * Sets the value of the name property.
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
+     * @see #getName()
      */
     public void setName(String value) {
         this.name = value;
     }
 
     /**
+     * Optional set of configurations to be assigned to the profile. List entries with tr2:ConfigurationEnumeration value "All" shall be ignored.
+     *
      * Gets the value of the configuration property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     *
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the configuration property.
-     * 
+     * This is why there is not a <CODE>set</CODE> method for the configuration property.</p>
+     *
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getConfiguration().add(newItem);
+     * getConfiguration().add(newItem);
      * </pre>
-     * 
-     * 
+     *
+     *
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link ConfigurationRef }
-     * 
-     * 
+     * </p>
+     *
+     *
+     * @return
+     *     The value of the configuration property.
      */
     public List<ConfigurationRef> getConfiguration() {
         if (configuration == null) {
-            configuration = new ArrayList<ConfigurationRef>();
+            configuration = new ArrayList<>();
         }
         return this.configuration;
     }

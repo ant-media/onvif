@@ -1,9 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.04 um 12:22:03 PM CET 
-//
 
 package org.oasis_open.docs.wsrf.bf_2;
 
@@ -11,6 +5,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.xml.datatype.XMLGregorianCalendar;
+import javax.xml.namespace.QName;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAnyAttribute;
@@ -22,8 +18,6 @@ import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlSeeAlso;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.XmlValue;
-import javax.xml.datatype.XMLGregorianCalendar;
-import javax.xml.namespace.QName;
 import org.oasis_open.docs.wsn.b_2.InvalidFilterFaultType;
 import org.oasis_open.docs.wsn.b_2.InvalidMessageContentExpressionFaultType;
 import org.oasis_open.docs.wsn.b_2.InvalidProducerPropertiesExpressionFaultType;
@@ -47,14 +41,13 @@ import org.oasis_open.docs.wsn.b_2.UnsupportedPolicyRequestFaultType;
 import org.w3._2005._08.addressing.EndpointReferenceType;
 import org.w3c.dom.Element;
 
+
 /**
- * <p>
- * Java-Klasse f�r BaseFaultType complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ * <p>Java class for BaseFaultType complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType name="BaseFaultType">
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -97,409 +90,558 @@ import org.w3c.dom.Element;
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "BaseFaultType", propOrder = { "any", "timestamp", "originator", "errorCode", "description", "faultCause" })
-@XmlSeeAlso({ TopicExpressionDialectUnknownFaultType.class, UnableToGetMessagesFaultType.class, ResumeFailedFaultType.class,
-		InvalidProducerPropertiesExpressionFaultType.class, SubscribeCreationFailedFaultType.class, UnableToDestroySubscriptionFaultType.class,
-		UnrecognizedPolicyRequestFaultType.class, NotifyMessageNotSupportedFaultType.class, UnableToCreatePullPointFaultType.class,
-		UnacceptableInitialTerminationTimeFaultType.class, InvalidTopicExpressionFaultType.class, UnsupportedPolicyRequestFaultType.class,
-		PauseFailedFaultType.class, InvalidMessageContentExpressionFaultType.class, UnableToDestroyPullPointFaultType.class,
-		MultipleTopicsSpecifiedFaultType.class, NoCurrentMessageOnTopicFaultType.class, InvalidFilterFaultType.class, TopicNotSupportedFaultType.class,
-		UnacceptableTerminationTimeFaultType.class })
+@XmlType(name = "BaseFaultType", propOrder = {
+    "any",
+    "timestamp",
+    "originator",
+    "errorCode",
+    "description",
+    "faultCause"
+})
+@XmlSeeAlso({
+    SubscribeCreationFailedFaultType.class,
+    InvalidFilterFaultType.class,
+    TopicExpressionDialectUnknownFaultType.class,
+    InvalidTopicExpressionFaultType.class,
+    TopicNotSupportedFaultType.class,
+    MultipleTopicsSpecifiedFaultType.class,
+    InvalidProducerPropertiesExpressionFaultType.class,
+    InvalidMessageContentExpressionFaultType.class,
+    UnrecognizedPolicyRequestFaultType.class,
+    UnsupportedPolicyRequestFaultType.class,
+    NotifyMessageNotSupportedFaultType.class,
+    UnacceptableInitialTerminationTimeFaultType.class,
+    NoCurrentMessageOnTopicFaultType.class,
+    UnableToGetMessagesFaultType.class,
+    UnableToDestroyPullPointFaultType.class,
+    UnableToCreatePullPointFaultType.class,
+    UnacceptableTerminationTimeFaultType.class,
+    UnableToDestroySubscriptionFaultType.class,
+    PauseFailedFaultType.class,
+    ResumeFailedFaultType.class
+})
 public class BaseFaultType {
 
-	@XmlAnyElement(lax = true)
-	protected List<Object> any;
-	@XmlElement(name = "Timestamp", required = true)
-	@XmlSchemaType(name = "dateTime")
-	protected XMLGregorianCalendar timestamp;
-	@XmlElement(name = "Originator")
-	protected EndpointReferenceType originator;
-	@XmlElement(name = "ErrorCode")
-	protected BaseFaultType.ErrorCode errorCode;
-	@XmlElement(name = "Description")
-	protected List<BaseFaultType.Description> description;
-	@XmlElement(name = "FaultCause")
-	protected BaseFaultType.FaultCause faultCause;
-	@XmlAnyAttribute
-	private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    @XmlAnyElement(lax = true)
+    protected List<Object> any;
+    @XmlElement(name = "Timestamp", required = true)
+    @XmlSchemaType(name = "dateTime")
+    protected XMLGregorianCalendar timestamp;
+    @XmlElement(name = "Originator")
+    protected EndpointReferenceType originator;
+    @XmlElement(name = "ErrorCode")
+    protected BaseFaultType.ErrorCode errorCode;
+    @XmlElement(name = "Description")
+    protected List<BaseFaultType.Description> description;
+    @XmlElement(name = "FaultCause")
+    protected BaseFaultType.FaultCause faultCause;
+    @XmlAnyAttribute
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
-	/**
-	 * Gets the value of the any property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a snapshot. Therefore any modification you make to the returned list will be present inside the JAXB object.
-	 * This is why there is not a <CODE>set</CODE> method for the any property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getAny().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list {@link Element } {@link Object }
-	 * 
-	 * 
-	 */
-	public List<Object> getAny() {
-		if (any == null) {
-			any = new ArrayList<Object>();
-		}
-		return this.any;
-	}
+    /**
+     * Gets the value of the any property.
+     *
+     * <p>This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * </p>
+     * <pre>
+     * getAny().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link Object }
+     * {@link Element }
+     * </p>
+     *
+     *
+     * @return
+     *     The value of the any property.
+     */
+    public List<Object> getAny() {
+        if (any == null) {
+            any = new ArrayList<>();
+        }
+        return this.any;
+    }
 
-	/**
-	 * Ruft den Wert der timestamp-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link XMLGregorianCalendar }
-	 * 
-	 */
-	public XMLGregorianCalendar getTimestamp() {
-		return timestamp;
-	}
+    /**
+     * Gets the value of the timestamp property.
+     *
+     * @return
+     *     possible object is
+     *     {@link XMLGregorianCalendar }
+     *
+     */
+    public XMLGregorianCalendar getTimestamp() {
+        return timestamp;
+    }
 
-	/**
-	 * Legt den Wert der timestamp-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link XMLGregorianCalendar }
-	 * 
-	 */
-	public void setTimestamp(XMLGregorianCalendar value) {
-		this.timestamp = value;
-	}
+    /**
+     * Sets the value of the timestamp property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link XMLGregorianCalendar }
+     *
+     */
+    public void setTimestamp(XMLGregorianCalendar value) {
+        this.timestamp = value;
+    }
 
-	/**
-	 * Ruft den Wert der originator-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link EndpointReferenceType }
-	 * 
-	 */
-	public EndpointReferenceType getOriginator() {
-		return originator;
-	}
+    /**
+     * Gets the value of the originator property.
+     *
+     * @return
+     *     possible object is
+     *     {@link EndpointReferenceType }
+     *
+     */
+    public EndpointReferenceType getOriginator() {
+        return originator;
+    }
 
-	/**
-	 * Legt den Wert der originator-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link EndpointReferenceType }
-	 * 
-	 */
-	public void setOriginator(EndpointReferenceType value) {
-		this.originator = value;
-	}
+    /**
+     * Sets the value of the originator property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link EndpointReferenceType }
+     *
+     */
+    public void setOriginator(EndpointReferenceType value) {
+        this.originator = value;
+    }
 
-	/**
-	 * Ruft den Wert der errorCode-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link BaseFaultType.ErrorCode }
-	 * 
-	 */
-	public BaseFaultType.ErrorCode getErrorCode() {
-		return errorCode;
-	}
+    /**
+     * Gets the value of the errorCode property.
+     *
+     * @return
+     *     possible object is
+     *     {@link BaseFaultType.ErrorCode }
+     *
+     */
+    public BaseFaultType.ErrorCode getErrorCode() {
+        return errorCode;
+    }
 
-	/**
-	 * Legt den Wert der errorCode-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link BaseFaultType.ErrorCode }
-	 * 
-	 */
-	public void setErrorCode(BaseFaultType.ErrorCode value) {
-		this.errorCode = value;
-	}
+    /**
+     * Sets the value of the errorCode property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link BaseFaultType.ErrorCode }
+     *
+     */
+    public void setErrorCode(BaseFaultType.ErrorCode value) {
+        this.errorCode = value;
+    }
 
-	/**
-	 * Gets the value of the description property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a snapshot. Therefore any modification you make to the returned list will be present inside the JAXB object.
-	 * This is why there is not a <CODE>set</CODE> method for the description property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getDescription().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list {@link BaseFaultType.Description }
-	 * 
-	 * 
-	 */
-	public List<BaseFaultType.Description> getDescription() {
-		if (description == null) {
-			description = new ArrayList<BaseFaultType.Description>();
-		}
-		return this.description;
-	}
+    /**
+     * Gets the value of the description property.
+     *
+     * <p>This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the description property.</p>
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * </p>
+     * <pre>
+     * getDescription().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link BaseFaultType.Description }
+     * </p>
+     *
+     *
+     * @return
+     *     The value of the description property.
+     */
+    public List<BaseFaultType.Description> getDescription() {
+        if (description == null) {
+            description = new ArrayList<>();
+        }
+        return this.description;
+    }
 
-	/**
-	 * Ruft den Wert der faultCause-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link BaseFaultType.FaultCause }
-	 * 
-	 */
-	public BaseFaultType.FaultCause getFaultCause() {
-		return faultCause;
-	}
+    /**
+     * Gets the value of the faultCause property.
+     *
+     * @return
+     *     possible object is
+     *     {@link BaseFaultType.FaultCause }
+     *
+     */
+    public BaseFaultType.FaultCause getFaultCause() {
+        return faultCause;
+    }
 
-	/**
-	 * Legt den Wert der faultCause-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link BaseFaultType.FaultCause }
-	 * 
-	 */
-	public void setFaultCause(BaseFaultType.FaultCause value) {
-		this.faultCause = value;
-	}
+    /**
+     * Sets the value of the faultCause property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link BaseFaultType.FaultCause }
+     *
+     */
+    public void setFaultCause(BaseFaultType.FaultCause value) {
+        this.faultCause = value;
+    }
 
-	/**
-	 * Gets a map that contains attributes that aren't bound to any typed property on this class.
-	 * 
-	 * <p>
-	 * the map is keyed by the name of the attribute and the value is the string value of the attribute.
-	 * 
-	 * the map returned by this method is live, and you can add new attribute by updating the map directly. Because of this design, there's no setter.
-	 * 
-	 * 
-	 * @return always non-null
-	 */
-	public Map<QName, String> getOtherAttributes() {
-		return otherAttributes;
-	}
+    /**
+     * Gets a map that contains attributes that aren't bound to any typed property on this class.
+     *
+     * <p>
+     * the map is keyed by the name of the attribute and
+     * the value is the string value of the attribute.
+     *
+     * the map returned by this method is live, and you can add new attribute
+     * by updating the map directly. Because of this design, there's no setter.
+     *
+     *
+     * @return
+     *     always non-null
+     */
+    public Map<QName, String> getOtherAttributes() {
+        return otherAttributes;
+    }
 
-	/**
-	 * <p>
-	 * Java-Klasse f�r anonymous complex type.
-	 * 
-	 * <p>
-	 * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
-	 * 
-	 * <pre>
-	 * <complexType>
-	 *   <simpleContent>
-	 *     <extension base="<http://www.w3.org/2001/XMLSchema>string">
-	 *       <attribute ref="{http://www.w3.org/XML/1998/namespace}lang"/>
-	 *     </extension>
-	 *   </simpleContent>
-	 * </complexType>
-	 * </pre>
-	 * 
-	 * 
-	 */
-	@XmlAccessorType(XmlAccessType.FIELD)
-	@XmlType(name = "", propOrder = { "value" })
-	public static class Description {
 
-		@XmlValue
-		protected String value;
-		@XmlAttribute(name = "lang", namespace = "http://www.w3.org/XML/1998/namespace")
-		protected String lang;
+    /**
+     * <p>Java class for anonymous complex type</p>.
+     *
+     * <p>The following schema fragment specifies the expected content contained within this class.</p>
+     *
+     * <pre>{@code
+     * <complexType>
+     *   <simpleContent>
+     *     <extension base="<http://www.w3.org/2001/XMLSchema>string">
+     *       <attribute ref="{http://www.w3.org/XML/1998/namespace}lang"/>
+     *     </extension>
+     *   </simpleContent>
+     * </complexType>
+     * }</pre>
+     *
+     *
+     */
+    @XmlAccessorType(XmlAccessType.FIELD)
+    @XmlType(name = "", propOrder = {
+        "value"
+    })
+    public static class Description {
 
-		/**
-		 * Ruft den Wert der value-Eigenschaft ab.
-		 * 
-		 * @return possible object is {@link String }
-		 * 
-		 */
-		public String getValue() {
-			return value;
-		}
+        @XmlValue
+        protected String value;
+        /**
+         * <pre>
+         * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;div xmlns="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+         *
+         *       &lt;h3&gt;lang (as an attribute name)&lt;/h3&gt;
+         *       &lt;p&gt;
+         *        denotes an attribute whose value
+         *        is a language code for the natural language of the content of
+         *        any element; its value is inherited.  This name is reserved
+         *        by virtue of its definition in the XML specification.&lt;/p&gt;
+         *
+         *     &lt;/div&gt;
+         * </pre>
+         *
+         *
+         * <pre>
+         * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;div xmlns="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+         *      &lt;h4&gt;Notes&lt;/h4&gt;
+         *      &lt;p&gt;
+         *       Attempting to install the relevant ISO 2- and 3-letter
+         *       codes as the enumerated possible values is probably never
+         *       going to be a realistic possibility.
+         *      &lt;/p&gt;
+         *      &lt;p&gt;
+         *       See BCP 47 at &lt;a href="http://www.rfc-editor.org/rfc/bcp/bcp47.txt"&gt;
+         *        http://www.rfc-editor.org/rfc/bcp/bcp47.txt&lt;/a&gt;
+         *       and the IANA language subtag registry at
+         *       &lt;a href="http://www.iana.org/assignments/language-subtag-registry"&gt;
+         *        http://www.iana.org/assignments/language-subtag-registry&lt;/a&gt;
+         *       for further information.
+         *      &lt;/p&gt;
+         *      &lt;p&gt;
+         *       The union allows for the 'un-declaration' of xml:lang with
+         *       the empty string.
+         *      &lt;/p&gt;
+         *     &lt;/div&gt;
+         * </pre>
+         *
+         */
+        @XmlAttribute(name = "lang", namespace = "http://www.w3.org/XML/1998/namespace")
+        protected String lang;
 
-		/**
-		 * Legt den Wert der value-Eigenschaft fest.
-		 * 
-		 * @param value
-		 *            allowed object is {@link String }
-		 * 
-		 */
-		public void setValue(String value) {
-			this.value = value;
-		}
+        /**
+         * Gets the value of the value property.
+         *
+         * @return
+         *     possible object is
+         *     {@link String }
+         *
+         */
+        public String getValue() {
+            return value;
+        }
 
-		/**
-		 * Ruft den Wert der lang-Eigenschaft ab.
-		 * 
-		 * @return possible object is {@link String }
-		 * 
-		 */
-		public String getLang() {
-			return lang;
-		}
+        /**
+         * Sets the value of the value property.
+         *
+         * @param value
+         *     allowed object is
+         *     {@link String }
+         *
+         */
+        public void setValue(String value) {
+            this.value = value;
+        }
 
-		/**
-		 * Legt den Wert der lang-Eigenschaft fest.
-		 * 
-		 * @param value
-		 *            allowed object is {@link String }
-		 * 
-		 */
-		public void setLang(String value) {
-			this.lang = value;
-		}
+        /**
+         * <pre>
+         * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;div xmlns="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+         *
+         *       &lt;h3&gt;lang (as an attribute name)&lt;/h3&gt;
+         *       &lt;p&gt;
+         *        denotes an attribute whose value
+         *        is a language code for the natural language of the content of
+         *        any element; its value is inherited.  This name is reserved
+         *        by virtue of its definition in the XML specification.&lt;/p&gt;
+         *
+         *     &lt;/div&gt;
+         * </pre>
+         *
+         *
+         * <pre>
+         * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;div xmlns="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+         *      &lt;h4&gt;Notes&lt;/h4&gt;
+         *      &lt;p&gt;
+         *       Attempting to install the relevant ISO 2- and 3-letter
+         *       codes as the enumerated possible values is probably never
+         *       going to be a realistic possibility.
+         *      &lt;/p&gt;
+         *      &lt;p&gt;
+         *       See BCP 47 at &lt;a href="http://www.rfc-editor.org/rfc/bcp/bcp47.txt"&gt;
+         *        http://www.rfc-editor.org/rfc/bcp/bcp47.txt&lt;/a&gt;
+         *       and the IANA language subtag registry at
+         *       &lt;a href="http://www.iana.org/assignments/language-subtag-registry"&gt;
+         *        http://www.iana.org/assignments/language-subtag-registry&lt;/a&gt;
+         *       for further information.
+         *      &lt;/p&gt;
+         *      &lt;p&gt;
+         *       The union allows for the 'un-declaration' of xml:lang with
+         *       the empty string.
+         *      &lt;/p&gt;
+         *     &lt;/div&gt;
+         * </pre>
+         *
+         * @return
+         *     possible object is
+         *     {@link String }
+         *
+         */
+        public String getLang() {
+            return lang;
+        }
 
-	}
+        /**
+         * Sets the value of the lang property.
+         *
+         * @param value
+         *     allowed object is
+         *     {@link String }
+         *
+         * @see #getLang()
+         */
+        public void setLang(String value) {
+            this.lang = value;
+        }
 
-	/**
-	 * <p>
-	 * Java-Klasse f�r anonymous complex type.
-	 * 
-	 * <p>
-	 * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
-	 * 
-	 * <pre>
-	 * <complexType>
-	 *   <complexContent>
-	 *     <extension base="{http://www.w3.org/2001/XMLSchema}anyType">
-	 *       <attribute name="dialect" use="required" type="{http://www.w3.org/2001/XMLSchema}anyURI" />
-	 *       <anyAttribute processContents='skip'/>
-	 *     </extension>
-	 *   </complexContent>
-	 * </complexType>
-	 * </pre>
-	 * 
-	 * 
-	 */
-	@XmlAccessorType(XmlAccessType.FIELD)
-	@XmlType(name = "", propOrder = { "content" })
-	public static class ErrorCode {
+    }
 
-		@XmlMixed
-		@XmlAnyElement
-		protected List<Object> content;
-		@XmlAttribute(name = "dialect", required = true)
-		@XmlSchemaType(name = "anyURI")
-		protected String dialect;
-		@XmlAnyAttribute
-		private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
-		/**
-		 * Gets the value of the content property.
-		 * 
-		 * <p>
-		 * This accessor method returns a reference to the live list, not a snapshot. Therefore any modification you make to the returned list will be present inside the JAXB
-		 * object. This is why there is not a <CODE>set</CODE> method for the content property.
-		 * 
-		 * <p>
-		 * For example, to add a new item, do as follows:
-		 * 
-		 * <pre>
-		 * getContent().add(newItem);
-		 * </pre>
-		 * 
-		 * 
-		 * <p>
-		 * Objects of the following type(s) are allowed in the list {@link Element } {@link String }
-		 * 
-		 * 
-		 */
-		public List<Object> getContent() {
-			if (content == null) {
-				content = new ArrayList<Object>();
-			}
-			return this.content;
-		}
+    /**
+     * <p>Java class for anonymous complex type</p>.
+     *
+     * <p>The following schema fragment specifies the expected content contained within this class.</p>
+     *
+     * <pre>{@code
+     * <complexType>
+     *   <complexContent>
+     *     <extension base="{http://www.w3.org/2001/XMLSchema}anyType">
+     *       <attribute name="dialect" use="required" type="{http://www.w3.org/2001/XMLSchema}anyURI" />
+     *       <anyAttribute processContents='skip'/>
+     *     </extension>
+     *   </complexContent>
+     * </complexType>
+     * }</pre>
+     *
+     *
+     */
+    @XmlAccessorType(XmlAccessType.FIELD)
+    @XmlType(name = "", propOrder = {
+        "content"
+    })
+    public static class ErrorCode {
 
-		/**
-		 * Ruft den Wert der dialect-Eigenschaft ab.
-		 * 
-		 * @return possible object is {@link String }
-		 * 
-		 */
-		public String getDialect() {
-			return dialect;
-		}
+        @XmlMixed
+        @XmlAnyElement
+        protected List<Object> content;
+        @XmlAttribute(name = "dialect", required = true)
+        @XmlSchemaType(name = "anyURI")
+        protected String dialect;
+        @XmlAnyAttribute
+        private Map<QName, String> otherAttributes = new HashMap<>();
 
-		/**
-		 * Legt den Wert der dialect-Eigenschaft fest.
-		 * 
-		 * @param value
-		 *            allowed object is {@link String }
-		 * 
-		 */
-		public void setDialect(String value) {
-			this.dialect = value;
-		}
+        /**
+         * Gets the value of the content property.
+         *
+         * <p>This accessor method returns a reference to the live list,
+         * not a snapshot. Therefore any modification you make to the
+         * returned list will be present inside the JAXB object.
+         * This is why there is not a <CODE>set</CODE> method for the content property.</p>
+         *
+         * <p>
+         * For example, to add a new item, do as follows:
+         * </p>
+         * <pre>
+         * getContent().add(newItem);
+         * </pre>
+         *
+         *
+         * <p>
+         * Objects of the following type(s) are allowed in the list
+         * {@link String }
+         * {@link Element }
+         * </p>
+         *
+         *
+         * @return
+         *     The value of the content property.
+         */
+        public List<Object> getContent() {
+            if (content == null) {
+                content = new ArrayList<>();
+            }
+            return this.content;
+        }
 
-		/**
-		 * Gets a map that contains attributes that aren't bound to any typed property on this class.
-		 * 
-		 * <p>
-		 * the map is keyed by the name of the attribute and the value is the string value of the attribute.
-		 * 
-		 * the map returned by this method is live, and you can add new attribute by updating the map directly. Because of this design, there's no setter.
-		 * 
-		 * 
-		 * @return always non-null
-		 */
-		public Map<QName, String> getOtherAttributes() {
-			return otherAttributes;
-		}
+        /**
+         * Gets the value of the dialect property.
+         *
+         * @return
+         *     possible object is
+         *     {@link String }
+         *
+         */
+        public String getDialect() {
+            return dialect;
+        }
 
-	}
+        /**
+         * Sets the value of the dialect property.
+         *
+         * @param value
+         *     allowed object is
+         *     {@link String }
+         *
+         */
+        public void setDialect(String value) {
+            this.dialect = value;
+        }
 
-	/**
-	 * <p>
-	 * Java-Klasse f�r anonymous complex type.
-	 * 
-	 * <p>
-	 * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
-	 * 
-	 * <pre>
-	 * <complexType>
-	 *   <complexContent>
-	 *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-	 *       <sequence>
-	 *         <any processContents='lax' namespace='##other'/>
-	 *       </sequence>
-	 *     </restriction>
-	 *   </complexContent>
-	 * </complexType>
-	 * </pre>
-	 * 
-	 * 
-	 */
-	@XmlAccessorType(XmlAccessType.FIELD)
-	@XmlType(name = "", propOrder = { "any" })
-	public static class FaultCause {
+        /**
+         * Gets a map that contains attributes that aren't bound to any typed property on this class.
+         *
+         * <p>
+         * the map is keyed by the name of the attribute and
+         * the value is the string value of the attribute.
+         *
+         * the map returned by this method is live, and you can add new attribute
+         * by updating the map directly. Because of this design, there's no setter.
+         *
+         *
+         * @return
+         *     always non-null
+         */
+        public Map<QName, String> getOtherAttributes() {
+            return otherAttributes;
+        }
 
-		@XmlAnyElement(lax = true)
-		protected Object any;
+    }
 
-		/**
-		 * Ruft den Wert der any-Eigenschaft ab.
-		 * 
-		 * @return possible object is {@link Element } {@link Object }
-		 * 
-		 */
-		public Object getAny() {
-			return any;
-		}
 
-		/**
-		 * Legt den Wert der any-Eigenschaft fest.
-		 * 
-		 * @param value
-		 *            allowed object is {@link Element } {@link Object }
-		 * 
-		 */
-		public void setAny(Object value) {
-			this.any = value;
-		}
+    /**
+     * <p>Java class for anonymous complex type</p>.
+     *
+     * <p>The following schema fragment specifies the expected content contained within this class.</p>
+     *
+     * <pre>{@code
+     * <complexType>
+     *   <complexContent>
+     *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+     *       <sequence>
+     *         <any processContents='lax' namespace='##other'/>
+     *       </sequence>
+     *     </restriction>
+     *   </complexContent>
+     * </complexType>
+     * }</pre>
+     *
+     *
+     */
+    @XmlAccessorType(XmlAccessType.FIELD)
+    @XmlType(name = "", propOrder = {
+        "any"
+    })
+    public static class FaultCause {
 
-	}
+        @XmlAnyElement(lax = true)
+        protected Object any;
+
+        /**
+         * Gets the value of the any property.
+         *
+         * @return
+         *     possible object is
+         *     {@link Object }
+         *     {@link Element }
+         *
+         */
+        public Object getAny() {
+            return any;
+        }
+
+        /**
+         * Sets the value of the any property.
+         *
+         * @param value
+         *     allowed object is
+         *     {@link Object }
+         *     {@link Element }
+         *
+         */
+        public void setAny(Object value) {
+            this.any = value;
+        }
+
+    }
 
 }

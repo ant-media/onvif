@@ -1,9 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.04 um 12:22:03 PM CET 
-//
 
 package org.onvif.ver10.device.wsdl;
 
@@ -16,14 +10,13 @@ import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
 import org.onvif.ver10.schema.NetworkProtocol;
 
+
 /**
- * <p>
- * Java-Klasse f�r anonymous complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ * <p>Java class for anonymous complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType>
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -33,43 +26,56 @@ import org.onvif.ver10.schema.NetworkProtocol;
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = { "networkProtocols" })
+@XmlType(name = "", propOrder = {
+    "networkProtocols"
+})
 @XmlRootElement(name = "SetNetworkProtocols")
 public class SetNetworkProtocols {
 
-	@XmlElement(name = "NetworkProtocols", required = true)
-	protected List<NetworkProtocol> networkProtocols;
+    /**
+     * Configures one or more defined network protocols supported by the device. There are currently three protocols defined; HTTP, HTTPS and RTSP. The following parameters can be set for each protocol: port and enable/disable.
+     *
+     */
+    @XmlElement(name = "NetworkProtocols", required = true)
+    protected List<NetworkProtocol> networkProtocols;
 
-	/**
-	 * Gets the value of the networkProtocols property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a snapshot. Therefore any modification you make to the returned list will be present inside the JAXB object.
-	 * This is why there is not a <CODE>set</CODE> method for the networkProtocols property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getNetworkProtocols().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list {@link NetworkProtocol }
-	 * 
-	 * 
-	 */
-	public List<NetworkProtocol> getNetworkProtocols() {
-		if (networkProtocols == null) {
-			networkProtocols = new ArrayList<NetworkProtocol>();
-		}
-		return this.networkProtocols;
-	}
+    /**
+     * Configures one or more defined network protocols supported by the device. There are currently three protocols defined; HTTP, HTTPS and RTSP. The following parameters can be set for each protocol: port and enable/disable.
+     *
+     * Gets the value of the networkProtocols property.
+     *
+     * <p>This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the networkProtocols property.</p>
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * </p>
+     * <pre>
+     * getNetworkProtocols().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link NetworkProtocol }
+     * </p>
+     *
+     *
+     * @return
+     *     The value of the networkProtocols property.
+     */
+    public List<NetworkProtocol> getNetworkProtocols() {
+        if (networkProtocols == null) {
+            networkProtocols = new ArrayList<>();
+        }
+        return this.networkProtocols;
+    }
 
 }

@@ -1,9 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.04 um 12:22:03 PM CET 
-//
 
 package org.w3._2005._05.xmlmime;
 
@@ -16,14 +10,13 @@ import jakarta.xml.bind.annotation.XmlValue;
 import jakarta.xml.bind.annotation.adapters.HexBinaryAdapter;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
+
 /**
- * <p>
- * Java-Klasse f�r hexBinary complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ * <p>Java class for hexBinary complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType name="hexBinary">
  *   <simpleContent>
  *     <extension base="<http://www.w3.org/2001/XMLSchema>hexBinary">
@@ -31,61 +24,69 @@ import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  *     </extension>
  *   </simpleContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "hexBinary", propOrder = { "value" })
+@XmlType(name = "hexBinary", propOrder = {
+    "value"
+})
 public class HexBinary {
 
-	@XmlValue
-	@XmlJavaTypeAdapter(HexBinaryAdapter.class)
-	@XmlSchemaType(name = "hexBinary")
-	protected byte[] value;
-	@XmlAttribute(name = "contentType", namespace = "http://www.w3.org/2005/05/xmlmime")
-	protected String contentType;
+    @XmlValue
+    @XmlJavaTypeAdapter(HexBinaryAdapter.class)
+    @XmlSchemaType(name = "hexBinary")
+    protected byte[] value;
+    @XmlAttribute(name = "contentType", namespace = "http://www.w3.org/2005/05/xmlmime")
+    protected String contentType;
 
-	/**
-	 * Ruft den Wert der value-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public byte[] getValue() {
-		return value;
-	}
+    /**
+     * Gets the value of the value property.
+     *
+     * @return
+     *     possible object is
+     *     {@link String }
+     *
+     */
+    public byte[] getValue() {
+        return value;
+    }
 
-	/**
-	 * Legt den Wert der value-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setValue(byte[] value) {
-		this.value = value;
-	}
+    /**
+     * Sets the value of the value property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *
+     */
+    public void setValue(byte[] value) {
+        this.value = value;
+    }
 
-	/**
-	 * Ruft den Wert der contentType-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getContentType() {
-		return contentType;
-	}
+    /**
+     * Gets the value of the contentType property.
+     *
+     * @return
+     *     possible object is
+     *     {@link String }
+     *
+     */
+    public String getContentType() {
+        return contentType;
+    }
 
-	/**
-	 * Legt den Wert der contentType-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setContentType(String value) {
-		this.contentType = value;
-	}
+    /**
+     * Sets the value of the contentType property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *
+     */
+    public void setContentType(String value) {
+        this.contentType = value;
+    }
 
 }

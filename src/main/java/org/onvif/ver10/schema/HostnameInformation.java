@@ -1,14 +1,9 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.04 um 12:22:03 PM CET 
-//
 
 package org.onvif.ver10.schema;
 
 import java.util.HashMap;
 import java.util.Map;
+import javax.xml.namespace.QName;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAnyAttribute;
@@ -17,16 +12,14 @@ import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.namespace.QName;
+
 
 /**
- * <p>
- * Java-Klasse f�r HostnameInformation complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ * <p>Java class for HostnameInformation complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType name="HostnameInformation">
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -39,96 +32,118 @@ import javax.xml.namespace.QName;
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "HostnameInformation", propOrder = { "fromDHCP", "name", "extension" })
+@XmlType(name = "HostnameInformation", propOrder = {
+    "fromDHCP",
+    "name",
+    "extension"
+})
 public class HostnameInformation {
 
-	@XmlElement(name = "FromDHCP")
-	protected boolean fromDHCP;
-	@XmlElement(name = "Name")
-	@XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-	@XmlSchemaType(name = "token")
-	protected String name;
-	@XmlElement(name = "Extension")
-	protected HostnameInformationExtension extension;
-	@XmlAnyAttribute
-	private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    /**
+     * Indicates whether the hostname has been obtained from DHCP or not.
+     *
+     */
+    @XmlElement(name = "FromDHCP")
+    protected boolean fromDHCP;
+    /**
+     * Indicates the device hostname or an empty string if no hostname has been assigned.
+     *
+     */
+    @XmlElement(name = "Name")
+    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
+    @XmlSchemaType(name = "token")
+    protected String name;
+    @XmlElement(name = "Extension")
+    protected HostnameInformationExtension extension;
+    @XmlAnyAttribute
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
-	/**
-	 * Ruft den Wert der fromDHCP-Eigenschaft ab.
-	 * 
-	 */
-	public boolean isFromDHCP() {
-		return fromDHCP;
-	}
+    /**
+     * Indicates whether the hostname has been obtained from DHCP or not.
+     *
+     */
+    public boolean isFromDHCP() {
+        return fromDHCP;
+    }
 
-	/**
-	 * Legt den Wert der fromDHCP-Eigenschaft fest.
-	 * 
-	 */
-	public void setFromDHCP(boolean value) {
-		this.fromDHCP = value;
-	}
+    /**
+     * Sets the value of the fromDHCP property.
+     *
+     */
+    public void setFromDHCP(boolean value) {
+        this.fromDHCP = value;
+    }
 
-	/**
-	 * Ruft den Wert der name-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getName() {
-		return name;
-	}
+    /**
+     * Indicates the device hostname or an empty string if no hostname has been assigned.
+     *
+     * @return
+     *     possible object is
+     *     {@link String }
+     *
+     */
+    public String getName() {
+        return name;
+    }
 
-	/**
-	 * Legt den Wert der name-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setName(String value) {
-		this.name = value;
-	}
+    /**
+     * Sets the value of the name property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *
+     * @see #getName()
+     */
+    public void setName(String value) {
+        this.name = value;
+    }
 
-	/**
-	 * Ruft den Wert der extension-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link HostnameInformationExtension }
-	 * 
-	 */
-	public HostnameInformationExtension getExtension() {
-		return extension;
-	}
+    /**
+     * Gets the value of the extension property.
+     *
+     * @return
+     *     possible object is
+     *     {@link HostnameInformationExtension }
+     *
+     */
+    public HostnameInformationExtension getExtension() {
+        return extension;
+    }
 
-	/**
-	 * Legt den Wert der extension-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link HostnameInformationExtension }
-	 * 
-	 */
-	public void setExtension(HostnameInformationExtension value) {
-		this.extension = value;
-	}
+    /**
+     * Sets the value of the extension property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link HostnameInformationExtension }
+     *
+     */
+    public void setExtension(HostnameInformationExtension value) {
+        this.extension = value;
+    }
 
-	/**
-	 * Gets a map that contains attributes that aren't bound to any typed property on this class.
-	 * 
-	 * <p>
-	 * the map is keyed by the name of the attribute and the value is the string value of the attribute.
-	 * 
-	 * the map returned by this method is live, and you can add new attribute by updating the map directly. Because of this design, there's no setter.
-	 * 
-	 * 
-	 * @return always non-null
-	 */
-	public Map<QName, String> getOtherAttributes() {
-		return otherAttributes;
-	}
+    /**
+     * Gets a map that contains attributes that aren't bound to any typed property on this class.
+     *
+     * <p>
+     * the map is keyed by the name of the attribute and
+     * the value is the string value of the attribute.
+     *
+     * the map returned by this method is live, and you can add new attribute
+     * by updating the map directly. Because of this design, there's no setter.
+     *
+     *
+     * @return
+     *     always non-null
+     */
+    public Map<QName, String> getOtherAttributes() {
+        return otherAttributes;
+    }
 
 }

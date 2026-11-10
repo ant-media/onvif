@@ -1,88 +1,180 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.04 um 12:22:03 PM CET 
-//
 
 package org.onvif.ver10.schema;
 
+import java.util.ArrayList;
+import java.util.List;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlAnyElement;
 import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import org.w3c.dom.Element;
+
 
 /**
- * <p>
- * Java-Klasse f�r Transport complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ * <p>Java class for Transport complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType name="Transport">
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       <sequence>
  *         <element name="Protocol" type="{http://www.onvif.org/ver10/schema}TransportProtocol"/>
- *         <element name="Tunnel" type="{http://www.onvif.org/ver10/schema}Transport" minOccurs="0"/>
+ *         <element name="Tunnel" minOccurs="0">
+ *           <complexType>
+ *             <complexContent>
+ *               <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *                 <sequence>
+ *                   <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
+ *                 </sequence>
+ *               </restriction>
+ *             </complexContent>
+ *           </complexType>
+ *         </element>
  *       </sequence>
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Transport", propOrder = { "protocol", "tunnel" })
+@XmlType(name = "Transport", propOrder = {
+    "protocol",
+    "tunnel"
+})
 public class Transport {
 
-	@XmlElement(name = "Protocol", required = true)
-	protected TransportProtocol protocol;
-	@XmlElement(name = "Tunnel")
-	protected Transport tunnel;
+    /**
+     * Defines the network protocol for streaming, either UDP=RTP/UDP, RTSP=RTP/RTSP/TCP or HTTP=RTP/RTSP/HTTP/TCP.
+     *
+     */
+    @XmlElement(name = "Protocol", required = true)
+    @XmlSchemaType(name = "string")
+    protected TransportProtocol protocol;
+    /**
+     * Deprecated: optional element to describe further tunnel options.
+     *
+     */
+    @XmlElement(name = "Tunnel")
+    protected Transport.Tunnel tunnel;
 
-	/**
-	 * Ruft den Wert der protocol-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link TransportProtocol }
-	 * 
-	 */
-	public TransportProtocol getProtocol() {
-		return protocol;
-	}
+    /**
+     * Defines the network protocol for streaming, either UDP=RTP/UDP, RTSP=RTP/RTSP/TCP or HTTP=RTP/RTSP/HTTP/TCP.
+     *
+     * @return
+     *     possible object is
+     *     {@link TransportProtocol }
+     *
+     */
+    public TransportProtocol getProtocol() {
+        return protocol;
+    }
 
-	/**
-	 * Legt den Wert der protocol-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link TransportProtocol }
-	 * 
-	 */
-	public void setProtocol(TransportProtocol value) {
-		this.protocol = value;
-	}
+    /**
+     * Sets the value of the protocol property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link TransportProtocol }
+     *
+     * @see #getProtocol()
+     */
+    public void setProtocol(TransportProtocol value) {
+        this.protocol = value;
+    }
 
-	/**
-	 * Ruft den Wert der tunnel-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link Transport }
-	 * 
-	 */
-	public Transport getTunnel() {
-		return tunnel;
-	}
+    /**
+     * Deprecated: optional element to describe further tunnel options.
+     *
+     * @return
+     *     possible object is
+     *     {@link Transport.Tunnel }
+     *
+     */
+    public Transport.Tunnel getTunnel() {
+        return tunnel;
+    }
 
-	/**
-	 * Legt den Wert der tunnel-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Transport }
-	 * 
-	 */
-	public void setTunnel(Transport value) {
-		this.tunnel = value;
-	}
+    /**
+     * Sets the value of the tunnel property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Transport.Tunnel }
+     *
+     * @see #getTunnel()
+     */
+    public void setTunnel(Transport.Tunnel value) {
+        this.tunnel = value;
+    }
+
+
+    /**
+     * <p>Java class for anonymous complex type</p>.
+     *
+     * <p>The following schema fragment specifies the expected content contained within this class.</p>
+     *
+     * <pre>{@code
+     * <complexType>
+     *   <complexContent>
+     *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+     *       <sequence>
+     *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
+     *       </sequence>
+     *     </restriction>
+     *   </complexContent>
+     * </complexType>
+     * }</pre>
+     *
+     *
+     */
+    @XmlAccessorType(XmlAccessType.FIELD)
+    @XmlType(name = "", propOrder = {
+        "any"
+    })
+    public static class Tunnel {
+
+        @XmlAnyElement(lax = true)
+        protected List<java.lang.Object> any;
+
+        /**
+         * Gets the value of the any property.
+         *
+         * <p>This accessor method returns a reference to the live list,
+         * not a snapshot. Therefore any modification you make to the
+         * returned list will be present inside the JAXB object.
+         * This is why there is not a <CODE>set</CODE> method for the any property.</p>
+         *
+         * <p>
+         * For example, to add a new item, do as follows:
+         * </p>
+         * <pre>
+         * getAny().add(newItem);
+         * </pre>
+         *
+         *
+         * <p>
+         * Objects of the following type(s) are allowed in the list
+         * {@link java.lang.Object }
+         * {@link Element }
+         * </p>
+         *
+         *
+         * @return
+         *     The value of the any property.
+         */
+        public List<java.lang.Object> getAny() {
+            if (any == null) {
+                any = new ArrayList<>();
+            }
+            return this.any;
+        }
+
+    }
 
 }

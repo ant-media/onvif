@@ -1,9 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.17 um 11:33:29 AM CET 
-//
 
 package org.onvif.ver20.ptz.wsdl;
 
@@ -16,14 +10,13 @@ import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
 import org.onvif.ver10.schema.PTZPreset;
 
+
 /**
- * <p>
- * Java-Klasse f�r anonymous complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ * <p>Java class for anonymous complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType>
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -33,43 +26,56 @@ import org.onvif.ver10.schema.PTZPreset;
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = { "preset" })
+@XmlType(name = "", propOrder = {
+    "preset"
+})
 @XmlRootElement(name = "GetPresetsResponse")
 public class GetPresetsResponse {
 
-	@XmlElement(name = "Preset")
-	protected List<PTZPreset> preset;
+    /**
+     * A list of presets which are available for the requested MediaProfile.
+     *
+     */
+    @XmlElement(name = "Preset")
+    protected List<PTZPreset> preset;
 
-	/**
-	 * Gets the value of the preset property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a snapshot. Therefore any modification you make to the returned list will be present inside the JAXB object.
-	 * This is why there is not a <CODE>set</CODE> method for the preset property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getPreset().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list {@link PTZPreset }
-	 * 
-	 * 
-	 */
-	public List<PTZPreset> getPreset() {
-		if (preset == null) {
-			preset = new ArrayList<PTZPreset>();
-		}
-		return this.preset;
-	}
+    /**
+     * A list of presets which are available for the requested MediaProfile.
+     *
+     * Gets the value of the preset property.
+     *
+     * <p>This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the preset property.</p>
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * </p>
+     * <pre>
+     * getPreset().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link PTZPreset }
+     * </p>
+     *
+     *
+     * @return
+     *     The value of the preset property.
+     */
+    public List<PTZPreset> getPreset() {
+        if (preset == null) {
+            preset = new ArrayList<>();
+        }
+        return this.preset;
+    }
 
 }

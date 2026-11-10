@@ -1,10 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2016.02.05 um 06:25:30 PM CET 
-//
-
 
 package org.onvif.ver20.media.wsdl;
 
@@ -18,26 +11,24 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java-Klasse f�r anonymous complex type.
- * 
- * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;sequence>
- *           &lt;element name="Token" type="{http://www.onvif.org/ver10/schema}ReferenceToken" minOccurs="0"/>
- *           &lt;element name="Type" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;/sequence>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * <p>Java class for anonymous complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Token" type="{http://www.onvif.org/ver10/schema}ReferenceToken" minOccurs="0"/>
+ *         <element name="Type" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -47,60 +38,74 @@ import jakarta.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "GetProfiles")
 public class GetProfiles {
 
+    /**
+     * Optional token of the requested profile.
+     *
+     */
     @XmlElement(name = "Token")
     protected String token;
+    /**
+     * The types shall be provided as defined by tr2:ConfigurationEnumeration.
+     *
+     */
     @XmlElement(name = "Type")
     protected List<String> type;
 
     /**
-     * Ruft den Wert der token-Eigenschaft ab.
-     * 
+     * Optional token of the requested profile.
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getToken() {
         return token;
     }
 
     /**
-     * Legt den Wert der token-Eigenschaft fest.
-     * 
+     * Sets the value of the token property.
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
+     * @see #getToken()
      */
     public void setToken(String value) {
         this.token = value;
     }
 
     /**
+     * The types shall be provided as defined by tr2:ConfigurationEnumeration.
+     *
      * Gets the value of the type property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     *
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the type property.
-     * 
+     * This is why there is not a <CODE>set</CODE> method for the type property.</p>
+     *
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getType().add(newItem);
+     * getType().add(newItem);
      * </pre>
-     * 
-     * 
+     *
+     *
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link String }
-     * 
-     * 
+     * </p>
+     *
+     *
+     * @return
+     *     The value of the type property.
      */
     public List<String> getType() {
         if (type == null) {
-            type = new ArrayList<String>();
+            type = new ArrayList<>();
         }
         return this.type;
     }

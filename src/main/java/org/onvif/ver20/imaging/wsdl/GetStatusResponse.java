@@ -1,10 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.04.25 um 04:22:13 PM CEST 
-//
-
 
 package org.onvif.ver20.imaging.wsdl;
 
@@ -17,23 +10,23 @@ import org.onvif.ver10.schema.ImagingStatus20;
 
 
 /**
- * <p>Java-Klasse f�r anonymous complex type.
- * 
- * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Status" type="{http://www.onvif.org/ver10/schema}ImagingStatus20"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * <p>Java class for anonymous complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Status" type="{http://www.onvif.org/ver10/schema}ImagingStatus20"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -42,28 +35,33 @@ import org.onvif.ver10.schema.ImagingStatus20;
 @XmlRootElement(name = "GetStatusResponse")
 public class GetStatusResponse {
 
+    /**
+     * Requested imaging status.
+     *
+     */
     @XmlElement(name = "Status", required = true)
     protected ImagingStatus20 status;
 
     /**
-     * Ruft den Wert der status-Eigenschaft ab.
-     * 
+     * Requested imaging status.
+     *
      * @return
      *     possible object is
      *     {@link ImagingStatus20 }
-     *     
+     *
      */
     public ImagingStatus20 getStatus() {
         return status;
     }
 
     /**
-     * Legt den Wert der status-Eigenschaft fest.
-     * 
+     * Sets the value of the status property.
+     *
      * @param value
      *     allowed object is
      *     {@link ImagingStatus20 }
-     *     
+     *
+     * @see #getStatus()
      */
     public void setStatus(ImagingStatus20 value) {
         this.status = value;

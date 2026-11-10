@@ -1,10 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2016.02.05 um 06:25:30 PM CET 
-//
-
 
 package org.onvif.ver20.media.wsdl;
 
@@ -16,23 +9,23 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java-Klasse f�r anonymous complex type.
- * 
- * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="OSDToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * <p>Java class for anonymous complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="OSDToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -41,28 +34,33 @@ import jakarta.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "CreateOSDResponse")
 public class CreateOSDResponse {
 
+    /**
+     * Returns Token of the newly created OSD
+     *
+     */
     @XmlElement(name = "OSDToken", required = true)
     protected String osdToken;
 
     /**
-     * Ruft den Wert der osdToken-Eigenschaft ab.
-     * 
+     * Returns Token of the newly created OSD
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getOSDToken() {
         return osdToken;
     }
 
     /**
-     * Legt den Wert der osdToken-Eigenschaft fest.
-     * 
+     * Sets the value of the osdToken property.
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
+     * @see #getOSDToken()
      */
     public void setOSDToken(String value) {
         this.osdToken = value;

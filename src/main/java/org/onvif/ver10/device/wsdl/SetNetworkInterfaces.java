@@ -1,9 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.04 um 12:22:03 PM CET 
-//
 
 package org.onvif.ver10.device.wsdl;
 
@@ -14,14 +8,13 @@ import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
 import org.onvif.ver10.schema.NetworkInterfaceSetConfiguration;
 
+
 /**
- * <p>
- * Java-Klasse f�r anonymous complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ * <p>Java class for anonymous complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType>
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -32,60 +25,79 @@ import org.onvif.ver10.schema.NetworkInterfaceSetConfiguration;
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = { "interfaceToken", "networkInterface" })
+@XmlType(name = "", propOrder = {
+    "interfaceToken",
+    "networkInterface"
+})
 @XmlRootElement(name = "SetNetworkInterfaces")
 public class SetNetworkInterfaces {
 
-	@XmlElement(name = "InterfaceToken", required = true)
-	protected String interfaceToken;
-	@XmlElement(name = "NetworkInterface", required = true)
-	protected NetworkInterfaceSetConfiguration networkInterface;
+    /**
+     * Symbolic network interface name.
+     *
+     */
+    @XmlElement(name = "InterfaceToken", required = true)
+    protected String interfaceToken;
+    /**
+     * Network interface name.
+     *
+     */
+    @XmlElement(name = "NetworkInterface", required = true)
+    protected NetworkInterfaceSetConfiguration networkInterface;
 
-	/**
-	 * Ruft den Wert der interfaceToken-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getInterfaceToken() {
-		return interfaceToken;
-	}
+    /**
+     * Symbolic network interface name.
+     *
+     * @return
+     *     possible object is
+     *     {@link String }
+     *
+     */
+    public String getInterfaceToken() {
+        return interfaceToken;
+    }
 
-	/**
-	 * Legt den Wert der interfaceToken-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setInterfaceToken(String value) {
-		this.interfaceToken = value;
-	}
+    /**
+     * Sets the value of the interfaceToken property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *
+     * @see #getInterfaceToken()
+     */
+    public void setInterfaceToken(String value) {
+        this.interfaceToken = value;
+    }
 
-	/**
-	 * Ruft den Wert der networkInterface-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link NetworkInterfaceSetConfiguration }
-	 * 
-	 */
-	public NetworkInterfaceSetConfiguration getNetworkInterface() {
-		return networkInterface;
-	}
+    /**
+     * Network interface name.
+     *
+     * @return
+     *     possible object is
+     *     {@link NetworkInterfaceSetConfiguration }
+     *
+     */
+    public NetworkInterfaceSetConfiguration getNetworkInterface() {
+        return networkInterface;
+    }
 
-	/**
-	 * Legt den Wert der networkInterface-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link NetworkInterfaceSetConfiguration }
-	 * 
-	 */
-	public void setNetworkInterface(NetworkInterfaceSetConfiguration value) {
-		this.networkInterface = value;
-	}
+    /**
+     * Sets the value of the networkInterface property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link NetworkInterfaceSetConfiguration }
+     *
+     * @see #getNetworkInterface()
+     */
+    public void setNetworkInterface(NetworkInterfaceSetConfiguration value) {
+        this.networkInterface = value;
+    }
 
 }

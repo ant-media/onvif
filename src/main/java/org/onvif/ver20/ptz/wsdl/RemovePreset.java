@@ -1,9 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.17 um 11:33:29 AM CET 
-//
 
 package org.onvif.ver20.ptz.wsdl;
 
@@ -13,14 +7,13 @@ import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
 
+
 /**
- * <p>
- * Java-Klasse f�r anonymous complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ * <p>Java class for anonymous complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType>
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -31,60 +24,79 @@ import jakarta.xml.bind.annotation.XmlType;
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = { "profileToken", "presetToken" })
+@XmlType(name = "", propOrder = {
+    "profileToken",
+    "presetToken"
+})
 @XmlRootElement(name = "RemovePreset")
 public class RemovePreset {
 
-	@XmlElement(name = "ProfileToken", required = true)
-	protected String profileToken;
-	@XmlElement(name = "PresetToken", required = true)
-	protected String presetToken;
+    /**
+     * A reference to the MediaProfile where the operation should take place.
+     *
+     */
+    @XmlElement(name = "ProfileToken", required = true)
+    protected String profileToken;
+    /**
+     * A requested preset token.
+     *
+     */
+    @XmlElement(name = "PresetToken", required = true)
+    protected String presetToken;
 
-	/**
-	 * Ruft den Wert der profileToken-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getProfileToken() {
-		return profileToken;
-	}
+    /**
+     * A reference to the MediaProfile where the operation should take place.
+     *
+     * @return
+     *     possible object is
+     *     {@link String }
+     *
+     */
+    public String getProfileToken() {
+        return profileToken;
+    }
 
-	/**
-	 * Legt den Wert der profileToken-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setProfileToken(String value) {
-		this.profileToken = value;
-	}
+    /**
+     * Sets the value of the profileToken property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *
+     * @see #getProfileToken()
+     */
+    public void setProfileToken(String value) {
+        this.profileToken = value;
+    }
 
-	/**
-	 * Ruft den Wert der presetToken-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getPresetToken() {
-		return presetToken;
-	}
+    /**
+     * A requested preset token.
+     *
+     * @return
+     *     possible object is
+     *     {@link String }
+     *
+     */
+    public String getPresetToken() {
+        return presetToken;
+    }
 
-	/**
-	 * Legt den Wert der presetToken-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setPresetToken(String value) {
-		this.presetToken = value;
-	}
+    /**
+     * Sets the value of the presetToken property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *
+     * @see #getPresetToken()
+     */
+    public void setPresetToken(String value) {
+        this.presetToken = value;
+    }
 
 }

@@ -1,44 +1,37 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2016.02.05 um 06:25:30 PM CET 
-//
-
 
 package org.onvif.ver10.schema;
 
 import java.util.HashMap;
 import java.util.Map;
+import javax.xml.namespace.QName;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
-import javax.xml.namespace.QName;
 
 
 /**
- * <p>Java-Klasse f�r StorageReferencePath complex type.
- * 
- * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
- * &lt;complexType name="StorageReferencePath">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="StorageToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/>
- *         &lt;element name="RelativePath" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}StorageReferencePathExtension" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;anyAttribute processContents='lax'/>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * <p>Java class for StorageReferencePath complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
+ * <complexType name="StorageReferencePath">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="StorageToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/>
+ *         <element name="RelativePath" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}StorageReferencePathExtension" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "StorageReferencePath", propOrder = {
@@ -48,82 +41,92 @@ import javax.xml.namespace.QName;
 })
 public class StorageReferencePath {
 
+    /**
+     * identifier of an existing Storage Configuration.
+     *
+     */
     @XmlElement(name = "StorageToken", required = true)
     protected String storageToken;
+    /**
+     * gives the relative directory path on the storage
+     *
+     */
     @XmlElement(name = "RelativePath")
     protected String relativePath;
     @XmlElement(name = "Extension")
     protected StorageReferencePathExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Ruft den Wert der storageToken-Eigenschaft ab.
-     * 
+     * identifier of an existing Storage Configuration.
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getStorageToken() {
         return storageToken;
     }
 
     /**
-     * Legt den Wert der storageToken-Eigenschaft fest.
-     * 
+     * Sets the value of the storageToken property.
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
+     * @see #getStorageToken()
      */
     public void setStorageToken(String value) {
         this.storageToken = value;
     }
 
     /**
-     * Ruft den Wert der relativePath-Eigenschaft ab.
-     * 
+     * gives the relative directory path on the storage
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getRelativePath() {
         return relativePath;
     }
 
     /**
-     * Legt den Wert der relativePath-Eigenschaft fest.
-     * 
+     * Sets the value of the relativePath property.
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
+     * @see #getRelativePath()
      */
     public void setRelativePath(String value) {
         this.relativePath = value;
     }
 
     /**
-     * Ruft den Wert der extension-Eigenschaft ab.
-     * 
+     * Gets the value of the extension property.
+     *
      * @return
      *     possible object is
      *     {@link StorageReferencePathExtension }
-     *     
+     *
      */
     public StorageReferencePathExtension getExtension() {
         return extension;
     }
 
     /**
-     * Legt den Wert der extension-Eigenschaft fest.
-     * 
+     * Sets the value of the extension property.
+     *
      * @param value
      *     allowed object is
      *     {@link StorageReferencePathExtension }
-     *     
+     *
      */
     public void setExtension(StorageReferencePathExtension value) {
         this.extension = value;
@@ -131,15 +134,15 @@ public class StorageReferencePath {
 
     /**
      * Gets a map that contains attributes that aren't bound to any typed property on this class.
-     * 
+     *
      * <p>
-     * the map is keyed by the name of the attribute and 
+     * the map is keyed by the name of the attribute and
      * the value is the string value of the attribute.
-     * 
+     *
      * the map returned by this method is live, and you can add new attribute
      * by updating the map directly. Because of this design, there's no setter.
-     * 
-     * 
+     *
+     *
      * @return
      *     always non-null
      */

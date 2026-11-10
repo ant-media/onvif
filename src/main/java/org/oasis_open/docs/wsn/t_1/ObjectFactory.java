@@ -1,102 +1,123 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.04 um 12:22:03 PM CET 
-//
 
 package org.oasis_open.docs.wsn.t_1;
 
+import javax.xml.namespace.QName;
 import jakarta.xml.bind.JAXBElement;
 import jakarta.xml.bind.annotation.XmlElementDecl;
 import jakarta.xml.bind.annotation.XmlRegistry;
-import javax.xml.namespace.QName;
+
 
 /**
- * This object contains factory methods for each Java content interface and Java element interface generated in the org.oasis_open.docs.wsn.t_1 package.
- * <p>
- * An ObjectFactory allows you to programatically construct new instances of the Java representation for XML content. The Java representation of XML content can consist of schema
- * derived interfaces and classes representing the binding of schema type definitions, element declarations and model groups. Factory methods for each of these are provided in this
- * class.
- * 
+ * This object contains factory methods for each
+ * Java content interface and Java element interface
+ * generated in the org.oasis_open.docs.wsn.t_1 package.
+ * <p>An ObjectFactory allows you to programmatically
+ * construct new instances of the Java representation
+ * for XML content. The Java representation of XML
+ * content can consist of schema derived interfaces
+ * and classes representing the binding of schema
+ * type definitions, element declarations and model
+ * groups.  Factory methods for each of these are
+ * provided in this class.
+ *
  */
 @XmlRegistry
 public class ObjectFactory {
 
-	private final static QName _TopicSet_QNAME = new QName("http://docs.oasis-open.org/wsn/t-1", "TopicSet");
-	private final static QName _TopicNamespace_QNAME = new QName("http://docs.oasis-open.org/wsn/t-1", "TopicNamespace");
+    private static final QName _TopicSet_QNAME = new QName("http://docs.oasis-open.org/wsn/t-1", "TopicSet");
+    private static final QName _TopicNamespace_QNAME = new QName("http://docs.oasis-open.org/wsn/t-1", "TopicNamespace");
 
-	/**
-	 * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: org.oasis_open.docs.wsn.t_1
-	 * 
-	 */
-	public ObjectFactory() {
-	}
+    /**
+     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: org.oasis_open.docs.wsn.t_1
+     *
+     */
+    public ObjectFactory() {
+    }
 
-	/**
-	 * Create an instance of {@link TopicNamespaceType }
-	 * 
-	 */
-	public TopicNamespaceType createTopicNamespaceType() {
-		return new TopicNamespaceType();
-	}
+    /**
+     * Create an instance of {@link TopicNamespaceType }
+     *
+     * @return
+     *     the new instance of {@link TopicNamespaceType }
+     */
+    public TopicNamespaceType createTopicNamespaceType() {
+        return new TopicNamespaceType();
+    }
 
-	/**
-	 * Create an instance of {@link TopicSetType }
-	 * 
-	 */
-	public TopicSetType createTopicSetType() {
-		return new TopicSetType();
-	}
+    /**
+     * Create an instance of {@link TopicSetType }
+     *
+     * @return
+     *     the new instance of {@link TopicSetType }
+     */
+    public TopicSetType createTopicSetType() {
+        return new TopicSetType();
+    }
 
-	/**
-	 * Create an instance of {@link Documentation }
-	 * 
-	 */
-	public Documentation createDocumentation() {
-		return new Documentation();
-	}
+    /**
+     * Create an instance of {@link Documentation }
+     *
+     * @return
+     *     the new instance of {@link Documentation }
+     */
+    public Documentation createDocumentation() {
+        return new Documentation();
+    }
 
-	/**
-	 * Create an instance of {@link TopicType }
-	 * 
-	 */
-	public TopicType createTopicType() {
-		return new TopicType();
-	}
+    /**
+     * Create an instance of {@link QueryExpressionType }
+     *
+     * @return
+     *     the new instance of {@link QueryExpressionType }
+     */
+    public QueryExpressionType createQueryExpressionType() {
+        return new QueryExpressionType();
+    }
 
-	/**
-	 * Create an instance of {@link QueryExpressionType }
-	 * 
-	 */
-	public QueryExpressionType createQueryExpressionType() {
-		return new QueryExpressionType();
-	}
+    /**
+     * Create an instance of {@link TopicType }
+     *
+     * @return
+     *     the new instance of {@link TopicType }
+     */
+    public TopicType createTopicType() {
+        return new TopicType();
+    }
 
-	/**
-	 * Create an instance of {@link TopicNamespaceType.Topic }
-	 * 
-	 */
-	public TopicNamespaceType.Topic createTopicNamespaceTypeTopic() {
-		return new TopicNamespaceType.Topic();
-	}
+    /**
+     * Create an instance of {@link TopicNamespaceType.Topic }
+     *
+     * @return
+     *     the new instance of {@link TopicNamespaceType.Topic }
+     */
+    public TopicNamespaceType.Topic createTopicNamespaceTypeTopic() {
+        return new TopicNamespaceType.Topic();
+    }
 
-	/**
-	 * Create an instance of {@link JAXBElement }{@code <}{@link TopicSetType }{@code >}
-	 * 
-	 */
-	@XmlElementDecl(namespace = "http://docs.oasis-open.org/wsn/t-1", name = "TopicSet")
-	public JAXBElement<TopicSetType> createTopicSet(TopicSetType value) {
-		return new JAXBElement<TopicSetType>(_TopicSet_QNAME, TopicSetType.class, null, value);
-	}
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link TopicSetType }{@code >}
+     *
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link TopicSetType }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://docs.oasis-open.org/wsn/t-1", name = "TopicSet")
+    public JAXBElement<TopicSetType> createTopicSet(TopicSetType value) {
+        return new JAXBElement<>(_TopicSet_QNAME, TopicSetType.class, null, value);
+    }
 
-	/**
-	 * Create an instance of {@link JAXBElement }{@code <}{@link TopicNamespaceType }{@code >}
-	 * 
-	 */
-	@XmlElementDecl(namespace = "http://docs.oasis-open.org/wsn/t-1", name = "TopicNamespace")
-	public JAXBElement<TopicNamespaceType> createTopicNamespace(TopicNamespaceType value) {
-		return new JAXBElement<TopicNamespaceType>(_TopicNamespace_QNAME, TopicNamespaceType.class, null, value);
-	}
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link TopicNamespaceType }{@code >}
+     *
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link TopicNamespaceType }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://docs.oasis-open.org/wsn/t-1", name = "TopicNamespace")
+    public JAXBElement<TopicNamespaceType> createTopicNamespace(TopicNamespaceType value) {
+        return new JAXBElement<>(_TopicNamespace_QNAME, TopicNamespaceType.class, null, value);
+    }
 
 }

@@ -1,10 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2016.02.05 um 06:25:30 PM CET 
-//
-
 
 package org.onvif.ver20.media.wsdl;
 
@@ -15,24 +8,24 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java-Klasse f�r GetConfiguration complex type.
- * 
- * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
- * &lt;complexType name="GetConfiguration">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="ConfigurationToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken" minOccurs="0"/>
- *         &lt;element name="ProfileToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * <p>Java class for GetConfiguration complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
+ * <complexType name="GetConfiguration">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="ConfigurationToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken" minOccurs="0"/>
+ *         <element name="ProfileToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken" minOccurs="0"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "GetConfiguration", propOrder = {
@@ -41,54 +34,64 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class GetConfiguration {
 
+    /**
+     * Token of the requested configuration.
+     *
+     */
     @XmlElement(name = "ConfigurationToken")
     protected String configurationToken;
+    /**
+     * Contains the token of an existing media profile the configurations shall be compatible with.
+     *
+     */
     @XmlElement(name = "ProfileToken")
     protected String profileToken;
 
     /**
-     * Ruft den Wert der configurationToken-Eigenschaft ab.
-     * 
+     * Token of the requested configuration.
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getConfigurationToken() {
         return configurationToken;
     }
 
     /**
-     * Legt den Wert der configurationToken-Eigenschaft fest.
-     * 
+     * Sets the value of the configurationToken property.
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
+     * @see #getConfigurationToken()
      */
     public void setConfigurationToken(String value) {
         this.configurationToken = value;
     }
 
     /**
-     * Ruft den Wert der profileToken-Eigenschaft ab.
-     * 
+     * Contains the token of an existing media profile the configurations shall be compatible with.
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getProfileToken() {
         return profileToken;
     }
 
     /**
-     * Legt den Wert der profileToken-Eigenschaft fest.
-     * 
+     * Sets the value of the profileToken property.
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
+     * @see #getProfileToken()
      */
     public void setProfileToken(String value) {
         this.profileToken = value;

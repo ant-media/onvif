@@ -1,9 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.04 um 12:22:03 PM CET 
-//
 
 package org.onvif.ver10.schema;
 
@@ -11,6 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.xml.namespace.QName;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAnyAttribute;
@@ -19,16 +14,14 @@ import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.namespace.QName;
+
 
 /**
- * <p>
- * Java-Klasse f�r DNSInformation complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ * <p>Java class for DNSInformation complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType name="DNSInformation">
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -43,160 +36,209 @@ import javax.xml.namespace.QName;
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "DNSInformation", propOrder = { "fromDHCP", "searchDomain", "dnsFromDHCP", "dnsManual", "extension" })
+@XmlType(name = "DNSInformation", propOrder = {
+    "fromDHCP",
+    "searchDomain",
+    "dnsFromDHCP",
+    "dnsManual",
+    "extension"
+})
 public class DNSInformation {
 
-	@XmlElement(name = "FromDHCP")
-	protected boolean fromDHCP;
-	@XmlElement(name = "SearchDomain")
-	@XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-	@XmlSchemaType(name = "token")
-	protected List<String> searchDomain;
-	@XmlElement(name = "DNSFromDHCP")
-	protected List<IPAddress> dnsFromDHCP;
-	@XmlElement(name = "DNSManual")
-	protected List<IPAddress> dnsManual;
-	@XmlElement(name = "Extension")
-	protected DNSInformationExtension extension;
-	@XmlAnyAttribute
-	private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    /**
+     * Indicates whether or not DNS information is retrieved from DHCP.
+     *
+     */
+    @XmlElement(name = "FromDHCP")
+    protected boolean fromDHCP;
+    /**
+     * Search domain.
+     *
+     */
+    @XmlElement(name = "SearchDomain")
+    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
+    @XmlSchemaType(name = "token")
+    protected List<String> searchDomain;
+    /**
+     * List of DNS addresses received from DHCP.
+     *
+     */
+    @XmlElement(name = "DNSFromDHCP")
+    protected List<IPAddress> dnsFromDHCP;
+    /**
+     * List of manually entered DNS addresses.
+     *
+     */
+    @XmlElement(name = "DNSManual")
+    protected List<IPAddress> dnsManual;
+    @XmlElement(name = "Extension")
+    protected DNSInformationExtension extension;
+    @XmlAnyAttribute
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
-	/**
-	 * Ruft den Wert der fromDHCP-Eigenschaft ab.
-	 * 
-	 */
-	public boolean isFromDHCP() {
-		return fromDHCP;
-	}
+    /**
+     * Indicates whether or not DNS information is retrieved from DHCP.
+     *
+     */
+    public boolean isFromDHCP() {
+        return fromDHCP;
+    }
 
-	/**
-	 * Legt den Wert der fromDHCP-Eigenschaft fest.
-	 * 
-	 */
-	public void setFromDHCP(boolean value) {
-		this.fromDHCP = value;
-	}
+    /**
+     * Sets the value of the fromDHCP property.
+     *
+     */
+    public void setFromDHCP(boolean value) {
+        this.fromDHCP = value;
+    }
 
-	/**
-	 * Gets the value of the searchDomain property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a snapshot. Therefore any modification you make to the returned list will be present inside the JAXB object.
-	 * This is why there is not a <CODE>set</CODE> method for the searchDomain property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getSearchDomain().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list {@link String }
-	 * 
-	 * 
-	 */
-	public List<String> getSearchDomain() {
-		if (searchDomain == null) {
-			searchDomain = new ArrayList<String>();
-		}
-		return this.searchDomain;
-	}
+    /**
+     * Search domain.
+     *
+     * Gets the value of the searchDomain property.
+     *
+     * <p>This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the searchDomain property.</p>
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * </p>
+     * <pre>
+     * getSearchDomain().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link String }
+     * </p>
+     *
+     *
+     * @return
+     *     The value of the searchDomain property.
+     */
+    public List<String> getSearchDomain() {
+        if (searchDomain == null) {
+            searchDomain = new ArrayList<>();
+        }
+        return this.searchDomain;
+    }
 
-	/**
-	 * Gets the value of the dnsFromDHCP property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a snapshot. Therefore any modification you make to the returned list will be present inside the JAXB object.
-	 * This is why there is not a <CODE>set</CODE> method for the dnsFromDHCP property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getDNSFromDHCP().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list {@link IPAddress }
-	 * 
-	 * 
-	 */
-	public List<IPAddress> getDNSFromDHCP() {
-		if (dnsFromDHCP == null) {
-			dnsFromDHCP = new ArrayList<IPAddress>();
-		}
-		return this.dnsFromDHCP;
-	}
+    /**
+     * List of DNS addresses received from DHCP.
+     *
+     * Gets the value of the dnsFromDHCP property.
+     *
+     * <p>This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the dnsFromDHCP property.</p>
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * </p>
+     * <pre>
+     * getDNSFromDHCP().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link IPAddress }
+     * </p>
+     *
+     *
+     * @return
+     *     The value of the dnsFromDHCP property.
+     */
+    public List<IPAddress> getDNSFromDHCP() {
+        if (dnsFromDHCP == null) {
+            dnsFromDHCP = new ArrayList<>();
+        }
+        return this.dnsFromDHCP;
+    }
 
-	/**
-	 * Gets the value of the dnsManual property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a snapshot. Therefore any modification you make to the returned list will be present inside the JAXB object.
-	 * This is why there is not a <CODE>set</CODE> method for the dnsManual property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getDNSManual().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list {@link IPAddress }
-	 * 
-	 * 
-	 */
-	public List<IPAddress> getDNSManual() {
-		if (dnsManual == null) {
-			dnsManual = new ArrayList<IPAddress>();
-		}
-		return this.dnsManual;
-	}
+    /**
+     * List of manually entered DNS addresses.
+     *
+     * Gets the value of the dnsManual property.
+     *
+     * <p>This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the dnsManual property.</p>
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * </p>
+     * <pre>
+     * getDNSManual().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link IPAddress }
+     * </p>
+     *
+     *
+     * @return
+     *     The value of the dnsManual property.
+     */
+    public List<IPAddress> getDNSManual() {
+        if (dnsManual == null) {
+            dnsManual = new ArrayList<>();
+        }
+        return this.dnsManual;
+    }
 
-	/**
-	 * Ruft den Wert der extension-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link DNSInformationExtension }
-	 * 
-	 */
-	public DNSInformationExtension getExtension() {
-		return extension;
-	}
+    /**
+     * Gets the value of the extension property.
+     *
+     * @return
+     *     possible object is
+     *     {@link DNSInformationExtension }
+     *
+     */
+    public DNSInformationExtension getExtension() {
+        return extension;
+    }
 
-	/**
-	 * Legt den Wert der extension-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link DNSInformationExtension }
-	 * 
-	 */
-	public void setExtension(DNSInformationExtension value) {
-		this.extension = value;
-	}
+    /**
+     * Sets the value of the extension property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link DNSInformationExtension }
+     *
+     */
+    public void setExtension(DNSInformationExtension value) {
+        this.extension = value;
+    }
 
-	/**
-	 * Gets a map that contains attributes that aren't bound to any typed property on this class.
-	 * 
-	 * <p>
-	 * the map is keyed by the name of the attribute and the value is the string value of the attribute.
-	 * 
-	 * the map returned by this method is live, and you can add new attribute by updating the map directly. Because of this design, there's no setter.
-	 * 
-	 * 
-	 * @return always non-null
-	 */
-	public Map<QName, String> getOtherAttributes() {
-		return otherAttributes;
-	}
+    /**
+     * Gets a map that contains attributes that aren't bound to any typed property on this class.
+     *
+     * <p>
+     * the map is keyed by the name of the attribute and
+     * the value is the string value of the attribute.
+     *
+     * the map returned by this method is live, and you can add new attribute
+     * by updating the map directly. Because of this design, there's no setter.
+     *
+     *
+     * @return
+     *     always non-null
+     */
+    public Map<QName, String> getOtherAttributes() {
+        return otherAttributes;
+    }
 
 }

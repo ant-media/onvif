@@ -1,10 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2016.02.05 um 06:25:30 PM CET 
-//
-
 
 package org.onvif.ver10.schema;
 
@@ -14,21 +7,26 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java-Klasse f�r VideoEncodingMimeNames.
- * 
- * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * <p>
+ * Video Media Subtypes as referenced by IANA (without the leading "video/" Video Media Type).  See also
  * <pre>
- * &lt;simpleType name="VideoEncodingMimeNames">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="JPEG"/>
- *     &lt;enumeration value="MPV4-ES"/>
- *     &lt;enumeration value="H264"/>
- *     &lt;enumeration value="H265"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;a xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope" xmlns:tt="http://www.onvif.org/ver10/schema" xmlns:wsnt="http://docs.oasis-open.org/wsn/b-2" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xop="http://www.w3.org/2004/08/xop/include" xmlns:xs="http://www.w3.org/2001/XMLSchema" href="https://www.iana.org/assignments/media-types/media-types.xhtml#video"&gt; IANA Media Types&lt;/a&gt;
  * </pre>
- * 
+ * .
+ *
+ * <p>Java class for VideoEncodingMimeNames</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <pre>{@code
+ * <simpleType name="VideoEncodingMimeNames">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="JPEG"/>
+ *     <enumeration value="MPV4-ES"/>
+ *     <enumeration value="H264"/>
+ *     <enumeration value="H265"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
+ *
  */
 @XmlType(name = "VideoEncodingMimeNames")
 @XmlEnum
@@ -47,10 +45,26 @@ public enum VideoEncodingMimeNames {
         value = v;
     }
 
+    /**
+     * Gets the value associated to the enum constant.
+     *
+     * @return
+     *     The value linked to the enum.
+     */
     public String value() {
         return value;
     }
 
+    /**
+     * Gets the enum associated to the value passed as parameter.
+     *
+     * @param v
+     *     The value to get the enum from.
+     * @return
+     *     The enum which corresponds to the value, if it exists.
+     * @throws IllegalArgumentException
+     *     If no value matches in the enum declaration.
+     */
     public static VideoEncodingMimeNames fromValue(String v) {
         for (VideoEncodingMimeNames c: VideoEncodingMimeNames.values()) {
             if (c.value.equals(v)) {

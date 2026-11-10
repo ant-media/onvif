@@ -1,0 +1,65 @@
+
+package org.onvif.ver10.device.wsdl;
+
+import javax.xml.datatype.Duration;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlType;
+
+
+/**
+ * <p>Java class for anonymous complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="ExpectedDownTime" type="{http://www.w3.org/2001/XMLSchema}duration"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
+ *
+ *
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "", propOrder = {
+    "expectedDownTime"
+})
+@XmlRootElement(name = "UpgradeFirmwareResponse")
+public class UpgradeFirmwareResponse {
+
+    @XmlElement(name = "ExpectedDownTime", required = true)
+    protected Duration expectedDownTime;
+
+    /**
+     * Gets the value of the expectedDownTime property.
+     *
+     * @return
+     *     possible object is
+     *     {@link Duration }
+     *
+     */
+    public Duration getExpectedDownTime() {
+        return expectedDownTime;
+    }
+
+    /**
+     * Sets the value of the expectedDownTime property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Duration }
+     *
+     */
+    public void setExpectedDownTime(Duration value) {
+        this.expectedDownTime = value;
+    }
+
+}

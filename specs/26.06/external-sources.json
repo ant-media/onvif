@@ -1,0 +1,10 @@
+{
+  "https://www.w3.org/2005/05/xmlmime": "external/www.w3.org/2005/05/xmlmime.xsd",
+  "https://www.w3.org/2003/05/soap-envelope": "external/www.w3.org/2003/05/soap-envelope.xsd",
+  "http://www.w3.org/2001/xml.xsd": "external/www.w3.org/2001/xml.xsd",
+  "http://docs.oasis-open.org/wsn/b-2.xsd": "external/docs.oasis-open.org/wsn/b-2.xsd",
+  "http://www.w3.org/2005/08/addressing/ws-addr.xsd": "external/www.w3.org/2005/08/addressing/ws-addr.xsd",
+  "http://docs.oasis-open.org/wsrf/bf-2.xsd": "external/docs.oasis-open.org/wsrf/bf-2.xsd",
+  "http://docs.oasis-open.org/wsn/t-1.xsd": "external/docs.oasis-open.org/wsn/t-1.xsd",
+  "https://www.w3.org/2004/08/xop/include": "external/www.w3.org/2004/08/xop/include.xsd"
+}

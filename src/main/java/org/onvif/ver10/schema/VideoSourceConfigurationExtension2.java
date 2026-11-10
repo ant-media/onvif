@@ -1,9 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.04 um 12:22:03 PM CET 
-//
 
 package org.onvif.ver10.schema;
 
@@ -12,62 +6,145 @@ import java.util.List;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAnyElement;
+import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
 import org.w3c.dom.Element;
 
+
 /**
- * <p>
- * Java-Klasse f�r VideoSourceConfigurationExtension2 complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ * <p>Java class for VideoSourceConfigurationExtension2 complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType name="VideoSourceConfigurationExtension2">
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       <sequence>
- *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
+ *         <element name="LensDescription" type="{http://www.onvif.org/ver10/schema}LensDescription" maxOccurs="unbounded" minOccurs="0"/>
+ *         <element name="SceneOrientation" type="{http://www.onvif.org/ver10/schema}SceneOrientation" minOccurs="0"/>
+ *         <any processContents='lax' namespace='http://www.onvif.org/ver10/schema' maxOccurs="unbounded" minOccurs="0"/>
  *       </sequence>
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "VideoSourceConfigurationExtension2", propOrder = { "any" })
+@XmlType(name = "VideoSourceConfigurationExtension2", propOrder = {
+    "lensDescription",
+    "sceneOrientation",
+    "any"
+})
 public class VideoSourceConfigurationExtension2 {
 
-	@XmlAnyElement(lax = true)
-	protected List<java.lang.Object> any;
+    /**
+     * Optional element describing the geometric lens distortion. Multiple instances for future variable lens support.
+     *
+     */
+    @XmlElement(name = "LensDescription")
+    protected List<LensDescription> lensDescription;
+    /**
+     * Optional element describing the scene orientation in the camera's field of view.
+     *
+     */
+    @XmlElement(name = "SceneOrientation")
+    protected SceneOrientation sceneOrientation;
+    @XmlAnyElement(lax = true)
+    protected List<java.lang.Object> any;
 
-	/**
-	 * Gets the value of the any property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a snapshot. Therefore any modification you make to the returned list will be present inside the JAXB object.
-	 * This is why there is not a <CODE>set</CODE> method for the any property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getAny().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list {@link Element } {@link java.lang.Object }
-	 * 
-	 * 
-	 */
-	public List<java.lang.Object> getAny() {
-		if (any == null) {
-			any = new ArrayList<java.lang.Object>();
-		}
-		return this.any;
-	}
+    /**
+     * Optional element describing the geometric lens distortion. Multiple instances for future variable lens support.
+     *
+     * Gets the value of the lensDescription property.
+     *
+     * <p>This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the lensDescription property.</p>
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * </p>
+     * <pre>
+     * getLensDescription().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link LensDescription }
+     * </p>
+     *
+     *
+     * @return
+     *     The value of the lensDescription property.
+     */
+    public List<LensDescription> getLensDescription() {
+        if (lensDescription == null) {
+            lensDescription = new ArrayList<>();
+        }
+        return this.lensDescription;
+    }
+
+    /**
+     * Optional element describing the scene orientation in the camera's field of view.
+     *
+     * @return
+     *     possible object is
+     *     {@link SceneOrientation }
+     *
+     */
+    public SceneOrientation getSceneOrientation() {
+        return sceneOrientation;
+    }
+
+    /**
+     * Sets the value of the sceneOrientation property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link SceneOrientation }
+     *
+     * @see #getSceneOrientation()
+     */
+    public void setSceneOrientation(SceneOrientation value) {
+        this.sceneOrientation = value;
+    }
+
+    /**
+     * Gets the value of the any property.
+     *
+     * <p>This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * </p>
+     * <pre>
+     * getAny().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link java.lang.Object }
+     * {@link Element }
+     * </p>
+     *
+     *
+     * @return
+     *     The value of the any property.
+     */
+    public List<java.lang.Object> getAny() {
+        if (any == null) {
+            any = new ArrayList<>();
+        }
+        return this.any;
+    }
 
 }

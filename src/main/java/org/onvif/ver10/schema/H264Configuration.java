@@ -1,25 +1,19 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.04 um 12:22:03 PM CET 
-//
 
 package org.onvif.ver10.schema;
 
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 
+
 /**
- * <p>
- * Java-Klasse f�r H264Configuration complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ * <p>Java class for H264Configuration complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType name="H264Configuration">
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -30,54 +24,70 @@ import jakarta.xml.bind.annotation.XmlType;
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "H264Configuration", propOrder = { "govLength", "h264Profile" })
+@XmlType(name = "H264Configuration", propOrder = {
+    "govLength",
+    "h264Profile"
+})
 public class H264Configuration {
 
-	@XmlElement(name = "GovLength")
-	protected int govLength;
-	@XmlElement(name = "H264Profile", required = true)
-	protected H264Profile h264Profile;
+    /**
+     * Group of Video frames length. Determines typically the interval in which the I-Frames will be coded. An entry of 1 indicates I-Frames are continuously generated. An entry of 2 indicates that every 2nd image is an I-Frame, and 3 only every 3rd frame, etc. The frames in between are coded as P or B Frames.
+     *
+     */
+    @XmlElement(name = "GovLength")
+    protected int govLength;
+    /**
+     * the H.264 profile, either baseline, main, extended or high
+     *
+     */
+    @XmlElement(name = "H264Profile", required = true)
+    @XmlSchemaType(name = "string")
+    protected H264Profile h264Profile;
 
-	/**
-	 * Ruft den Wert der govLength-Eigenschaft ab.
-	 * 
-	 */
-	public int getGovLength() {
-		return govLength;
-	}
+    /**
+     * Group of Video frames length. Determines typically the interval in which the I-Frames will be coded. An entry of 1 indicates I-Frames are continuously generated. An entry of 2 indicates that every 2nd image is an I-Frame, and 3 only every 3rd frame, etc. The frames in between are coded as P or B Frames.
+     *
+     */
+    public int getGovLength() {
+        return govLength;
+    }
 
-	/**
-	 * Legt den Wert der govLength-Eigenschaft fest.
-	 * 
-	 */
-	public void setGovLength(int value) {
-		this.govLength = value;
-	}
+    /**
+     * Sets the value of the govLength property.
+     *
+     */
+    public void setGovLength(int value) {
+        this.govLength = value;
+    }
 
-	/**
-	 * Ruft den Wert der h264Profile-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link H264Profile }
-	 * 
-	 */
-	public H264Profile getH264Profile() {
-		return h264Profile;
-	}
+    /**
+     * the H.264 profile, either baseline, main, extended or high
+     *
+     * @return
+     *     possible object is
+     *     {@link H264Profile }
+     *
+     */
+    public H264Profile getH264Profile() {
+        return h264Profile;
+    }
 
-	/**
-	 * Legt den Wert der h264Profile-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link H264Profile }
-	 * 
-	 */
-	public void setH264Profile(H264Profile value) {
-		this.h264Profile = value;
-	}
+    /**
+     * Sets the value of the h264Profile property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link H264Profile }
+     *
+     * @see #getH264Profile()
+     */
+    public void setH264Profile(H264Profile value) {
+        this.h264Profile = value;
+    }
 
 }
