@@ -1,0 +1,23 @@
+name: Maven CI
+
+on:
+  pull_request:
+    branches: [master]
+  push:
+    branches: [master]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: maven
+      - name: Build JAR and run tests
+        run: mvn --batch-mode --no-transfer-progress verify -DskipTests=false -Dgpg.skip -Dmaven.javadoc.skip=true

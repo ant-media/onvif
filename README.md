@@ -19,3 +19,16 @@ Build and run the XML compatibility tests with:
 ```sh
 mvn clean test -DskipTests=false
 ```
+
+## Publishing to GitHub Packages
+
+After merging the version change into `master`, open **Actions → Publish Maven
+package → Run workflow**. Select `master` and enter the release version from
+`pom.xml` (for example, `1.3.0`). The workflow tests the selected commit and
+publishes the JAR, sources JAR, and POM using the repository token.
+
+Use the Maven repository `https://maven.pkg.github.com/ant-media/onvif` and
+dependency `io.antmedia.ipcamera.onvif:onvif:1.3.0` for the first GitHub
+Packages release. The artifact ID is lowercase. Maven clients need a GitHub
+credential to download public packages. See the
+[GitHub Maven authentication guide](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-apache-maven-registry#authenticating-to-github-packages).
