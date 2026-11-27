@@ -1,10 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2016.02.05 um 06:25:30 PM CET 
-//
-
 
 package org.onvif.ver20.media.wsdl;
 
@@ -17,23 +10,23 @@ import org.onvif.ver10.schema.OSDConfigurationOptions;
 
 
 /**
- * <p>Java-Klasse f�r anonymous complex type.
- * 
- * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="OSDOptions" type="{http://www.onvif.org/ver10/schema}OSDConfigurationOptions"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * <p>Java class for anonymous complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="OSDOptions" type="{http://www.onvif.org/ver10/schema}OSDConfigurationOptions"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -46,24 +39,24 @@ public class GetOSDOptionsResponse {
     protected OSDConfigurationOptions osdOptions;
 
     /**
-     * Ruft den Wert der osdOptions-Eigenschaft ab.
-     * 
+     * Gets the value of the osdOptions property.
+     *
      * @return
      *     possible object is
      *     {@link OSDConfigurationOptions }
-     *     
+     *
      */
     public OSDConfigurationOptions getOSDOptions() {
         return osdOptions;
     }
 
     /**
-     * Legt den Wert der osdOptions-Eigenschaft fest.
-     * 
+     * Sets the value of the osdOptions property.
+     *
      * @param value
      *     allowed object is
      *     {@link OSDConfigurationOptions }
-     *     
+     *
      */
     public void setOSDOptions(OSDConfigurationOptions value) {
         this.osdOptions = value;

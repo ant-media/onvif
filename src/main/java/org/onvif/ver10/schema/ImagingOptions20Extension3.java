@@ -1,73 +1,161 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.04 um 12:22:03 PM CET 
-//
 
 package org.onvif.ver10.schema;
 
-import java.util.ArrayList;
-import java.util.List;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlAnyElement;
+import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
-import org.w3c.dom.Element;
+
 
 /**
- * <p>
- * Java-Klasse f�r ImagingOptions20Extension3 complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ * <p>Java class for ImagingOptions20Extension3 complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType name="ImagingOptions20Extension3">
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       <sequence>
- *         <any processContents='lax' namespace='http://www.onvif.org/ver10/schema' maxOccurs="unbounded" minOccurs="0"/>
+ *         <element name="ToneCompensationOptions" type="{http://www.onvif.org/ver10/schema}ToneCompensationOptions" minOccurs="0"/>
+ *         <element name="DefoggingOptions" type="{http://www.onvif.org/ver10/schema}DefoggingOptions" minOccurs="0"/>
+ *         <element name="NoiseReductionOptions" type="{http://www.onvif.org/ver10/schema}NoiseReductionOptions" minOccurs="0"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}ImagingOptions20Extension4" minOccurs="0"/>
  *       </sequence>
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ImagingOptions20Extension3", propOrder = { "any" })
+@XmlType(name = "ImagingOptions20Extension3", propOrder = {
+    "toneCompensationOptions",
+    "defoggingOptions",
+    "noiseReductionOptions",
+    "extension"
+})
 public class ImagingOptions20Extension3 {
 
-	@XmlAnyElement(lax = true)
-	protected List<java.lang.Object> any;
+    /**
+     * Options of parameters for Tone Compensation feature.
+     *
+     */
+    @XmlElement(name = "ToneCompensationOptions")
+    protected ToneCompensationOptions toneCompensationOptions;
+    /**
+     * Options of parameters for Defogging feature.
+     *
+     */
+    @XmlElement(name = "DefoggingOptions")
+    protected DefoggingOptions defoggingOptions;
+    /**
+     * Options of parameter for Noise Reduction feature.
+     *
+     */
+    @XmlElement(name = "NoiseReductionOptions")
+    protected NoiseReductionOptions noiseReductionOptions;
+    @XmlElement(name = "Extension")
+    protected ImagingOptions20Extension4 extension;
 
-	/**
-	 * Gets the value of the any property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a snapshot. Therefore any modification you make to the returned list will be present inside the JAXB object.
-	 * This is why there is not a <CODE>set</CODE> method for the any property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getAny().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list {@link Element } {@link java.lang.Object }
-	 * 
-	 * 
-	 */
-	public List<java.lang.Object> getAny() {
-		if (any == null) {
-			any = new ArrayList<java.lang.Object>();
-		}
-		return this.any;
-	}
+    /**
+     * Options of parameters for Tone Compensation feature.
+     *
+     * @return
+     *     possible object is
+     *     {@link ToneCompensationOptions }
+     *
+     */
+    public ToneCompensationOptions getToneCompensationOptions() {
+        return toneCompensationOptions;
+    }
+
+    /**
+     * Sets the value of the toneCompensationOptions property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link ToneCompensationOptions }
+     *
+     * @see #getToneCompensationOptions()
+     */
+    public void setToneCompensationOptions(ToneCompensationOptions value) {
+        this.toneCompensationOptions = value;
+    }
+
+    /**
+     * Options of parameters for Defogging feature.
+     *
+     * @return
+     *     possible object is
+     *     {@link DefoggingOptions }
+     *
+     */
+    public DefoggingOptions getDefoggingOptions() {
+        return defoggingOptions;
+    }
+
+    /**
+     * Sets the value of the defoggingOptions property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link DefoggingOptions }
+     *
+     * @see #getDefoggingOptions()
+     */
+    public void setDefoggingOptions(DefoggingOptions value) {
+        this.defoggingOptions = value;
+    }
+
+    /**
+     * Options of parameter for Noise Reduction feature.
+     *
+     * @return
+     *     possible object is
+     *     {@link NoiseReductionOptions }
+     *
+     */
+    public NoiseReductionOptions getNoiseReductionOptions() {
+        return noiseReductionOptions;
+    }
+
+    /**
+     * Sets the value of the noiseReductionOptions property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link NoiseReductionOptions }
+     *
+     * @see #getNoiseReductionOptions()
+     */
+    public void setNoiseReductionOptions(NoiseReductionOptions value) {
+        this.noiseReductionOptions = value;
+    }
+
+    /**
+     * Gets the value of the extension property.
+     *
+     * @return
+     *     possible object is
+     *     {@link ImagingOptions20Extension4 }
+     *
+     */
+    public ImagingOptions20Extension4 getExtension() {
+        return extension;
+    }
+
+    /**
+     * Sets the value of the extension property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link ImagingOptions20Extension4 }
+     *
+     */
+    public void setExtension(ImagingOptions20Extension4 value) {
+        this.extension = value;
+    }
 
 }

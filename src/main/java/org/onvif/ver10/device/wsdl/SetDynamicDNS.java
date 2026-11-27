@@ -1,30 +1,24 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.04 um 12:22:03 PM CET 
-//
 
 package org.onvif.ver10.device.wsdl;
 
+import javax.xml.datatype.Duration;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.Duration;
 import org.onvif.ver10.schema.DynamicDNSType;
 
+
 /**
- * <p>
- * Java-Klasse f�r anonymous complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ * <p>Java class for anonymous complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType>
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -36,84 +30,114 @@ import org.onvif.ver10.schema.DynamicDNSType;
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = { "type", "name", "ttl" })
+@XmlType(name = "", propOrder = {
+    "type",
+    "name",
+    "ttl"
+})
 @XmlRootElement(name = "SetDynamicDNS")
 public class SetDynamicDNS {
 
-	@XmlElement(name = "Type", required = true)
-	protected DynamicDNSType type;
-	@XmlElement(name = "Name")
-	@XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-	protected String name;
-	@XmlElement(name = "TTL")
-	protected Duration ttl;
+    /**
+     * Dynamic DNS type.
+     *
+     */
+    @XmlElement(name = "Type", required = true)
+    @XmlSchemaType(name = "string")
+    protected DynamicDNSType type;
+    /**
+     * DNS name.
+     *
+     */
+    @XmlElement(name = "Name")
+    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
+    @XmlSchemaType(name = "token")
+    protected String name;
+    /**
+     * DNS record time to live.
+     *
+     */
+    @XmlElement(name = "TTL")
+    protected Duration ttl;
 
-	/**
-	 * Ruft den Wert der type-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link DynamicDNSType }
-	 * 
-	 */
-	public DynamicDNSType getType() {
-		return type;
-	}
+    /**
+     * Dynamic DNS type.
+     *
+     * @return
+     *     possible object is
+     *     {@link DynamicDNSType }
+     *
+     */
+    public DynamicDNSType getType() {
+        return type;
+    }
 
-	/**
-	 * Legt den Wert der type-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link DynamicDNSType }
-	 * 
-	 */
-	public void setType(DynamicDNSType value) {
-		this.type = value;
-	}
+    /**
+     * Sets the value of the type property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link DynamicDNSType }
+     *
+     * @see #getType()
+     */
+    public void setType(DynamicDNSType value) {
+        this.type = value;
+    }
 
-	/**
-	 * Ruft den Wert der name-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getName() {
-		return name;
-	}
+    /**
+     * DNS name.
+     *
+     * @return
+     *     possible object is
+     *     {@link String }
+     *
+     */
+    public String getName() {
+        return name;
+    }
 
-	/**
-	 * Legt den Wert der name-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setName(String value) {
-		this.name = value;
-	}
+    /**
+     * Sets the value of the name property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *
+     * @see #getName()
+     */
+    public void setName(String value) {
+        this.name = value;
+    }
 
-	/**
-	 * Ruft den Wert der ttl-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link Duration }
-	 * 
-	 */
-	public Duration getTTL() {
-		return ttl;
-	}
+    /**
+     * DNS record time to live.
+     *
+     * @return
+     *     possible object is
+     *     {@link Duration }
+     *
+     */
+    public Duration getTTL() {
+        return ttl;
+    }
 
-	/**
-	 * Legt den Wert der ttl-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Duration }
-	 * 
-	 */
-	public void setTTL(Duration value) {
-		this.ttl = value;
-	}
+    /**
+     * Sets the value of the ttl property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Duration }
+     *
+     * @see #getTTL()
+     */
+    public void setTTL(Duration value) {
+        this.ttl = value;
+    }
 
 }

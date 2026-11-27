@@ -1,9 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.04 um 12:22:03 PM CET 
-//
 
 package org.onvif.ver10.schema;
 
@@ -11,58 +5,74 @@ import jakarta.xml.bind.annotation.XmlEnum;
 import jakarta.xml.bind.annotation.XmlEnumValue;
 import jakarta.xml.bind.annotation.XmlType;
 
+
 /**
- * <p>
- * Java-Klasse f�r FactoryDefaultType.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * <p>
- * 
- * <pre>
+ * Enumeration describing the available factory default modes.
+ *
+ * <p>Java class for FactoryDefaultType</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <pre>{@code
  * <simpleType name="FactoryDefaultType">
  *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
  *     <enumeration value="Hard"/>
  *     <enumeration value="Soft"/>
  *   </restriction>
  * </simpleType>
- * </pre>
- * 
+ * }</pre>
+ *
  */
 @XmlType(name = "FactoryDefaultType")
 @XmlEnum
 public enum FactoryDefaultType {
 
-	/**
-	 * Indicates that a hard factory default is requested.
-	 * 
-	 */
-	@XmlEnumValue("Hard")
-	HARD("Hard"),
 
-	/**
-	 * Indicates that a soft factory default is requested.
-	 * 
-	 */
-	@XmlEnumValue("Soft")
-	SOFT("Soft");
-	private final String value;
+    /**
+     * Indicates that a hard factory default is requested.
+     *
+     */
+    @XmlEnumValue("Hard")
+    HARD("Hard"),
 
-	FactoryDefaultType(String v) {
-		value = v;
-	}
+    /**
+     * Indicates that a soft factory default is requested.
+     *
+     */
+    @XmlEnumValue("Soft")
+    SOFT("Soft");
+    private final String value;
 
-	public String value() {
-		return value;
-	}
+    FactoryDefaultType(String v) {
+        value = v;
+    }
 
-	public static FactoryDefaultType fromValue(String v) {
-		for (FactoryDefaultType c : FactoryDefaultType.values()) {
-			if (c.value.equals(v)) {
-				return c;
-			}
-		}
-		throw new IllegalArgumentException(v);
-	}
+    /**
+     * Gets the value associated to the enum constant.
+     *
+     * @return
+     *     The value linked to the enum.
+     */
+    public String value() {
+        return value;
+    }
+
+    /**
+     * Gets the enum associated to the value passed as parameter.
+     *
+     * @param v
+     *     The value to get the enum from.
+     * @return
+     *     The enum which corresponds to the value, if it exists.
+     * @throws IllegalArgumentException
+     *     If no value matches in the enum declaration.
+     */
+    public static FactoryDefaultType fromValue(String v) {
+        for (FactoryDefaultType c: FactoryDefaultType.values()) {
+            if (c.value.equals(v)) {
+                return c;
+            }
+        }
+        throw new IllegalArgumentException(v);
+    }
 
 }

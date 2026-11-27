@@ -1,9 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.04 um 12:22:03 PM CET 
-//
 
 package org.onvif.ver10.device.wsdl;
 
@@ -13,14 +7,13 @@ import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
 
+
 /**
- * <p>
- * Java-Klasse f�r anonymous complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ * <p>Java class for anonymous complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType>
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -34,129 +27,175 @@ import jakarta.xml.bind.annotation.XmlType;
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = { "manufacturer", "model", "firmwareVersion", "serialNumber", "hardwareId" })
+@XmlType(name = "", propOrder = {
+    "manufacturer",
+    "model",
+    "firmwareVersion",
+    "serialNumber",
+    "hardwareId"
+})
 @XmlRootElement(name = "GetDeviceInformationResponse")
 public class GetDeviceInformationResponse {
 
-	@XmlElement(name = "Manufacturer", required = true)
-	protected String manufacturer;
-	@XmlElement(name = "Model", required = true)
-	protected String model;
-	@XmlElement(name = "FirmwareVersion", required = true)
-	protected String firmwareVersion;
-	@XmlElement(name = "SerialNumber", required = true)
-	protected String serialNumber;
-	@XmlElement(name = "HardwareId", required = true)
-	protected String hardwareId;
+    /**
+     * The manufactor of the device.
+     *
+     */
+    @XmlElement(name = "Manufacturer", required = true)
+    protected String manufacturer;
+    /**
+     * The device model.
+     *
+     */
+    @XmlElement(name = "Model", required = true)
+    protected String model;
+    /**
+     * The firmware version in the device.
+     *
+     */
+    @XmlElement(name = "FirmwareVersion", required = true)
+    protected String firmwareVersion;
+    /**
+     * The serial number of the device.
+     *
+     */
+    @XmlElement(name = "SerialNumber", required = true)
+    protected String serialNumber;
+    /**
+     * The hardware ID of the device.
+     *
+     */
+    @XmlElement(name = "HardwareId", required = true)
+    protected String hardwareId;
 
-	/**
-	 * Ruft den Wert der manufacturer-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getManufacturer() {
-		return manufacturer;
-	}
+    /**
+     * The manufactor of the device.
+     *
+     * @return
+     *     possible object is
+     *     {@link String }
+     *
+     */
+    public String getManufacturer() {
+        return manufacturer;
+    }
 
-	/**
-	 * Legt den Wert der manufacturer-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setManufacturer(String value) {
-		this.manufacturer = value;
-	}
+    /**
+     * Sets the value of the manufacturer property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *
+     * @see #getManufacturer()
+     */
+    public void setManufacturer(String value) {
+        this.manufacturer = value;
+    }
 
-	/**
-	 * Ruft den Wert der model-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getModel() {
-		return model;
-	}
+    /**
+     * The device model.
+     *
+     * @return
+     *     possible object is
+     *     {@link String }
+     *
+     */
+    public String getModel() {
+        return model;
+    }
 
-	/**
-	 * Legt den Wert der model-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setModel(String value) {
-		this.model = value;
-	}
+    /**
+     * Sets the value of the model property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *
+     * @see #getModel()
+     */
+    public void setModel(String value) {
+        this.model = value;
+    }
 
-	/**
-	 * Ruft den Wert der firmwareVersion-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getFirmwareVersion() {
-		return firmwareVersion;
-	}
+    /**
+     * The firmware version in the device.
+     *
+     * @return
+     *     possible object is
+     *     {@link String }
+     *
+     */
+    public String getFirmwareVersion() {
+        return firmwareVersion;
+    }
 
-	/**
-	 * Legt den Wert der firmwareVersion-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setFirmwareVersion(String value) {
-		this.firmwareVersion = value;
-	}
+    /**
+     * Sets the value of the firmwareVersion property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *
+     * @see #getFirmwareVersion()
+     */
+    public void setFirmwareVersion(String value) {
+        this.firmwareVersion = value;
+    }
 
-	/**
-	 * Ruft den Wert der serialNumber-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getSerialNumber() {
-		return serialNumber;
-	}
+    /**
+     * The serial number of the device.
+     *
+     * @return
+     *     possible object is
+     *     {@link String }
+     *
+     */
+    public String getSerialNumber() {
+        return serialNumber;
+    }
 
-	/**
-	 * Legt den Wert der serialNumber-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setSerialNumber(String value) {
-		this.serialNumber = value;
-	}
+    /**
+     * Sets the value of the serialNumber property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *
+     * @see #getSerialNumber()
+     */
+    public void setSerialNumber(String value) {
+        this.serialNumber = value;
+    }
 
-	/**
-	 * Ruft den Wert der hardwareId-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getHardwareId() {
-		return hardwareId;
-	}
+    /**
+     * The hardware ID of the device.
+     *
+     * @return
+     *     possible object is
+     *     {@link String }
+     *
+     */
+    public String getHardwareId() {
+        return hardwareId;
+    }
 
-	/**
-	 * Legt den Wert der hardwareId-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setHardwareId(String value) {
-		this.hardwareId = value;
-	}
+    /**
+     * Sets the value of the hardwareId property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *
+     * @see #getHardwareId()
+     */
+    public void setHardwareId(String value) {
+        this.hardwareId = value;
+    }
 
 }

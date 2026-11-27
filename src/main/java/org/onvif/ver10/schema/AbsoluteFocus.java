@@ -1,9 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.04 um 12:22:03 PM CET 
-//
 
 package org.onvif.ver10.schema;
 
@@ -12,14 +6,13 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
 
+
 /**
- * <p>
- * Java-Klasse f�r AbsoluteFocus complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ * <p>Java class for AbsoluteFocus complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType name="AbsoluteFocus">
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -30,54 +23,69 @@ import jakarta.xml.bind.annotation.XmlType;
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "AbsoluteFocus", propOrder = { "position", "speed" })
+@XmlType(name = "AbsoluteFocus", propOrder = {
+    "position",
+    "speed"
+})
 public class AbsoluteFocus {
 
-	@XmlElement(name = "Position")
-	protected float position;
-	@XmlElement(name = "Speed")
-	protected Float speed;
+    /**
+     * Position parameter for the absolute focus control.
+     *
+     */
+    @XmlElement(name = "Position")
+    protected float position;
+    /**
+     * Speed parameter for the absolute focus control.
+     *
+     */
+    @XmlElement(name = "Speed")
+    protected Float speed;
 
-	/**
-	 * Ruft den Wert der position-Eigenschaft ab.
-	 * 
-	 */
-	public float getPosition() {
-		return position;
-	}
+    /**
+     * Position parameter for the absolute focus control.
+     *
+     */
+    public float getPosition() {
+        return position;
+    }
 
-	/**
-	 * Legt den Wert der position-Eigenschaft fest.
-	 * 
-	 */
-	public void setPosition(float value) {
-		this.position = value;
-	}
+    /**
+     * Sets the value of the position property.
+     *
+     */
+    public void setPosition(float value) {
+        this.position = value;
+    }
 
-	/**
-	 * Ruft den Wert der speed-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link Float }
-	 * 
-	 */
-	public Float getSpeed() {
-		return speed;
-	}
+    /**
+     * Speed parameter for the absolute focus control.
+     *
+     * @return
+     *     possible object is
+     *     {@link Float }
+     *
+     */
+    public Float getSpeed() {
+        return speed;
+    }
 
-	/**
-	 * Legt den Wert der speed-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Float }
-	 * 
-	 */
-	public void setSpeed(Float value) {
-		this.speed = value;
-	}
+    /**
+     * Sets the value of the speed property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Float }
+     *
+     * @see #getSpeed()
+     */
+    public void setSpeed(Float value) {
+        this.speed = value;
+    }
 
 }

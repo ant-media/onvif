@@ -1,9 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.04 um 12:22:03 PM CET 
-//
 
 package org.oasis_open.docs.wsn.b_2;
 
@@ -15,14 +9,13 @@ import jakarta.xml.bind.annotation.XmlType;
 import org.w3._2005._08.addressing.EndpointReferenceType;
 import org.w3c.dom.Element;
 
+
 /**
- * <p>
- * Java-Klasse f�r NotificationMessageHolderType complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ * <p>Java class for NotificationMessageHolderType complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType name="NotificationMessageHolderType">
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -45,156 +38,179 @@ import org.w3c.dom.Element;
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "NotificationMessageHolderType", propOrder = { "subscriptionReference", "topic", "producerReference", "message" })
+@XmlType(name = "NotificationMessageHolderType", propOrder = {
+    "subscriptionReference",
+    "topic",
+    "producerReference",
+    "message"
+})
 public class NotificationMessageHolderType {
 
-	@XmlElement(name = "SubscriptionReference")
-	protected EndpointReferenceType subscriptionReference;
-	@XmlElement(name = "Topic")
-	protected TopicExpressionType topic;
-	@XmlElement(name = "ProducerReference")
-	protected EndpointReferenceType producerReference;
-	@XmlElement(name = "Message", required = true)
-	protected NotificationMessageHolderType.Message message;
+    @XmlElement(name = "SubscriptionReference")
+    protected EndpointReferenceType subscriptionReference;
+    @XmlElement(name = "Topic")
+    protected TopicExpressionType topic;
+    @XmlElement(name = "ProducerReference")
+    protected EndpointReferenceType producerReference;
+    @XmlElement(name = "Message", required = true)
+    protected NotificationMessageHolderType.Message message;
 
-	/**
-	 * Ruft den Wert der subscriptionReference-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link EndpointReferenceType }
-	 * 
-	 */
-	public EndpointReferenceType getSubscriptionReference() {
-		return subscriptionReference;
-	}
+    /**
+     * Gets the value of the subscriptionReference property.
+     *
+     * @return
+     *     possible object is
+     *     {@link EndpointReferenceType }
+     *
+     */
+    public EndpointReferenceType getSubscriptionReference() {
+        return subscriptionReference;
+    }
 
-	/**
-	 * Legt den Wert der subscriptionReference-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link EndpointReferenceType }
-	 * 
-	 */
-	public void setSubscriptionReference(EndpointReferenceType value) {
-		this.subscriptionReference = value;
-	}
+    /**
+     * Sets the value of the subscriptionReference property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link EndpointReferenceType }
+     *
+     */
+    public void setSubscriptionReference(EndpointReferenceType value) {
+        this.subscriptionReference = value;
+    }
 
-	/**
-	 * Ruft den Wert der topic-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link TopicExpressionType }
-	 * 
-	 */
-	public TopicExpressionType getTopic() {
-		return topic;
-	}
+    /**
+     * Gets the value of the topic property.
+     *
+     * @return
+     *     possible object is
+     *     {@link TopicExpressionType }
+     *
+     */
+    public TopicExpressionType getTopic() {
+        return topic;
+    }
 
-	/**
-	 * Legt den Wert der topic-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link TopicExpressionType }
-	 * 
-	 */
-	public void setTopic(TopicExpressionType value) {
-		this.topic = value;
-	}
+    /**
+     * Sets the value of the topic property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link TopicExpressionType }
+     *
+     */
+    public void setTopic(TopicExpressionType value) {
+        this.topic = value;
+    }
 
-	/**
-	 * Ruft den Wert der producerReference-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link EndpointReferenceType }
-	 * 
-	 */
-	public EndpointReferenceType getProducerReference() {
-		return producerReference;
-	}
+    /**
+     * Gets the value of the producerReference property.
+     *
+     * @return
+     *     possible object is
+     *     {@link EndpointReferenceType }
+     *
+     */
+    public EndpointReferenceType getProducerReference() {
+        return producerReference;
+    }
 
-	/**
-	 * Legt den Wert der producerReference-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link EndpointReferenceType }
-	 * 
-	 */
-	public void setProducerReference(EndpointReferenceType value) {
-		this.producerReference = value;
-	}
+    /**
+     * Sets the value of the producerReference property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link EndpointReferenceType }
+     *
+     */
+    public void setProducerReference(EndpointReferenceType value) {
+        this.producerReference = value;
+    }
 
-	/**
-	 * Ruft den Wert der message-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link NotificationMessageHolderType.Message }
-	 * 
-	 */
-	public NotificationMessageHolderType.Message getMessage() {
-		return message;
-	}
+    /**
+     * Gets the value of the message property.
+     *
+     * @return
+     *     possible object is
+     *     {@link NotificationMessageHolderType.Message }
+     *
+     */
+    public NotificationMessageHolderType.Message getMessage() {
+        return message;
+    }
 
-	/**
-	 * Legt den Wert der message-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link NotificationMessageHolderType.Message }
-	 * 
-	 */
-	public void setMessage(NotificationMessageHolderType.Message value) {
-		this.message = value;
-	}
+    /**
+     * Sets the value of the message property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link NotificationMessageHolderType.Message }
+     *
+     */
+    public void setMessage(NotificationMessageHolderType.Message value) {
+        this.message = value;
+    }
 
-	/**
-	 * <p>
-	 * Java-Klasse f�r anonymous complex type.
-	 * 
-	 * <p>
-	 * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
-	 * 
-	 * <pre>
-	 * <complexType>
-	 *   <complexContent>
-	 *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-	 *       <sequence>
-	 *         <any processContents='lax'/>
-	 *       </sequence>
-	 *     </restriction>
-	 *   </complexContent>
-	 * </complexType>
-	 * </pre>
-	 * 
-	 * 
-	 */
-	@XmlAccessorType(XmlAccessType.FIELD)
-	@XmlType(name = "", propOrder = { "any" })
-	public static class Message {
 
-		@XmlAnyElement(lax = true)
-		protected Object any;
+    /**
+     * <p>Java class for anonymous complex type</p>.
+     *
+     * <p>The following schema fragment specifies the expected content contained within this class.</p>
+     *
+     * <pre>{@code
+     * <complexType>
+     *   <complexContent>
+     *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+     *       <sequence>
+     *         <any processContents='lax'/>
+     *       </sequence>
+     *     </restriction>
+     *   </complexContent>
+     * </complexType>
+     * }</pre>
+     *
+     *
+     */
+    @XmlAccessorType(XmlAccessType.FIELD)
+    @XmlType(name = "", propOrder = {
+        "any"
+    })
+    public static class Message {
 
-		/**
-		 * Ruft den Wert der any-Eigenschaft ab.
-		 * 
-		 * @return possible object is {@link Element } {@link Object }
-		 * 
-		 */
-		public Object getAny() {
-			return any;
-		}
+        @XmlAnyElement(lax = true)
+        protected Object any;
 
-		/**
-		 * Legt den Wert der any-Eigenschaft fest.
-		 * 
-		 * @param value
-		 *            allowed object is {@link Element } {@link Object }
-		 * 
-		 */
-		public void setAny(Object value) {
-			this.any = value;
-		}
+        /**
+         * Gets the value of the any property.
+         *
+         * @return
+         *     possible object is
+         *     {@link Object }
+         *     {@link Element }
+         *
+         */
+        public Object getAny() {
+            return any;
+        }
 
-	}
+        /**
+         * Sets the value of the any property.
+         *
+         * @param value
+         *     allowed object is
+         *     {@link Object }
+         *     {@link Element }
+         *
+         */
+        public void setAny(Object value) {
+            this.any = value;
+        }
+
+    }
 
 }

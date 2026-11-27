@@ -1,10 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2016.02.05 um 06:25:30 PM CET 
-//
-
 
 package org.onvif.ver10.schema;
 
@@ -12,34 +5,34 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.xml.namespace.QName;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
-import javax.xml.namespace.QName;
 
 
 /**
- * <p>Java-Klasse f�r ArrayOfFileProgress complex type.
- * 
- * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
- * &lt;complexType name="ArrayOfFileProgress">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="FileProgress" type="{http://www.onvif.org/ver10/schema}FileProgress" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}ArrayOfFileProgressExtension" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;anyAttribute processContents='lax'/>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * <p>Java class for ArrayOfFileProgress complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
+ * <complexType name="ArrayOfFileProgress">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="FileProgress" type="{http://www.onvif.org/ver10/schema}FileProgress" maxOccurs="unbounded" minOccurs="0"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}ArrayOfFileProgressExtension" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ArrayOfFileProgress", propOrder = {
@@ -48,61 +41,70 @@ import javax.xml.namespace.QName;
 })
 public class ArrayOfFileProgress {
 
+    /**
+     * Exported file name and export progress information
+     *
+     */
     @XmlElement(name = "FileProgress")
     protected List<FileProgress> fileProgress;
     @XmlElement(name = "Extension")
     protected ArrayOfFileProgressExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
+     * Exported file name and export progress information
+     *
      * Gets the value of the fileProgress property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     *
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the fileProgress property.
-     * 
+     * This is why there is not a <CODE>set</CODE> method for the fileProgress property.</p>
+     *
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getFileProgress().add(newItem);
+     * getFileProgress().add(newItem);
      * </pre>
-     * 
-     * 
+     *
+     *
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link FileProgress }
-     * 
-     * 
+     * </p>
+     *
+     *
+     * @return
+     *     The value of the fileProgress property.
      */
     public List<FileProgress> getFileProgress() {
         if (fileProgress == null) {
-            fileProgress = new ArrayList<FileProgress>();
+            fileProgress = new ArrayList<>();
         }
         return this.fileProgress;
     }
 
     /**
-     * Ruft den Wert der extension-Eigenschaft ab.
-     * 
+     * Gets the value of the extension property.
+     *
      * @return
      *     possible object is
      *     {@link ArrayOfFileProgressExtension }
-     *     
+     *
      */
     public ArrayOfFileProgressExtension getExtension() {
         return extension;
     }
 
     /**
-     * Legt den Wert der extension-Eigenschaft fest.
-     * 
+     * Sets the value of the extension property.
+     *
      * @param value
      *     allowed object is
      *     {@link ArrayOfFileProgressExtension }
-     *     
+     *
      */
     public void setExtension(ArrayOfFileProgressExtension value) {
         this.extension = value;
@@ -110,15 +112,15 @@ public class ArrayOfFileProgress {
 
     /**
      * Gets a map that contains attributes that aren't bound to any typed property on this class.
-     * 
+     *
      * <p>
-     * the map is keyed by the name of the attribute and 
+     * the map is keyed by the name of the attribute and
      * the value is the string value of the attribute.
-     * 
+     *
      * the map returned by this method is live, and you can add new attribute
      * by updating the map directly. Because of this design, there's no setter.
-     * 
-     * 
+     *
+     *
      * @return
      *     always non-null
      */

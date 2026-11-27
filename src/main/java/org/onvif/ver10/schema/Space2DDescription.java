@@ -1,9 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.04 um 12:22:03 PM CET 
-//
 
 package org.onvif.ver10.schema;
 
@@ -13,14 +7,13 @@ import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 
+
 /**
- * <p>
- * Java-Klasse f�r Space2DDescription complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ * <p>Java class for Space2DDescription complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType name="Space2DDescription">
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -32,83 +25,111 @@ import jakarta.xml.bind.annotation.XmlType;
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Space2DDescription", propOrder = { "uri", "xRange", "yRange" })
+@XmlType(name = "Space2DDescription", propOrder = {
+    "uri",
+    "xRange",
+    "yRange"
+})
 public class Space2DDescription {
 
-	@XmlElement(name = "URI", required = true)
-	@XmlSchemaType(name = "anyURI")
-	protected String uri;
-	@XmlElement(name = "XRange", required = true)
-	protected FloatRange xRange;
-	@XmlElement(name = "YRange", required = true)
-	protected FloatRange yRange;
+    /**
+     * A URI of coordinate systems.
+     *
+     */
+    @XmlElement(name = "URI", required = true)
+    @XmlSchemaType(name = "anyURI")
+    protected String uri;
+    /**
+     * A range of x-axis.
+     *
+     */
+    @XmlElement(name = "XRange", required = true)
+    protected FloatRange xRange;
+    /**
+     * A range of y-axis.
+     *
+     */
+    @XmlElement(name = "YRange", required = true)
+    protected FloatRange yRange;
 
-	/**
-	 * Ruft den Wert der uri-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getURI() {
-		return uri;
-	}
+    /**
+     * A URI of coordinate systems.
+     *
+     * @return
+     *     possible object is
+     *     {@link String }
+     *
+     */
+    public String getURI() {
+        return uri;
+    }
 
-	/**
-	 * Legt den Wert der uri-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setURI(String value) {
-		this.uri = value;
-	}
+    /**
+     * Sets the value of the uri property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *
+     * @see #getURI()
+     */
+    public void setURI(String value) {
+        this.uri = value;
+    }
 
-	/**
-	 * Ruft den Wert der xRange-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link FloatRange }
-	 * 
-	 */
-	public FloatRange getXRange() {
-		return xRange;
-	}
+    /**
+     * A range of x-axis.
+     *
+     * @return
+     *     possible object is
+     *     {@link FloatRange }
+     *
+     */
+    public FloatRange getXRange() {
+        return xRange;
+    }
 
-	/**
-	 * Legt den Wert der xRange-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link FloatRange }
-	 * 
-	 */
-	public void setXRange(FloatRange value) {
-		this.xRange = value;
-	}
+    /**
+     * Sets the value of the xRange property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link FloatRange }
+     *
+     * @see #getXRange()
+     */
+    public void setXRange(FloatRange value) {
+        this.xRange = value;
+    }
 
-	/**
-	 * Ruft den Wert der yRange-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link FloatRange }
-	 * 
-	 */
-	public FloatRange getYRange() {
-		return yRange;
-	}
+    /**
+     * A range of y-axis.
+     *
+     * @return
+     *     possible object is
+     *     {@link FloatRange }
+     *
+     */
+    public FloatRange getYRange() {
+        return yRange;
+    }
 
-	/**
-	 * Legt den Wert der yRange-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link FloatRange }
-	 * 
-	 */
-	public void setYRange(FloatRange value) {
-		this.yRange = value;
-	}
+    /**
+     * Sets the value of the yRange property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link FloatRange }
+     *
+     * @see #getYRange()
+     */
+    public void setYRange(FloatRange value) {
+        this.yRange = value;
+    }
 
 }

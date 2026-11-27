@@ -1,9 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.17 um 11:33:29 AM CET 
-//
 
 package org.onvif.ver20.ptz.wsdl;
 
@@ -15,14 +9,13 @@ import jakarta.xml.bind.annotation.XmlType;
 import org.onvif.ver10.schema.PTZSpeed;
 import org.onvif.ver10.schema.PTZVector;
 
+
 /**
- * <p>
- * Java-Klasse f�r anonymous complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ * <p>Java class for anonymous complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType>
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -34,83 +27,111 @@ import org.onvif.ver10.schema.PTZVector;
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = { "profileToken", "position", "speed" })
+@XmlType(name = "", propOrder = {
+    "profileToken",
+    "position",
+    "speed"
+})
 @XmlRootElement(name = "AbsoluteMove")
 public class AbsoluteMove {
 
-	@XmlElement(name = "ProfileToken", required = true)
-	protected String profileToken;
-	@XmlElement(name = "Position", required = true)
-	protected PTZVector position;
-	@XmlElement(name = "Speed")
-	protected PTZSpeed speed;
+    /**
+     * A reference to the MediaProfile.
+     *
+     */
+    @XmlElement(name = "ProfileToken", required = true)
+    protected String profileToken;
+    /**
+     * A Position vector specifying the absolute target position.
+     *
+     */
+    @XmlElement(name = "Position", required = true)
+    protected PTZVector position;
+    /**
+     * An optional Speed.
+     *
+     */
+    @XmlElement(name = "Speed")
+    protected PTZSpeed speed;
 
-	/**
-	 * Ruft den Wert der profileToken-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getProfileToken() {
-		return profileToken;
-	}
+    /**
+     * A reference to the MediaProfile.
+     *
+     * @return
+     *     possible object is
+     *     {@link String }
+     *
+     */
+    public String getProfileToken() {
+        return profileToken;
+    }
 
-	/**
-	 * Legt den Wert der profileToken-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setProfileToken(String value) {
-		this.profileToken = value;
-	}
+    /**
+     * Sets the value of the profileToken property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *
+     * @see #getProfileToken()
+     */
+    public void setProfileToken(String value) {
+        this.profileToken = value;
+    }
 
-	/**
-	 * Ruft den Wert der position-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link PTZVector }
-	 * 
-	 */
-	public PTZVector getPosition() {
-		return position;
-	}
+    /**
+     * A Position vector specifying the absolute target position.
+     *
+     * @return
+     *     possible object is
+     *     {@link PTZVector }
+     *
+     */
+    public PTZVector getPosition() {
+        return position;
+    }
 
-	/**
-	 * Legt den Wert der position-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link PTZVector }
-	 * 
-	 */
-	public void setPosition(PTZVector value) {
-		this.position = value;
-	}
+    /**
+     * Sets the value of the position property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link PTZVector }
+     *
+     * @see #getPosition()
+     */
+    public void setPosition(PTZVector value) {
+        this.position = value;
+    }
 
-	/**
-	 * Ruft den Wert der speed-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link PTZSpeed }
-	 * 
-	 */
-	public PTZSpeed getSpeed() {
-		return speed;
-	}
+    /**
+     * An optional Speed.
+     *
+     * @return
+     *     possible object is
+     *     {@link PTZSpeed }
+     *
+     */
+    public PTZSpeed getSpeed() {
+        return speed;
+    }
 
-	/**
-	 * Legt den Wert der speed-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link PTZSpeed }
-	 * 
-	 */
-	public void setSpeed(PTZSpeed value) {
-		this.speed = value;
-	}
+    /**
+     * Sets the value of the speed property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link PTZSpeed }
+     *
+     * @see #getSpeed()
+     */
+    public void setSpeed(PTZSpeed value) {
+        this.speed = value;
+    }
 
 }

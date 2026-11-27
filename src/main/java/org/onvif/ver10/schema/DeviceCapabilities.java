@@ -1,30 +1,23 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.04 um 12:22:03 PM CET 
-//
 
 package org.onvif.ver10.schema;
 
 import java.util.HashMap;
 import java.util.Map;
+import javax.xml.namespace.QName;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
-import javax.xml.namespace.QName;
+
 
 /**
- * <p>
- * Java-Klasse f�r DeviceCapabilities complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ * <p>Java class for DeviceCapabilities complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType name="DeviceCapabilities">
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -40,169 +33,222 @@ import javax.xml.namespace.QName;
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "DeviceCapabilities", propOrder = { "xAddr", "network", "system", "io", "security", "extension" })
+@XmlType(name = "DeviceCapabilities", propOrder = {
+    "xAddr",
+    "network",
+    "system",
+    "io",
+    "security",
+    "extension"
+})
 public class DeviceCapabilities {
 
-	@XmlElement(name = "XAddr", required = true)
-	@XmlSchemaType(name = "anyURI")
-	protected String xAddr;
-	@XmlElement(name = "Network")
-	protected NetworkCapabilities network;
-	@XmlElement(name = "System")
-	protected SystemCapabilities system;
-	@XmlElement(name = "IO")
-	protected IOCapabilities io;
-	@XmlElement(name = "Security")
-	protected SecurityCapabilities security;
-	@XmlElement(name = "Extension")
-	protected DeviceCapabilitiesExtension extension;
-	@XmlAnyAttribute
-	private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    /**
+     * Device service URI.
+     *
+     */
+    @XmlElement(name = "XAddr", required = true)
+    @XmlSchemaType(name = "anyURI")
+    protected String xAddr;
+    /**
+     * Network capabilities.
+     *
+     */
+    @XmlElement(name = "Network")
+    protected NetworkCapabilities network;
+    /**
+     * System capabilities.
+     *
+     */
+    @XmlElement(name = "System")
+    protected SystemCapabilities system;
+    /**
+     * I/O capabilities.
+     *
+     */
+    @XmlElement(name = "IO")
+    protected IOCapabilities io;
+    /**
+     * Security capabilities.
+     *
+     */
+    @XmlElement(name = "Security")
+    protected SecurityCapabilities security;
+    @XmlElement(name = "Extension")
+    protected DeviceCapabilitiesExtension extension;
+    @XmlAnyAttribute
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
-	/**
-	 * Ruft den Wert der xAddr-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getXAddr() {
-		return xAddr;
-	}
+    /**
+     * Device service URI.
+     *
+     * @return
+     *     possible object is
+     *     {@link String }
+     *
+     */
+    public String getXAddr() {
+        return xAddr;
+    }
 
-	/**
-	 * Legt den Wert der xAddr-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setXAddr(String value) {
-		this.xAddr = value;
-	}
+    /**
+     * Sets the value of the xAddr property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *
+     * @see #getXAddr()
+     */
+    public void setXAddr(String value) {
+        this.xAddr = value;
+    }
 
-	/**
-	 * Ruft den Wert der network-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link NetworkCapabilities }
-	 * 
-	 */
-	public NetworkCapabilities getNetwork() {
-		return network;
-	}
+    /**
+     * Network capabilities.
+     *
+     * @return
+     *     possible object is
+     *     {@link NetworkCapabilities }
+     *
+     */
+    public NetworkCapabilities getNetwork() {
+        return network;
+    }
 
-	/**
-	 * Legt den Wert der network-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link NetworkCapabilities }
-	 * 
-	 */
-	public void setNetwork(NetworkCapabilities value) {
-		this.network = value;
-	}
+    /**
+     * Sets the value of the network property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link NetworkCapabilities }
+     *
+     * @see #getNetwork()
+     */
+    public void setNetwork(NetworkCapabilities value) {
+        this.network = value;
+    }
 
-	/**
-	 * Ruft den Wert der system-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link SystemCapabilities }
-	 * 
-	 */
-	public SystemCapabilities getSystem() {
-		return system;
-	}
+    /**
+     * System capabilities.
+     *
+     * @return
+     *     possible object is
+     *     {@link SystemCapabilities }
+     *
+     */
+    public SystemCapabilities getSystem() {
+        return system;
+    }
 
-	/**
-	 * Legt den Wert der system-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link SystemCapabilities }
-	 * 
-	 */
-	public void setSystem(SystemCapabilities value) {
-		this.system = value;
-	}
+    /**
+     * Sets the value of the system property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link SystemCapabilities }
+     *
+     * @see #getSystem()
+     */
+    public void setSystem(SystemCapabilities value) {
+        this.system = value;
+    }
 
-	/**
-	 * Ruft den Wert der io-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link IOCapabilities }
-	 * 
-	 */
-	public IOCapabilities getIO() {
-		return io;
-	}
+    /**
+     * I/O capabilities.
+     *
+     * @return
+     *     possible object is
+     *     {@link IOCapabilities }
+     *
+     */
+    public IOCapabilities getIO() {
+        return io;
+    }
 
-	/**
-	 * Legt den Wert der io-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link IOCapabilities }
-	 * 
-	 */
-	public void setIO(IOCapabilities value) {
-		this.io = value;
-	}
+    /**
+     * Sets the value of the io property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link IOCapabilities }
+     *
+     * @see #getIO()
+     */
+    public void setIO(IOCapabilities value) {
+        this.io = value;
+    }
 
-	/**
-	 * Ruft den Wert der security-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link SecurityCapabilities }
-	 * 
-	 */
-	public SecurityCapabilities getSecurity() {
-		return security;
-	}
+    /**
+     * Security capabilities.
+     *
+     * @return
+     *     possible object is
+     *     {@link SecurityCapabilities }
+     *
+     */
+    public SecurityCapabilities getSecurity() {
+        return security;
+    }
 
-	/**
-	 * Legt den Wert der security-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link SecurityCapabilities }
-	 * 
-	 */
-	public void setSecurity(SecurityCapabilities value) {
-		this.security = value;
-	}
+    /**
+     * Sets the value of the security property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link SecurityCapabilities }
+     *
+     * @see #getSecurity()
+     */
+    public void setSecurity(SecurityCapabilities value) {
+        this.security = value;
+    }
 
-	/**
-	 * Ruft den Wert der extension-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link DeviceCapabilitiesExtension }
-	 * 
-	 */
-	public DeviceCapabilitiesExtension getExtension() {
-		return extension;
-	}
+    /**
+     * Gets the value of the extension property.
+     *
+     * @return
+     *     possible object is
+     *     {@link DeviceCapabilitiesExtension }
+     *
+     */
+    public DeviceCapabilitiesExtension getExtension() {
+        return extension;
+    }
 
-	/**
-	 * Legt den Wert der extension-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link DeviceCapabilitiesExtension }
-	 * 
-	 */
-	public void setExtension(DeviceCapabilitiesExtension value) {
-		this.extension = value;
-	}
+    /**
+     * Sets the value of the extension property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link DeviceCapabilitiesExtension }
+     *
+     */
+    public void setExtension(DeviceCapabilitiesExtension value) {
+        this.extension = value;
+    }
 
-	/**
-	 * Gets a map that contains attributes that aren't bound to any typed property on this class.
-	 * 
-	 * <p>
-	 * the map is keyed by the name of the attribute and the value is the string value of the attribute.
-	 * 
-	 * the map returned by this method is live, and you can add new attribute by updating the map directly. Because of this design, there's no setter.
-	 * 
-	 * 
-	 * @return always non-null
-	 */
-	public Map<QName, String> getOtherAttributes() {
-		return otherAttributes;
-	}
+    /**
+     * Gets a map that contains attributes that aren't bound to any typed property on this class.
+     *
+     * <p>
+     * the map is keyed by the name of the attribute and
+     * the value is the string value of the attribute.
+     *
+     * the map returned by this method is live, and you can add new attribute
+     * by updating the map directly. Because of this design, there's no setter.
+     *
+     *
+     * @return
+     *     always non-null
+     */
+    public Map<QName, String> getOtherAttributes() {
+        return otherAttributes;
+    }
 
 }

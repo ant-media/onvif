@@ -1,44 +1,37 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2016.02.05 um 06:25:30 PM CET 
-//
-
 
 package org.onvif.ver10.schema;
 
 import java.util.HashMap;
 import java.util.Map;
+import javax.xml.namespace.QName;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
-import javax.xml.namespace.QName;
 
 
 /**
- * <p>Java-Klasse f�r Defogging complex type.
- * 
- * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
- * &lt;complexType name="Defogging">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Mode" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="Level" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}DefoggingExtension" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;anyAttribute processContents='lax'/>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * <p>Java class for Defogging complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
+ * <complexType name="Defogging">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Mode" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         <element name="Level" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}DefoggingExtension" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Defogging", propOrder = {
@@ -48,82 +41,92 @@ import javax.xml.namespace.QName;
 })
 public class Defogging {
 
+    /**
+     * Parameter to enable/disable or automatic Defogging feature. Its options shall be chosen from tt:DefoggingMode Type.
+     *
+     */
     @XmlElement(name = "Mode", required = true)
     protected String mode;
+    /**
+     * Optional level parameter specified with unitless normalized value from 0.0 to +1.0.
+     *
+     */
     @XmlElement(name = "Level")
     protected Float level;
     @XmlElement(name = "Extension")
     protected DefoggingExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Ruft den Wert der mode-Eigenschaft ab.
-     * 
+     * Parameter to enable/disable or automatic Defogging feature. Its options shall be chosen from tt:DefoggingMode Type.
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getMode() {
         return mode;
     }
 
     /**
-     * Legt den Wert der mode-Eigenschaft fest.
-     * 
+     * Sets the value of the mode property.
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
+     * @see #getMode()
      */
     public void setMode(String value) {
         this.mode = value;
     }
 
     /**
-     * Ruft den Wert der level-Eigenschaft ab.
-     * 
+     * Optional level parameter specified with unitless normalized value from 0.0 to +1.0.
+     *
      * @return
      *     possible object is
      *     {@link Float }
-     *     
+     *
      */
     public Float getLevel() {
         return level;
     }
 
     /**
-     * Legt den Wert der level-Eigenschaft fest.
-     * 
+     * Sets the value of the level property.
+     *
      * @param value
      *     allowed object is
      *     {@link Float }
-     *     
+     *
+     * @see #getLevel()
      */
     public void setLevel(Float value) {
         this.level = value;
     }
 
     /**
-     * Ruft den Wert der extension-Eigenschaft ab.
-     * 
+     * Gets the value of the extension property.
+     *
      * @return
      *     possible object is
      *     {@link DefoggingExtension }
-     *     
+     *
      */
     public DefoggingExtension getExtension() {
         return extension;
     }
 
     /**
-     * Legt den Wert der extension-Eigenschaft fest.
-     * 
+     * Sets the value of the extension property.
+     *
      * @param value
      *     allowed object is
      *     {@link DefoggingExtension }
-     *     
+     *
      */
     public void setExtension(DefoggingExtension value) {
         this.extension = value;
@@ -131,15 +134,15 @@ public class Defogging {
 
     /**
      * Gets a map that contains attributes that aren't bound to any typed property on this class.
-     * 
+     *
      * <p>
-     * the map is keyed by the name of the attribute and 
+     * the map is keyed by the name of the attribute and
      * the value is the string value of the attribute.
-     * 
+     *
      * the map returned by this method is live, and you can add new attribute
      * by updating the map directly. Because of this design, there's no setter.
-     * 
-     * 
+     *
+     *
      * @return
      *     always non-null
      */

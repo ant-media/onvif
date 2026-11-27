@@ -1,14 +1,9 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.04 um 12:22:03 PM CET 
-//
 
 package org.onvif.ver10.schema;
 
 import java.util.HashMap;
 import java.util.Map;
+import javax.xml.namespace.QName;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAnyAttribute;
@@ -17,16 +12,14 @@ import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.namespace.QName;
+
 
 /**
- * <p>
- * Java-Klasse f�r CertificateGenerationParameters complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ * <p>Java class for CertificateGenerationParameters complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType name="CertificateGenerationParameters">
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -41,151 +34,175 @@ import javax.xml.namespace.QName;
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "CertificateGenerationParameters", propOrder = { "certificateID", "subject", "validNotBefore", "validNotAfter", "extension" })
+@XmlType(name = "CertificateGenerationParameters", propOrder = {
+    "certificateID",
+    "subject",
+    "validNotBefore",
+    "validNotAfter",
+    "extension"
+})
 public class CertificateGenerationParameters {
 
-	@XmlElement(name = "CertificateID")
-	@XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-	@XmlSchemaType(name = "token")
-	protected String certificateID;
-	@XmlElement(name = "Subject")
-	protected String subject;
-	@XmlElement(name = "ValidNotBefore")
-	@XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-	@XmlSchemaType(name = "token")
-	protected String validNotBefore;
-	@XmlElement(name = "ValidNotAfter")
-	@XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-	@XmlSchemaType(name = "token")
-	protected String validNotAfter;
-	@XmlElement(name = "Extension")
-	protected CertificateGenerationParametersExtension extension;
-	@XmlAnyAttribute
-	private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    @XmlElement(name = "CertificateID")
+    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
+    @XmlSchemaType(name = "token")
+    protected String certificateID;
+    @XmlElement(name = "Subject")
+    protected String subject;
+    @XmlElement(name = "ValidNotBefore")
+    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
+    @XmlSchemaType(name = "token")
+    protected String validNotBefore;
+    @XmlElement(name = "ValidNotAfter")
+    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
+    @XmlSchemaType(name = "token")
+    protected String validNotAfter;
+    @XmlElement(name = "Extension")
+    protected CertificateGenerationParametersExtension extension;
+    @XmlAnyAttribute
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
-	/**
-	 * Ruft den Wert der certificateID-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getCertificateID() {
-		return certificateID;
-	}
+    /**
+     * Gets the value of the certificateID property.
+     *
+     * @return
+     *     possible object is
+     *     {@link String }
+     *
+     */
+    public String getCertificateID() {
+        return certificateID;
+    }
 
-	/**
-	 * Legt den Wert der certificateID-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setCertificateID(String value) {
-		this.certificateID = value;
-	}
+    /**
+     * Sets the value of the certificateID property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *
+     */
+    public void setCertificateID(String value) {
+        this.certificateID = value;
+    }
 
-	/**
-	 * Ruft den Wert der subject-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getSubject() {
-		return subject;
-	}
+    /**
+     * Gets the value of the subject property.
+     *
+     * @return
+     *     possible object is
+     *     {@link String }
+     *
+     */
+    public String getSubject() {
+        return subject;
+    }
 
-	/**
-	 * Legt den Wert der subject-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setSubject(String value) {
-		this.subject = value;
-	}
+    /**
+     * Sets the value of the subject property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *
+     */
+    public void setSubject(String value) {
+        this.subject = value;
+    }
 
-	/**
-	 * Ruft den Wert der validNotBefore-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getValidNotBefore() {
-		return validNotBefore;
-	}
+    /**
+     * Gets the value of the validNotBefore property.
+     *
+     * @return
+     *     possible object is
+     *     {@link String }
+     *
+     */
+    public String getValidNotBefore() {
+        return validNotBefore;
+    }
 
-	/**
-	 * Legt den Wert der validNotBefore-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setValidNotBefore(String value) {
-		this.validNotBefore = value;
-	}
+    /**
+     * Sets the value of the validNotBefore property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *
+     */
+    public void setValidNotBefore(String value) {
+        this.validNotBefore = value;
+    }
 
-	/**
-	 * Ruft den Wert der validNotAfter-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getValidNotAfter() {
-		return validNotAfter;
-	}
+    /**
+     * Gets the value of the validNotAfter property.
+     *
+     * @return
+     *     possible object is
+     *     {@link String }
+     *
+     */
+    public String getValidNotAfter() {
+        return validNotAfter;
+    }
 
-	/**
-	 * Legt den Wert der validNotAfter-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setValidNotAfter(String value) {
-		this.validNotAfter = value;
-	}
+    /**
+     * Sets the value of the validNotAfter property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *
+     */
+    public void setValidNotAfter(String value) {
+        this.validNotAfter = value;
+    }
 
-	/**
-	 * Ruft den Wert der extension-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link CertificateGenerationParametersExtension }
-	 * 
-	 */
-	public CertificateGenerationParametersExtension getExtension() {
-		return extension;
-	}
+    /**
+     * Gets the value of the extension property.
+     *
+     * @return
+     *     possible object is
+     *     {@link CertificateGenerationParametersExtension }
+     *
+     */
+    public CertificateGenerationParametersExtension getExtension() {
+        return extension;
+    }
 
-	/**
-	 * Legt den Wert der extension-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link CertificateGenerationParametersExtension }
-	 * 
-	 */
-	public void setExtension(CertificateGenerationParametersExtension value) {
-		this.extension = value;
-	}
+    /**
+     * Sets the value of the extension property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link CertificateGenerationParametersExtension }
+     *
+     */
+    public void setExtension(CertificateGenerationParametersExtension value) {
+        this.extension = value;
+    }
 
-	/**
-	 * Gets a map that contains attributes that aren't bound to any typed property on this class.
-	 * 
-	 * <p>
-	 * the map is keyed by the name of the attribute and the value is the string value of the attribute.
-	 * 
-	 * the map returned by this method is live, and you can add new attribute by updating the map directly. Because of this design, there's no setter.
-	 * 
-	 * 
-	 * @return always non-null
-	 */
-	public Map<QName, String> getOtherAttributes() {
-		return otherAttributes;
-	}
+    /**
+     * Gets a map that contains attributes that aren't bound to any typed property on this class.
+     *
+     * <p>
+     * the map is keyed by the name of the attribute and
+     * the value is the string value of the attribute.
+     *
+     * the map returned by this method is live, and you can add new attribute
+     * by updating the map directly. Because of this design, there's no setter.
+     *
+     *
+     * @return
+     *     always non-null
+     */
+    public Map<QName, String> getOtherAttributes() {
+        return otherAttributes;
+    }
 
 }

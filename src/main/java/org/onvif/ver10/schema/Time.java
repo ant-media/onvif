@@ -1,9 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.04 um 12:22:03 PM CET 
-//
 
 package org.onvif.ver10.schema;
 
@@ -12,14 +6,13 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
 
+
 /**
- * <p>
- * Java-Klasse f�r Time complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ * <p>Java class for Time complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType name="Time">
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -31,67 +24,83 @@ import jakarta.xml.bind.annotation.XmlType;
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Time", propOrder = { "hour", "minute", "second" })
+@XmlType(name = "Time", propOrder = {
+    "hour",
+    "minute",
+    "second"
+})
 public class Time {
 
-	@XmlElement(name = "Hour")
-	protected int hour;
-	@XmlElement(name = "Minute")
-	protected int minute;
-	@XmlElement(name = "Second")
-	protected int second;
+    /**
+     * Range is 0 to 23.
+     *
+     */
+    @XmlElement(name = "Hour")
+    protected int hour;
+    /**
+     * Range is 0 to 59.
+     *
+     */
+    @XmlElement(name = "Minute")
+    protected int minute;
+    /**
+     * Range is 0 to 61 (typically 59).
+     *
+     */
+    @XmlElement(name = "Second")
+    protected int second;
 
-	/**
-	 * Ruft den Wert der hour-Eigenschaft ab.
-	 * 
-	 */
-	public int getHour() {
-		return hour;
-	}
+    /**
+     * Range is 0 to 23.
+     *
+     */
+    public int getHour() {
+        return hour;
+    }
 
-	/**
-	 * Legt den Wert der hour-Eigenschaft fest.
-	 * 
-	 */
-	public void setHour(int value) {
-		this.hour = value;
-	}
+    /**
+     * Sets the value of the hour property.
+     *
+     */
+    public void setHour(int value) {
+        this.hour = value;
+    }
 
-	/**
-	 * Ruft den Wert der minute-Eigenschaft ab.
-	 * 
-	 */
-	public int getMinute() {
-		return minute;
-	}
+    /**
+     * Range is 0 to 59.
+     *
+     */
+    public int getMinute() {
+        return minute;
+    }
 
-	/**
-	 * Legt den Wert der minute-Eigenschaft fest.
-	 * 
-	 */
-	public void setMinute(int value) {
-		this.minute = value;
-	}
+    /**
+     * Sets the value of the minute property.
+     *
+     */
+    public void setMinute(int value) {
+        this.minute = value;
+    }
 
-	/**
-	 * Ruft den Wert der second-Eigenschaft ab.
-	 * 
-	 */
-	public int getSecond() {
-		return second;
-	}
+    /**
+     * Range is 0 to 61 (typically 59).
+     *
+     */
+    public int getSecond() {
+        return second;
+    }
 
-	/**
-	 * Legt den Wert der second-Eigenschaft fest.
-	 * 
-	 */
-	public void setSecond(int value) {
-		this.second = value;
-	}
+    /**
+     * Sets the value of the second property.
+     *
+     */
+    public void setSecond(int value) {
+        this.second = value;
+    }
 
 }

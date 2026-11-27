@@ -1,9 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.04 um 12:22:03 PM CET 
-//
 
 package org.onvif.ver10.schema;
 
@@ -12,17 +6,17 @@ import java.util.List;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlSeeAlso;
 import jakarta.xml.bind.annotation.XmlType;
 
+
 /**
- * <p>
- * Java-Klasse f�r H264Options complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ * <p>Java class for H264Options complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType name="H264Options">
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -36,141 +30,196 @@ import jakarta.xml.bind.annotation.XmlType;
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "H264Options", propOrder = { "resolutionsAvailable", "govLengthRange", "frameRateRange", "encodingIntervalRange", "h264ProfilesSupported" })
-@XmlSeeAlso({ H264Options2.class })
+@XmlType(name = "H264Options", propOrder = {
+    "resolutionsAvailable",
+    "govLengthRange",
+    "frameRateRange",
+    "encodingIntervalRange",
+    "h264ProfilesSupported"
+})
+@XmlSeeAlso({
+    H264Options2 .class
+})
 public class H264Options {
 
-	@XmlElement(name = "ResolutionsAvailable", required = true)
-	protected List<VideoResolution> resolutionsAvailable;
-	@XmlElement(name = "GovLengthRange", required = true)
-	protected IntRange govLengthRange;
-	@XmlElement(name = "FrameRateRange", required = true)
-	protected IntRange frameRateRange;
-	@XmlElement(name = "EncodingIntervalRange", required = true)
-	protected IntRange encodingIntervalRange;
-	@XmlElement(name = "H264ProfilesSupported", required = true)
-	protected List<H264Profile> h264ProfilesSupported;
+    /**
+     * List of supported image sizes.
+     *
+     */
+    @XmlElement(name = "ResolutionsAvailable", required = true)
+    protected List<VideoResolution> resolutionsAvailable;
+    /**
+     * Supported group of Video frames length. This value typically corresponds to the I-Frame distance.
+     *
+     */
+    @XmlElement(name = "GovLengthRange", required = true)
+    protected IntRange govLengthRange;
+    /**
+     * Supported frame rate in fps (frames per second).
+     *
+     */
+    @XmlElement(name = "FrameRateRange", required = true)
+    protected IntRange frameRateRange;
+    /**
+     * Supported encoding interval range. The encoding interval corresponds to the number of frames devided by the encoded frames. An encoding interval value of "1" means that all frames are encoded.
+     *
+     */
+    @XmlElement(name = "EncodingIntervalRange", required = true)
+    protected IntRange encodingIntervalRange;
+    /**
+     * List of supported H.264 profiles.
+     *
+     */
+    @XmlElement(name = "H264ProfilesSupported", required = true)
+    @XmlSchemaType(name = "string")
+    protected List<H264Profile> h264ProfilesSupported;
 
-	/**
-	 * Gets the value of the resolutionsAvailable property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a snapshot. Therefore any modification you make to the returned list will be present inside the JAXB object.
-	 * This is why there is not a <CODE>set</CODE> method for the resolutionsAvailable property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getResolutionsAvailable().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list {@link VideoResolution }
-	 * 
-	 * 
-	 */
-	public List<VideoResolution> getResolutionsAvailable() {
-		if (resolutionsAvailable == null) {
-			resolutionsAvailable = new ArrayList<VideoResolution>();
-		}
-		return this.resolutionsAvailable;
-	}
+    /**
+     * List of supported image sizes.
+     *
+     * Gets the value of the resolutionsAvailable property.
+     *
+     * <p>This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the resolutionsAvailable property.</p>
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * </p>
+     * <pre>
+     * getResolutionsAvailable().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link VideoResolution }
+     * </p>
+     *
+     *
+     * @return
+     *     The value of the resolutionsAvailable property.
+     */
+    public List<VideoResolution> getResolutionsAvailable() {
+        if (resolutionsAvailable == null) {
+            resolutionsAvailable = new ArrayList<>();
+        }
+        return this.resolutionsAvailable;
+    }
 
-	/**
-	 * Ruft den Wert der govLengthRange-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link IntRange }
-	 * 
-	 */
-	public IntRange getGovLengthRange() {
-		return govLengthRange;
-	}
+    /**
+     * Supported group of Video frames length. This value typically corresponds to the I-Frame distance.
+     *
+     * @return
+     *     possible object is
+     *     {@link IntRange }
+     *
+     */
+    public IntRange getGovLengthRange() {
+        return govLengthRange;
+    }
 
-	/**
-	 * Legt den Wert der govLengthRange-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link IntRange }
-	 * 
-	 */
-	public void setGovLengthRange(IntRange value) {
-		this.govLengthRange = value;
-	}
+    /**
+     * Sets the value of the govLengthRange property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link IntRange }
+     *
+     * @see #getGovLengthRange()
+     */
+    public void setGovLengthRange(IntRange value) {
+        this.govLengthRange = value;
+    }
 
-	/**
-	 * Ruft den Wert der frameRateRange-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link IntRange }
-	 * 
-	 */
-	public IntRange getFrameRateRange() {
-		return frameRateRange;
-	}
+    /**
+     * Supported frame rate in fps (frames per second).
+     *
+     * @return
+     *     possible object is
+     *     {@link IntRange }
+     *
+     */
+    public IntRange getFrameRateRange() {
+        return frameRateRange;
+    }
 
-	/**
-	 * Legt den Wert der frameRateRange-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link IntRange }
-	 * 
-	 */
-	public void setFrameRateRange(IntRange value) {
-		this.frameRateRange = value;
-	}
+    /**
+     * Sets the value of the frameRateRange property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link IntRange }
+     *
+     * @see #getFrameRateRange()
+     */
+    public void setFrameRateRange(IntRange value) {
+        this.frameRateRange = value;
+    }
 
-	/**
-	 * Ruft den Wert der encodingIntervalRange-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link IntRange }
-	 * 
-	 */
-	public IntRange getEncodingIntervalRange() {
-		return encodingIntervalRange;
-	}
+    /**
+     * Supported encoding interval range. The encoding interval corresponds to the number of frames devided by the encoded frames. An encoding interval value of "1" means that all frames are encoded.
+     *
+     * @return
+     *     possible object is
+     *     {@link IntRange }
+     *
+     */
+    public IntRange getEncodingIntervalRange() {
+        return encodingIntervalRange;
+    }
 
-	/**
-	 * Legt den Wert der encodingIntervalRange-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link IntRange }
-	 * 
-	 */
-	public void setEncodingIntervalRange(IntRange value) {
-		this.encodingIntervalRange = value;
-	}
+    /**
+     * Sets the value of the encodingIntervalRange property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link IntRange }
+     *
+     * @see #getEncodingIntervalRange()
+     */
+    public void setEncodingIntervalRange(IntRange value) {
+        this.encodingIntervalRange = value;
+    }
 
-	/**
-	 * Gets the value of the h264ProfilesSupported property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a snapshot. Therefore any modification you make to the returned list will be present inside the JAXB object.
-	 * This is why there is not a <CODE>set</CODE> method for the h264ProfilesSupported property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getH264ProfilesSupported().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list {@link H264Profile }
-	 * 
-	 * 
-	 */
-	public List<H264Profile> getH264ProfilesSupported() {
-		if (h264ProfilesSupported == null) {
-			h264ProfilesSupported = new ArrayList<H264Profile>();
-		}
-		return this.h264ProfilesSupported;
-	}
+    /**
+     * List of supported H.264 profiles.
+     *
+     * Gets the value of the h264ProfilesSupported property.
+     *
+     * <p>This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the h264ProfilesSupported property.</p>
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * </p>
+     * <pre>
+     * getH264ProfilesSupported().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link H264Profile }
+     * </p>
+     *
+     *
+     * @return
+     *     The value of the h264ProfilesSupported property.
+     */
+    public List<H264Profile> getH264ProfilesSupported() {
+        if (h264ProfilesSupported == null) {
+            h264ProfilesSupported = new ArrayList<>();
+        }
+        return this.h264ProfilesSupported;
+    }
 
 }

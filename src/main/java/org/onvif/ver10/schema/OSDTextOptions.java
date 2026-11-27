@@ -1,9 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.04 um 12:22:03 PM CET 
-//
 
 package org.onvif.ver10.schema;
 
@@ -11,21 +5,20 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.xml.namespace.QName;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
-import javax.xml.namespace.QName;
+
 
 /**
- * <p>
- * Java-Klasse f�r OSDTextOptions complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ * <p>Java class for OSDTextOptions complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType name="OSDTextOptions">
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -42,209 +35,280 @@ import javax.xml.namespace.QName;
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "OSDTextOptions", propOrder = { "type", "fontSizeRange", "dateFormat", "timeFormat", "fontColor", "backgroundColor", "extension" })
+@XmlType(name = "OSDTextOptions", propOrder = {
+    "type",
+    "fontSizeRange",
+    "dateFormat",
+    "timeFormat",
+    "fontColor",
+    "backgroundColor",
+    "extension"
+})
 public class OSDTextOptions {
 
-	@XmlElement(name = "Type", required = true)
-	protected List<String> type;
-	@XmlElement(name = "FontSizeRange")
-	protected IntRange fontSizeRange;
-	@XmlElement(name = "DateFormat")
-	protected List<String> dateFormat;
-	@XmlElement(name = "TimeFormat")
-	protected List<String> timeFormat;
-	@XmlElement(name = "FontColor")
-	protected OSDColorOptions fontColor;
-	@XmlElement(name = "BackgroundColor")
-	protected OSDColorOptions backgroundColor;
-	@XmlElement(name = "Extension")
-	protected OSDTextOptionsExtension extension;
-	@XmlAnyAttribute
-	private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    /**
+     * List of supported OSD text type. When a device indicates the supported number relating to Text type in MaximumNumberOfOSDs, the type shall be presented.
+     *
+     */
+    @XmlElement(name = "Type", required = true)
+    protected List<String> type;
+    /**
+     * Range of the font size value.
+     *
+     */
+    @XmlElement(name = "FontSizeRange")
+    protected IntRange fontSizeRange;
+    /**
+     * List of supported date format.
+     *
+     */
+    @XmlElement(name = "DateFormat")
+    protected List<String> dateFormat;
+    /**
+     * List of supported time format.
+     *
+     */
+    @XmlElement(name = "TimeFormat")
+    protected List<String> timeFormat;
+    /**
+     * List of supported font color.
+     *
+     */
+    @XmlElement(name = "FontColor")
+    protected OSDColorOptions fontColor;
+    /**
+     * List of supported background color.
+     *
+     */
+    @XmlElement(name = "BackgroundColor")
+    protected OSDColorOptions backgroundColor;
+    @XmlElement(name = "Extension")
+    protected OSDTextOptionsExtension extension;
+    @XmlAnyAttribute
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
-	/**
-	 * Gets the value of the type property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a snapshot. Therefore any modification you make to the returned list will be present inside the JAXB object.
-	 * This is why there is not a <CODE>set</CODE> method for the type property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getType().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list {@link String }
-	 * 
-	 * 
-	 */
-	public List<String> getType() {
-		if (type == null) {
-			type = new ArrayList<String>();
-		}
-		return this.type;
-	}
+    /**
+     * List of supported OSD text type. When a device indicates the supported number relating to Text type in MaximumNumberOfOSDs, the type shall be presented.
+     *
+     * Gets the value of the type property.
+     *
+     * <p>This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the type property.</p>
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * </p>
+     * <pre>
+     * getType().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link String }
+     * </p>
+     *
+     *
+     * @return
+     *     The value of the type property.
+     */
+    public List<String> getType() {
+        if (type == null) {
+            type = new ArrayList<>();
+        }
+        return this.type;
+    }
 
-	/**
-	 * Ruft den Wert der fontSizeRange-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link IntRange }
-	 * 
-	 */
-	public IntRange getFontSizeRange() {
-		return fontSizeRange;
-	}
+    /**
+     * Range of the font size value.
+     *
+     * @return
+     *     possible object is
+     *     {@link IntRange }
+     *
+     */
+    public IntRange getFontSizeRange() {
+        return fontSizeRange;
+    }
 
-	/**
-	 * Legt den Wert der fontSizeRange-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link IntRange }
-	 * 
-	 */
-	public void setFontSizeRange(IntRange value) {
-		this.fontSizeRange = value;
-	}
+    /**
+     * Sets the value of the fontSizeRange property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link IntRange }
+     *
+     * @see #getFontSizeRange()
+     */
+    public void setFontSizeRange(IntRange value) {
+        this.fontSizeRange = value;
+    }
 
-	/**
-	 * Gets the value of the dateFormat property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a snapshot. Therefore any modification you make to the returned list will be present inside the JAXB object.
-	 * This is why there is not a <CODE>set</CODE> method for the dateFormat property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getDateFormat().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list {@link String }
-	 * 
-	 * 
-	 */
-	public List<String> getDateFormat() {
-		if (dateFormat == null) {
-			dateFormat = new ArrayList<String>();
-		}
-		return this.dateFormat;
-	}
+    /**
+     * List of supported date format.
+     *
+     * Gets the value of the dateFormat property.
+     *
+     * <p>This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the dateFormat property.</p>
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * </p>
+     * <pre>
+     * getDateFormat().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link String }
+     * </p>
+     *
+     *
+     * @return
+     *     The value of the dateFormat property.
+     */
+    public List<String> getDateFormat() {
+        if (dateFormat == null) {
+            dateFormat = new ArrayList<>();
+        }
+        return this.dateFormat;
+    }
 
-	/**
-	 * Gets the value of the timeFormat property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a snapshot. Therefore any modification you make to the returned list will be present inside the JAXB object.
-	 * This is why there is not a <CODE>set</CODE> method for the timeFormat property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getTimeFormat().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list {@link String }
-	 * 
-	 * 
-	 */
-	public List<String> getTimeFormat() {
-		if (timeFormat == null) {
-			timeFormat = new ArrayList<String>();
-		}
-		return this.timeFormat;
-	}
+    /**
+     * List of supported time format.
+     *
+     * Gets the value of the timeFormat property.
+     *
+     * <p>This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the timeFormat property.</p>
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * </p>
+     * <pre>
+     * getTimeFormat().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link String }
+     * </p>
+     *
+     *
+     * @return
+     *     The value of the timeFormat property.
+     */
+    public List<String> getTimeFormat() {
+        if (timeFormat == null) {
+            timeFormat = new ArrayList<>();
+        }
+        return this.timeFormat;
+    }
 
-	/**
-	 * Ruft den Wert der fontColor-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link OSDColorOptions }
-	 * 
-	 */
-	public OSDColorOptions getFontColor() {
-		return fontColor;
-	}
+    /**
+     * List of supported font color.
+     *
+     * @return
+     *     possible object is
+     *     {@link OSDColorOptions }
+     *
+     */
+    public OSDColorOptions getFontColor() {
+        return fontColor;
+    }
 
-	/**
-	 * Legt den Wert der fontColor-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link OSDColorOptions }
-	 * 
-	 */
-	public void setFontColor(OSDColorOptions value) {
-		this.fontColor = value;
-	}
+    /**
+     * Sets the value of the fontColor property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link OSDColorOptions }
+     *
+     * @see #getFontColor()
+     */
+    public void setFontColor(OSDColorOptions value) {
+        this.fontColor = value;
+    }
 
-	/**
-	 * Ruft den Wert der backgroundColor-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link OSDColorOptions }
-	 * 
-	 */
-	public OSDColorOptions getBackgroundColor() {
-		return backgroundColor;
-	}
+    /**
+     * List of supported background color.
+     *
+     * @return
+     *     possible object is
+     *     {@link OSDColorOptions }
+     *
+     */
+    public OSDColorOptions getBackgroundColor() {
+        return backgroundColor;
+    }
 
-	/**
-	 * Legt den Wert der backgroundColor-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link OSDColorOptions }
-	 * 
-	 */
-	public void setBackgroundColor(OSDColorOptions value) {
-		this.backgroundColor = value;
-	}
+    /**
+     * Sets the value of the backgroundColor property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link OSDColorOptions }
+     *
+     * @see #getBackgroundColor()
+     */
+    public void setBackgroundColor(OSDColorOptions value) {
+        this.backgroundColor = value;
+    }
 
-	/**
-	 * Ruft den Wert der extension-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link OSDTextOptionsExtension }
-	 * 
-	 */
-	public OSDTextOptionsExtension getExtension() {
-		return extension;
-	}
+    /**
+     * Gets the value of the extension property.
+     *
+     * @return
+     *     possible object is
+     *     {@link OSDTextOptionsExtension }
+     *
+     */
+    public OSDTextOptionsExtension getExtension() {
+        return extension;
+    }
 
-	/**
-	 * Legt den Wert der extension-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link OSDTextOptionsExtension }
-	 * 
-	 */
-	public void setExtension(OSDTextOptionsExtension value) {
-		this.extension = value;
-	}
+    /**
+     * Sets the value of the extension property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link OSDTextOptionsExtension }
+     *
+     */
+    public void setExtension(OSDTextOptionsExtension value) {
+        this.extension = value;
+    }
 
-	/**
-	 * Gets a map that contains attributes that aren't bound to any typed property on this class.
-	 * 
-	 * <p>
-	 * the map is keyed by the name of the attribute and the value is the string value of the attribute.
-	 * 
-	 * the map returned by this method is live, and you can add new attribute by updating the map directly. Because of this design, there's no setter.
-	 * 
-	 * 
-	 * @return always non-null
-	 */
-	public Map<QName, String> getOtherAttributes() {
-		return otherAttributes;
-	}
+    /**
+     * Gets a map that contains attributes that aren't bound to any typed property on this class.
+     *
+     * <p>
+     * the map is keyed by the name of the attribute and
+     * the value is the string value of the attribute.
+     *
+     * the map returned by this method is live, and you can add new attribute
+     * by updating the map directly. Because of this design, there's no setter.
+     *
+     *
+     * @return
+     *     always non-null
+     */
+    public Map<QName, String> getOtherAttributes() {
+        return otherAttributes;
+    }
 
 }

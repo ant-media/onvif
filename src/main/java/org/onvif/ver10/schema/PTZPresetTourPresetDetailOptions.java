@@ -1,9 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.04 um 12:22:03 PM CET 
-//
 
 package org.onvif.ver10.schema;
 
@@ -11,21 +5,20 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.xml.namespace.QName;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
-import javax.xml.namespace.QName;
+
 
 /**
- * <p>
- * Java-Klasse f�r PTZPresetTourPresetDetailOptions complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ * <p>Java class for PTZPresetTourPresetDetailOptions complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType name="PTZPresetTourPresetDetailOptions">
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -40,151 +33,198 @@ import javax.xml.namespace.QName;
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "PTZPresetTourPresetDetailOptions", propOrder = { "presetToken", "home", "panTiltPositionSpace", "zoomPositionSpace", "extension" })
+@XmlType(name = "PTZPresetTourPresetDetailOptions", propOrder = {
+    "presetToken",
+    "home",
+    "panTiltPositionSpace",
+    "zoomPositionSpace",
+    "extension"
+})
 public class PTZPresetTourPresetDetailOptions {
 
-	@XmlElement(name = "PresetToken")
-	protected List<String> presetToken;
-	@XmlElement(name = "Home")
-	protected Boolean home;
-	@XmlElement(name = "PanTiltPositionSpace")
-	protected Space2DDescription panTiltPositionSpace;
-	@XmlElement(name = "ZoomPositionSpace")
-	protected Space1DDescription zoomPositionSpace;
-	@XmlElement(name = "Extension")
-	protected PTZPresetTourPresetDetailOptionsExtension extension;
-	@XmlAnyAttribute
-	private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    /**
+     * A list of available Preset Tokens for tour spots.
+     *
+     */
+    @XmlElement(name = "PresetToken")
+    protected List<String> presetToken;
+    /**
+     * An option to indicate Home postion for tour spots.
+     *
+     */
+    @XmlElement(name = "Home")
+    protected Boolean home;
+    /**
+     * Supported range of Pan and Tilt for tour spots.
+     *
+     */
+    @XmlElement(name = "PanTiltPositionSpace")
+    protected Space2DDescription panTiltPositionSpace;
+    /**
+     * Supported range of Zoom for a tour spot.
+     *
+     */
+    @XmlElement(name = "ZoomPositionSpace")
+    protected Space1DDescription zoomPositionSpace;
+    @XmlElement(name = "Extension")
+    protected PTZPresetTourPresetDetailOptionsExtension extension;
+    @XmlAnyAttribute
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
-	/**
-	 * Gets the value of the presetToken property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a snapshot. Therefore any modification you make to the returned list will be present inside the JAXB object.
-	 * This is why there is not a <CODE>set</CODE> method for the presetToken property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getPresetToken().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list {@link String }
-	 * 
-	 * 
-	 */
-	public List<String> getPresetToken() {
-		if (presetToken == null) {
-			presetToken = new ArrayList<String>();
-		}
-		return this.presetToken;
-	}
+    /**
+     * A list of available Preset Tokens for tour spots.
+     *
+     * Gets the value of the presetToken property.
+     *
+     * <p>This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the presetToken property.</p>
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * </p>
+     * <pre>
+     * getPresetToken().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link String }
+     * </p>
+     *
+     *
+     * @return
+     *     The value of the presetToken property.
+     */
+    public List<String> getPresetToken() {
+        if (presetToken == null) {
+            presetToken = new ArrayList<>();
+        }
+        return this.presetToken;
+    }
 
-	/**
-	 * Ruft den Wert der home-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link Boolean }
-	 * 
-	 */
-	public Boolean isHome() {
-		return home;
-	}
+    /**
+     * An option to indicate Home postion for tour spots.
+     *
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *
+     */
+    public Boolean isHome() {
+        return home;
+    }
 
-	/**
-	 * Legt den Wert der home-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Boolean }
-	 * 
-	 */
-	public void setHome(Boolean value) {
-		this.home = value;
-	}
+    /**
+     * Sets the value of the home property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *
+     * @see #isHome()
+     */
+    public void setHome(Boolean value) {
+        this.home = value;
+    }
 
-	/**
-	 * Ruft den Wert der panTiltPositionSpace-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link Space2DDescription }
-	 * 
-	 */
-	public Space2DDescription getPanTiltPositionSpace() {
-		return panTiltPositionSpace;
-	}
+    /**
+     * Supported range of Pan and Tilt for tour spots.
+     *
+     * @return
+     *     possible object is
+     *     {@link Space2DDescription }
+     *
+     */
+    public Space2DDescription getPanTiltPositionSpace() {
+        return panTiltPositionSpace;
+    }
 
-	/**
-	 * Legt den Wert der panTiltPositionSpace-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Space2DDescription }
-	 * 
-	 */
-	public void setPanTiltPositionSpace(Space2DDescription value) {
-		this.panTiltPositionSpace = value;
-	}
+    /**
+     * Sets the value of the panTiltPositionSpace property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Space2DDescription }
+     *
+     * @see #getPanTiltPositionSpace()
+     */
+    public void setPanTiltPositionSpace(Space2DDescription value) {
+        this.panTiltPositionSpace = value;
+    }
 
-	/**
-	 * Ruft den Wert der zoomPositionSpace-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link Space1DDescription }
-	 * 
-	 */
-	public Space1DDescription getZoomPositionSpace() {
-		return zoomPositionSpace;
-	}
+    /**
+     * Supported range of Zoom for a tour spot.
+     *
+     * @return
+     *     possible object is
+     *     {@link Space1DDescription }
+     *
+     */
+    public Space1DDescription getZoomPositionSpace() {
+        return zoomPositionSpace;
+    }
 
-	/**
-	 * Legt den Wert der zoomPositionSpace-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Space1DDescription }
-	 * 
-	 */
-	public void setZoomPositionSpace(Space1DDescription value) {
-		this.zoomPositionSpace = value;
-	}
+    /**
+     * Sets the value of the zoomPositionSpace property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Space1DDescription }
+     *
+     * @see #getZoomPositionSpace()
+     */
+    public void setZoomPositionSpace(Space1DDescription value) {
+        this.zoomPositionSpace = value;
+    }
 
-	/**
-	 * Ruft den Wert der extension-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link PTZPresetTourPresetDetailOptionsExtension }
-	 * 
-	 */
-	public PTZPresetTourPresetDetailOptionsExtension getExtension() {
-		return extension;
-	}
+    /**
+     * Gets the value of the extension property.
+     *
+     * @return
+     *     possible object is
+     *     {@link PTZPresetTourPresetDetailOptionsExtension }
+     *
+     */
+    public PTZPresetTourPresetDetailOptionsExtension getExtension() {
+        return extension;
+    }
 
-	/**
-	 * Legt den Wert der extension-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link PTZPresetTourPresetDetailOptionsExtension }
-	 * 
-	 */
-	public void setExtension(PTZPresetTourPresetDetailOptionsExtension value) {
-		this.extension = value;
-	}
+    /**
+     * Sets the value of the extension property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link PTZPresetTourPresetDetailOptionsExtension }
+     *
+     */
+    public void setExtension(PTZPresetTourPresetDetailOptionsExtension value) {
+        this.extension = value;
+    }
 
-	/**
-	 * Gets a map that contains attributes that aren't bound to any typed property on this class.
-	 * 
-	 * <p>
-	 * the map is keyed by the name of the attribute and the value is the string value of the attribute.
-	 * 
-	 * the map returned by this method is live, and you can add new attribute by updating the map directly. Because of this design, there's no setter.
-	 * 
-	 * 
-	 * @return always non-null
-	 */
-	public Map<QName, String> getOtherAttributes() {
-		return otherAttributes;
-	}
+    /**
+     * Gets a map that contains attributes that aren't bound to any typed property on this class.
+     *
+     * <p>
+     * the map is keyed by the name of the attribute and
+     * the value is the string value of the attribute.
+     *
+     * the map returned by this method is live, and you can add new attribute
+     * by updating the map directly. Because of this design, there's no setter.
+     *
+     *
+     * @return
+     *     always non-null
+     */
+    public Map<QName, String> getOtherAttributes() {
+        return otherAttributes;
+    }
 
 }

@@ -1,32 +1,26 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.04 um 12:22:03 PM CET 
-//
 
 package org.onvif.ver10.schema;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.xml.namespace.QName;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
-import javax.xml.namespace.QName;
+
 
 /**
- * <p>
- * Java-Klasse f�r ConfigDescription complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ * <p>Java class for ConfigDescription complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType name="ConfigDescription">
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -47,184 +41,306 @@ import javax.xml.namespace.QName;
  *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}ConfigDescriptionExtension" minOccurs="0"/>
  *       </sequence>
  *       <attribute name="Name" use="required" type="{http://www.w3.org/2001/XMLSchema}QName" />
+ *       <attribute name="fixed" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <attribute name="maxInstances" type="{http://www.w3.org/2001/XMLSchema}integer" />
  *       <anyAttribute processContents='lax'/>
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ConfigDescription", propOrder = { "parameters", "messages", "extension" })
+@XmlType(name = "ConfigDescription", propOrder = {
+    "parameters",
+    "messages",
+    "extension"
+})
 public class ConfigDescription {
 
-	@XmlElement(name = "Parameters", required = true)
-	protected ItemListDescription parameters;
-	@XmlElement(name = "Messages")
-	protected List<ConfigDescription.Messages> messages;
-	@XmlElement(name = "Extension")
-	protected ConfigDescriptionExtension extension;
-	@XmlAttribute(name = "Name", required = true)
-	protected QName name;
-	@XmlAnyAttribute
-	private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    /**
+     * List describing the configuration parameters. The names of the parameters must be unique. If possible SimpleItems
+     * 						should be used to transport the information to ease parsing of dynamically defined messages by a client
+     * 						application.
+     *
+     */
+    @XmlElement(name = "Parameters", required = true)
+    protected ItemListDescription parameters;
+    /**
+     * The analytics modules and rule engine produce Events, which must be listed within the Analytics Module Description. In order to do so
+     * 						the structure of the Message is defined and consists of three groups: Source, Key, and Data. It is recommended to use SimpleItemDescriptions wherever applicable.
+     * 						The name of all Items must be unique within all Items contained in any group of this Message.
+     * 						Depending on the component multiple parameters or none may be needed to identify the component uniquely.
+     *
+     */
+    @XmlElement(name = "Messages")
+    protected List<ConfigDescription.Messages> messages;
+    @XmlElement(name = "Extension")
+    protected ConfigDescriptionExtension extension;
+    /**
+     * The Name attribute (e.g. "tt::LineDetector") uniquely identifies the type of rule, not a type definition in a schema.
+     *
+     */
+    @XmlAttribute(name = "Name", required = true)
+    protected QName name;
+    /**
+     * The fixed attribute signals that it is not allowed to add or remove this type of configuration.
+     *
+     */
+    @XmlAttribute(name = "fixed")
+    protected Boolean fixed;
+    /**
+     * The maxInstances attribute signals the maximum number of instances per configuration.
+     *
+     */
+    @XmlAttribute(name = "maxInstances")
+    protected BigInteger maxInstances;
+    @XmlAnyAttribute
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
-	/**
-	 * Ruft den Wert der parameters-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link ItemListDescription }
-	 * 
-	 */
-	public ItemListDescription getParameters() {
-		return parameters;
-	}
+    /**
+     * List describing the configuration parameters. The names of the parameters must be unique. If possible SimpleItems
+     * 						should be used to transport the information to ease parsing of dynamically defined messages by a client
+     * 						application.
+     *
+     * @return
+     *     possible object is
+     *     {@link ItemListDescription }
+     *
+     */
+    public ItemListDescription getParameters() {
+        return parameters;
+    }
 
-	/**
-	 * Legt den Wert der parameters-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link ItemListDescription }
-	 * 
-	 */
-	public void setParameters(ItemListDescription value) {
-		this.parameters = value;
-	}
+    /**
+     * Sets the value of the parameters property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link ItemListDescription }
+     *
+     * @see #getParameters()
+     */
+    public void setParameters(ItemListDescription value) {
+        this.parameters = value;
+    }
 
-	/**
-	 * Gets the value of the messages property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a snapshot. Therefore any modification you make to the returned list will be present inside the JAXB object.
-	 * This is why there is not a <CODE>set</CODE> method for the messages property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getMessages().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list {@link ConfigDescription.Messages }
-	 * 
-	 * 
-	 */
-	public List<ConfigDescription.Messages> getMessages() {
-		if (messages == null) {
-			messages = new ArrayList<ConfigDescription.Messages>();
-		}
-		return this.messages;
-	}
+    /**
+     * The analytics modules and rule engine produce Events, which must be listed within the Analytics Module Description. In order to do so
+     * 						the structure of the Message is defined and consists of three groups: Source, Key, and Data. It is recommended to use SimpleItemDescriptions wherever applicable.
+     * 						The name of all Items must be unique within all Items contained in any group of this Message.
+     * 						Depending on the component multiple parameters or none may be needed to identify the component uniquely.
+     *
+     * Gets the value of the messages property.
+     *
+     * <p>This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the messages property.</p>
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * </p>
+     * <pre>
+     * getMessages().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link ConfigDescription.Messages }
+     * </p>
+     *
+     *
+     * @return
+     *     The value of the messages property.
+     */
+    public List<ConfigDescription.Messages> getMessages() {
+        if (messages == null) {
+            messages = new ArrayList<>();
+        }
+        return this.messages;
+    }
 
-	/**
-	 * Ruft den Wert der extension-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link ConfigDescriptionExtension }
-	 * 
-	 */
-	public ConfigDescriptionExtension getExtension() {
-		return extension;
-	}
+    /**
+     * Gets the value of the extension property.
+     *
+     * @return
+     *     possible object is
+     *     {@link ConfigDescriptionExtension }
+     *
+     */
+    public ConfigDescriptionExtension getExtension() {
+        return extension;
+    }
 
-	/**
-	 * Legt den Wert der extension-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link ConfigDescriptionExtension }
-	 * 
-	 */
-	public void setExtension(ConfigDescriptionExtension value) {
-		this.extension = value;
-	}
+    /**
+     * Sets the value of the extension property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link ConfigDescriptionExtension }
+     *
+     */
+    public void setExtension(ConfigDescriptionExtension value) {
+        this.extension = value;
+    }
 
-	/**
-	 * Ruft den Wert der name-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link QName }
-	 * 
-	 */
-	public QName getName() {
-		return name;
-	}
+    /**
+     * The Name attribute (e.g. "tt::LineDetector") uniquely identifies the type of rule, not a type definition in a schema.
+     *
+     * @return
+     *     possible object is
+     *     {@link QName }
+     *
+     */
+    public QName getName() {
+        return name;
+    }
 
-	/**
-	 * Legt den Wert der name-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link QName }
-	 * 
-	 */
-	public void setName(QName value) {
-		this.name = value;
-	}
+    /**
+     * Sets the value of the name property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link QName }
+     *
+     * @see #getName()
+     */
+    public void setName(QName value) {
+        this.name = value;
+    }
 
-	/**
-	 * Gets a map that contains attributes that aren't bound to any typed property on this class.
-	 * 
-	 * <p>
-	 * the map is keyed by the name of the attribute and the value is the string value of the attribute.
-	 * 
-	 * the map returned by this method is live, and you can add new attribute by updating the map directly. Because of this design, there's no setter.
-	 * 
-	 * 
-	 * @return always non-null
-	 */
-	public Map<QName, String> getOtherAttributes() {
-		return otherAttributes;
-	}
+    /**
+     * The fixed attribute signals that it is not allowed to add or remove this type of configuration.
+     *
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *
+     */
+    public Boolean isFixed() {
+        return fixed;
+    }
 
-	/**
-	 * <p>
-	 * Java-Klasse f�r anonymous complex type.
-	 * 
-	 * <p>
-	 * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
-	 * 
-	 * <pre>
-	 * <complexType>
-	 *   <complexContent>
-	 *     <extension base="{http://www.onvif.org/ver10/schema}MessageDescription">
-	 *       <sequence>
-	 *         <element name="ParentTopic" type="{http://www.w3.org/2001/XMLSchema}string"/>
-	 *       </sequence>
-	 *       <anyAttribute processContents='lax'/>
-	 *     </extension>
-	 *   </complexContent>
-	 * </complexType>
-	 * </pre>
-	 * 
-	 * 
-	 */
-	@XmlAccessorType(XmlAccessType.FIELD)
-	@XmlType(name = "", propOrder = { "parentTopic" })
-	public static class Messages extends MessageDescription {
+    /**
+     * Sets the value of the fixed property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *
+     * @see #isFixed()
+     */
+    public void setFixed(Boolean value) {
+        this.fixed = value;
+    }
 
-		@XmlElement(name = "ParentTopic", required = true)
-		protected String parentTopic;
+    /**
+     * The maxInstances attribute signals the maximum number of instances per configuration.
+     *
+     * @return
+     *     possible object is
+     *     {@link BigInteger }
+     *
+     */
+    public BigInteger getMaxInstances() {
+        return maxInstances;
+    }
 
-		/**
-		 * Ruft den Wert der parentTopic-Eigenschaft ab.
-		 * 
-		 * @return possible object is {@link String }
-		 * 
-		 */
-		public String getParentTopic() {
-			return parentTopic;
-		}
+    /**
+     * Sets the value of the maxInstances property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link BigInteger }
+     *
+     * @see #getMaxInstances()
+     */
+    public void setMaxInstances(BigInteger value) {
+        this.maxInstances = value;
+    }
 
-		/**
-		 * Legt den Wert der parentTopic-Eigenschaft fest.
-		 * 
-		 * @param value
-		 *            allowed object is {@link String }
-		 * 
-		 */
-		public void setParentTopic(String value) {
-			this.parentTopic = value;
-		}
+    /**
+     * Gets a map that contains attributes that aren't bound to any typed property on this class.
+     *
+     * <p>
+     * the map is keyed by the name of the attribute and
+     * the value is the string value of the attribute.
+     *
+     * the map returned by this method is live, and you can add new attribute
+     * by updating the map directly. Because of this design, there's no setter.
+     *
+     *
+     * @return
+     *     always non-null
+     */
+    public Map<QName, String> getOtherAttributes() {
+        return otherAttributes;
+    }
 
-	}
+
+    /**
+     * <p>Java class for anonymous complex type</p>.
+     *
+     * <p>The following schema fragment specifies the expected content contained within this class.</p>
+     *
+     * <pre>{@code
+     * <complexType>
+     *   <complexContent>
+     *     <extension base="{http://www.onvif.org/ver10/schema}MessageDescription">
+     *       <sequence>
+     *         <element name="ParentTopic" type="{http://www.w3.org/2001/XMLSchema}string"/>
+     *       </sequence>
+     *       <anyAttribute processContents='lax'/>
+     *     </extension>
+     *   </complexContent>
+     * </complexType>
+     * }</pre>
+     *
+     *
+     */
+    @XmlAccessorType(XmlAccessType.FIELD)
+    @XmlType(name = "", propOrder = {
+        "parentTopic"
+    })
+    public static class Messages
+        extends MessageDescription
+    {
+
+        /**
+         * The topic of the message. For historical reason the element is named ParentTopic, but the full topic is expected.
+         *
+         */
+        @XmlElement(name = "ParentTopic", required = true)
+        protected String parentTopic;
+
+        /**
+         * The topic of the message. For historical reason the element is named ParentTopic, but the full topic is expected.
+         *
+         * @return
+         *     possible object is
+         *     {@link String }
+         *
+         */
+        public String getParentTopic() {
+            return parentTopic;
+        }
+
+        /**
+         * Sets the value of the parentTopic property.
+         *
+         * @param value
+         *     allowed object is
+         *     {@link String }
+         *
+         * @see #getParentTopic()
+         */
+        public void setParentTopic(String value) {
+            this.parentTopic = value;
+        }
+
+    }
 
 }

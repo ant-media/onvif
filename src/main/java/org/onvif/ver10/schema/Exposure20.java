@@ -1,27 +1,21 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.04 um 12:22:03 PM CET 
-//
 
 package org.onvif.ver10.schema;
 
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+
 
 /**
  * Type describing the exposure settings.
- * 
- * <p>
- * Java-Klasse f�r Exposure20 complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ *
+ * <p>Java class for Exposure20 complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType name="Exposure20">
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -42,290 +36,414 @@ import jakarta.xml.bind.annotation.XmlType;
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Exposure20", propOrder = { "mode", "priority", "window", "minExposureTime", "maxExposureTime", "minGain", "maxGain", "minIris", "maxIris",
-		"exposureTime", "gain", "iris" })
+@XmlType(name = "Exposure20", propOrder = {
+    "mode",
+    "priority",
+    "window",
+    "minExposureTime",
+    "maxExposureTime",
+    "minGain",
+    "maxGain",
+    "minIris",
+    "maxIris",
+    "exposureTime",
+    "gain",
+    "iris"
+})
 public class Exposure20 {
 
-	@XmlElement(name = "Mode", required = true)
-	protected ExposureMode mode;
-	@XmlElement(name = "Priority")
-	protected ExposurePriority priority;
-	@XmlElement(name = "Window")
-	protected Rectangle window;
-	@XmlElement(name = "MinExposureTime")
-	protected Float minExposureTime;
-	@XmlElement(name = "MaxExposureTime")
-	protected Float maxExposureTime;
-	@XmlElement(name = "MinGain")
-	protected Float minGain;
-	@XmlElement(name = "MaxGain")
-	protected Float maxGain;
-	@XmlElement(name = "MinIris")
-	protected Float minIris;
-	@XmlElement(name = "MaxIris")
-	protected Float maxIris;
-	@XmlElement(name = "ExposureTime")
-	protected Float exposureTime;
-	@XmlElement(name = "Gain")
-	protected Float gain;
-	@XmlElement(name = "Iris")
-	protected Float iris;
+    /**
+     * Exposure Mode
+     *
+     * <pre>
+     * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;ul xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope" xmlns:tt="http://www.onvif.org/ver10/schema" xmlns:wsnt="http://docs.oasis-open.org/wsn/b-2" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xop="http://www.w3.org/2004/08/xop/include" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+     * 							&lt;li&gt;Auto - Enabled the exposure algorithm on the device.&lt;/li&gt;
+     * 							&lt;li&gt;Manual - Disabled exposure algorithm on the device.&lt;/li&gt;
+     * 						&lt;/ul&gt;
+     * </pre>
+     *
+     */
+    @XmlElement(name = "Mode", required = true)
+    @XmlSchemaType(name = "string")
+    protected ExposureMode mode;
+    /**
+     * The exposure priority mode (low noise/framerate).
+     *
+     */
+    @XmlElement(name = "Priority")
+    @XmlSchemaType(name = "string")
+    protected ExposurePriority priority;
+    /**
+     * Rectangular exposure mask.
+     *
+     */
+    @XmlElement(name = "Window")
+    protected Rectangle window;
+    /**
+     * Minimum value of exposure time range allowed to be used by the algorithm.
+     *
+     */
+    @XmlElement(name = "MinExposureTime")
+    protected Float minExposureTime;
+    /**
+     * Maximum value of exposure time range allowed to be used by the algorithm.
+     *
+     */
+    @XmlElement(name = "MaxExposureTime")
+    protected Float maxExposureTime;
+    /**
+     * Minimum value of the sensor gain range that is allowed to be used by the algorithm.
+     *
+     */
+    @XmlElement(name = "MinGain")
+    protected Float minGain;
+    /**
+     * Maximum value of the sensor gain range that is allowed to be used by the algorithm.
+     *
+     */
+    @XmlElement(name = "MaxGain")
+    protected Float maxGain;
+    /**
+     * Minimum value of the iris range allowed to be used by the algorithm.  0dB maps to a fully opened iris and positive values map to higher attenuation.
+     *
+     */
+    @XmlElement(name = "MinIris")
+    protected Float minIris;
+    /**
+     * Maximum value of the iris range allowed to be used by the algorithm. 0dB maps to a fully opened iris and positive values map to higher attenuation.
+     *
+     */
+    @XmlElement(name = "MaxIris")
+    protected Float maxIris;
+    /**
+     * The fixed exposure time used by the image sensor (μs).
+     *
+     */
+    @XmlElement(name = "ExposureTime")
+    protected Float exposureTime;
+    /**
+     * The fixed gain used by the image sensor (dB).
+     *
+     */
+    @XmlElement(name = "Gain")
+    protected Float gain;
+    /**
+     * The fixed attenuation of input light affected by the iris (dB). 0dB maps to a fully opened iris and positive values map to higher attenuation.
+     *
+     */
+    @XmlElement(name = "Iris")
+    protected Float iris;
 
-	/**
-	 * Ruft den Wert der mode-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link ExposureMode }
-	 * 
-	 */
-	public ExposureMode getMode() {
-		return mode;
-	}
+    /**
+     * Exposure Mode
+     *
+     * <pre>
+     * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;ul xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope" xmlns:tt="http://www.onvif.org/ver10/schema" xmlns:wsnt="http://docs.oasis-open.org/wsn/b-2" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xop="http://www.w3.org/2004/08/xop/include" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+     * 							&lt;li&gt;Auto - Enabled the exposure algorithm on the device.&lt;/li&gt;
+     * 							&lt;li&gt;Manual - Disabled exposure algorithm on the device.&lt;/li&gt;
+     * 						&lt;/ul&gt;
+     * </pre>
+     *
+     * @return
+     *     possible object is
+     *     {@link ExposureMode }
+     *
+     */
+    public ExposureMode getMode() {
+        return mode;
+    }
 
-	/**
-	 * Legt den Wert der mode-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link ExposureMode }
-	 * 
-	 */
-	public void setMode(ExposureMode value) {
-		this.mode = value;
-	}
+    /**
+     * Sets the value of the mode property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link ExposureMode }
+     *
+     * @see #getMode()
+     */
+    public void setMode(ExposureMode value) {
+        this.mode = value;
+    }
 
-	/**
-	 * Ruft den Wert der priority-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link ExposurePriority }
-	 * 
-	 */
-	public ExposurePriority getPriority() {
-		return priority;
-	}
+    /**
+     * The exposure priority mode (low noise/framerate).
+     *
+     * @return
+     *     possible object is
+     *     {@link ExposurePriority }
+     *
+     */
+    public ExposurePriority getPriority() {
+        return priority;
+    }
 
-	/**
-	 * Legt den Wert der priority-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link ExposurePriority }
-	 * 
-	 */
-	public void setPriority(ExposurePriority value) {
-		this.priority = value;
-	}
+    /**
+     * Sets the value of the priority property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link ExposurePriority }
+     *
+     * @see #getPriority()
+     */
+    public void setPriority(ExposurePriority value) {
+        this.priority = value;
+    }
 
-	/**
-	 * Ruft den Wert der window-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link Rectangle }
-	 * 
-	 */
-	public Rectangle getWindow() {
-		return window;
-	}
+    /**
+     * Rectangular exposure mask.
+     *
+     * @return
+     *     possible object is
+     *     {@link Rectangle }
+     *
+     */
+    public Rectangle getWindow() {
+        return window;
+    }
 
-	/**
-	 * Legt den Wert der window-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Rectangle }
-	 * 
-	 */
-	public void setWindow(Rectangle value) {
-		this.window = value;
-	}
+    /**
+     * Sets the value of the window property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Rectangle }
+     *
+     * @see #getWindow()
+     */
+    public void setWindow(Rectangle value) {
+        this.window = value;
+    }
 
-	/**
-	 * Ruft den Wert der minExposureTime-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link Float }
-	 * 
-	 */
-	public Float getMinExposureTime() {
-		return minExposureTime;
-	}
+    /**
+     * Minimum value of exposure time range allowed to be used by the algorithm.
+     *
+     * @return
+     *     possible object is
+     *     {@link Float }
+     *
+     */
+    public Float getMinExposureTime() {
+        return minExposureTime;
+    }
 
-	/**
-	 * Legt den Wert der minExposureTime-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Float }
-	 * 
-	 */
-	public void setMinExposureTime(Float value) {
-		this.minExposureTime = value;
-	}
+    /**
+     * Sets the value of the minExposureTime property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Float }
+     *
+     * @see #getMinExposureTime()
+     */
+    public void setMinExposureTime(Float value) {
+        this.minExposureTime = value;
+    }
 
-	/**
-	 * Ruft den Wert der maxExposureTime-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link Float }
-	 * 
-	 */
-	public Float getMaxExposureTime() {
-		return maxExposureTime;
-	}
+    /**
+     * Maximum value of exposure time range allowed to be used by the algorithm.
+     *
+     * @return
+     *     possible object is
+     *     {@link Float }
+     *
+     */
+    public Float getMaxExposureTime() {
+        return maxExposureTime;
+    }
 
-	/**
-	 * Legt den Wert der maxExposureTime-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Float }
-	 * 
-	 */
-	public void setMaxExposureTime(Float value) {
-		this.maxExposureTime = value;
-	}
+    /**
+     * Sets the value of the maxExposureTime property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Float }
+     *
+     * @see #getMaxExposureTime()
+     */
+    public void setMaxExposureTime(Float value) {
+        this.maxExposureTime = value;
+    }
 
-	/**
-	 * Ruft den Wert der minGain-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link Float }
-	 * 
-	 */
-	public Float getMinGain() {
-		return minGain;
-	}
+    /**
+     * Minimum value of the sensor gain range that is allowed to be used by the algorithm.
+     *
+     * @return
+     *     possible object is
+     *     {@link Float }
+     *
+     */
+    public Float getMinGain() {
+        return minGain;
+    }
 
-	/**
-	 * Legt den Wert der minGain-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Float }
-	 * 
-	 */
-	public void setMinGain(Float value) {
-		this.minGain = value;
-	}
+    /**
+     * Sets the value of the minGain property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Float }
+     *
+     * @see #getMinGain()
+     */
+    public void setMinGain(Float value) {
+        this.minGain = value;
+    }
 
-	/**
-	 * Ruft den Wert der maxGain-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link Float }
-	 * 
-	 */
-	public Float getMaxGain() {
-		return maxGain;
-	}
+    /**
+     * Maximum value of the sensor gain range that is allowed to be used by the algorithm.
+     *
+     * @return
+     *     possible object is
+     *     {@link Float }
+     *
+     */
+    public Float getMaxGain() {
+        return maxGain;
+    }
 
-	/**
-	 * Legt den Wert der maxGain-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Float }
-	 * 
-	 */
-	public void setMaxGain(Float value) {
-		this.maxGain = value;
-	}
+    /**
+     * Sets the value of the maxGain property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Float }
+     *
+     * @see #getMaxGain()
+     */
+    public void setMaxGain(Float value) {
+        this.maxGain = value;
+    }
 
-	/**
-	 * Ruft den Wert der minIris-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link Float }
-	 * 
-	 */
-	public Float getMinIris() {
-		return minIris;
-	}
+    /**
+     * Minimum value of the iris range allowed to be used by the algorithm.  0dB maps to a fully opened iris and positive values map to higher attenuation.
+     *
+     * @return
+     *     possible object is
+     *     {@link Float }
+     *
+     */
+    public Float getMinIris() {
+        return minIris;
+    }
 
-	/**
-	 * Legt den Wert der minIris-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Float }
-	 * 
-	 */
-	public void setMinIris(Float value) {
-		this.minIris = value;
-	}
+    /**
+     * Sets the value of the minIris property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Float }
+     *
+     * @see #getMinIris()
+     */
+    public void setMinIris(Float value) {
+        this.minIris = value;
+    }
 
-	/**
-	 * Ruft den Wert der maxIris-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link Float }
-	 * 
-	 */
-	public Float getMaxIris() {
-		return maxIris;
-	}
+    /**
+     * Maximum value of the iris range allowed to be used by the algorithm. 0dB maps to a fully opened iris and positive values map to higher attenuation.
+     *
+     * @return
+     *     possible object is
+     *     {@link Float }
+     *
+     */
+    public Float getMaxIris() {
+        return maxIris;
+    }
 
-	/**
-	 * Legt den Wert der maxIris-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Float }
-	 * 
-	 */
-	public void setMaxIris(Float value) {
-		this.maxIris = value;
-	}
+    /**
+     * Sets the value of the maxIris property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Float }
+     *
+     * @see #getMaxIris()
+     */
+    public void setMaxIris(Float value) {
+        this.maxIris = value;
+    }
 
-	/**
-	 * Ruft den Wert der exposureTime-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link Float }
-	 * 
-	 */
-	public Float getExposureTime() {
-		return exposureTime;
-	}
+    /**
+     * The fixed exposure time used by the image sensor (μs).
+     *
+     * @return
+     *     possible object is
+     *     {@link Float }
+     *
+     */
+    public Float getExposureTime() {
+        return exposureTime;
+    }
 
-	/**
-	 * Legt den Wert der exposureTime-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Float }
-	 * 
-	 */
-	public void setExposureTime(Float value) {
-		this.exposureTime = value;
-	}
+    /**
+     * Sets the value of the exposureTime property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Float }
+     *
+     * @see #getExposureTime()
+     */
+    public void setExposureTime(Float value) {
+        this.exposureTime = value;
+    }
 
-	/**
-	 * Ruft den Wert der gain-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link Float }
-	 * 
-	 */
-	public Float getGain() {
-		return gain;
-	}
+    /**
+     * The fixed gain used by the image sensor (dB).
+     *
+     * @return
+     *     possible object is
+     *     {@link Float }
+     *
+     */
+    public Float getGain() {
+        return gain;
+    }
 
-	/**
-	 * Legt den Wert der gain-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Float }
-	 * 
-	 */
-	public void setGain(Float value) {
-		this.gain = value;
-	}
+    /**
+     * Sets the value of the gain property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Float }
+     *
+     * @see #getGain()
+     */
+    public void setGain(Float value) {
+        this.gain = value;
+    }
 
-	/**
-	 * Ruft den Wert der iris-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link Float }
-	 * 
-	 */
-	public Float getIris() {
-		return iris;
-	}
+    /**
+     * The fixed attenuation of input light affected by the iris (dB). 0dB maps to a fully opened iris and positive values map to higher attenuation.
+     *
+     * @return
+     *     possible object is
+     *     {@link Float }
+     *
+     */
+    public Float getIris() {
+        return iris;
+    }
 
-	/**
-	 * Legt den Wert der iris-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Float }
-	 * 
-	 */
-	public void setIris(Float value) {
-		this.iris = value;
-	}
+    /**
+     * Sets the value of the iris property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Float }
+     *
+     * @see #getIris()
+     */
+    public void setIris(Float value) {
+        this.iris = value;
+    }
 
 }

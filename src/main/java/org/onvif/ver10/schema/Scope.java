@@ -1,9 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.04 um 12:22:03 PM CET 
-//
 
 package org.onvif.ver10.schema;
 
@@ -13,14 +7,13 @@ import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 
+
 /**
- * <p>
- * Java-Klasse f�r Scope complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ * <p>Java class for Scope complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType name="Scope">
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -31,60 +24,80 @@ import jakarta.xml.bind.annotation.XmlType;
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Scope", propOrder = { "scopeDef", "scopeItem" })
+@XmlType(name = "Scope", propOrder = {
+    "scopeDef",
+    "scopeItem"
+})
 public class Scope {
 
-	@XmlElement(name = "ScopeDef", required = true)
-	protected ScopeDefinition scopeDef;
-	@XmlElement(name = "ScopeItem", required = true)
-	@XmlSchemaType(name = "anyURI")
-	protected String scopeItem;
+    /**
+     * Indicates if the scope is fixed or configurable.
+     *
+     */
+    @XmlElement(name = "ScopeDef", required = true)
+    @XmlSchemaType(name = "string")
+    protected ScopeDefinition scopeDef;
+    /**
+     * Scope item URI.
+     *
+     */
+    @XmlElement(name = "ScopeItem", required = true)
+    @XmlSchemaType(name = "anyURI")
+    protected String scopeItem;
 
-	/**
-	 * Ruft den Wert der scopeDef-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link ScopeDefinition }
-	 * 
-	 */
-	public ScopeDefinition getScopeDef() {
-		return scopeDef;
-	}
+    /**
+     * Indicates if the scope is fixed or configurable.
+     *
+     * @return
+     *     possible object is
+     *     {@link ScopeDefinition }
+     *
+     */
+    public ScopeDefinition getScopeDef() {
+        return scopeDef;
+    }
 
-	/**
-	 * Legt den Wert der scopeDef-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link ScopeDefinition }
-	 * 
-	 */
-	public void setScopeDef(ScopeDefinition value) {
-		this.scopeDef = value;
-	}
+    /**
+     * Sets the value of the scopeDef property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link ScopeDefinition }
+     *
+     * @see #getScopeDef()
+     */
+    public void setScopeDef(ScopeDefinition value) {
+        this.scopeDef = value;
+    }
 
-	/**
-	 * Ruft den Wert der scopeItem-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getScopeItem() {
-		return scopeItem;
-	}
+    /**
+     * Scope item URI.
+     *
+     * @return
+     *     possible object is
+     *     {@link String }
+     *
+     */
+    public String getScopeItem() {
+        return scopeItem;
+    }
 
-	/**
-	 * Legt den Wert der scopeItem-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setScopeItem(String value) {
-		this.scopeItem = value;
-	}
+    /**
+     * Sets the value of the scopeItem property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *
+     * @see #getScopeItem()
+     */
+    public void setScopeItem(String value) {
+        this.scopeItem = value;
+    }
 
 }

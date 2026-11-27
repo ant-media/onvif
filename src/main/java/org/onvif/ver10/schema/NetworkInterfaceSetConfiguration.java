@@ -1,29 +1,22 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.04 um 12:22:03 PM CET 
-//
 
 package org.onvif.ver10.schema;
 
 import java.util.HashMap;
 import java.util.Map;
+import javax.xml.namespace.QName;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
-import javax.xml.namespace.QName;
+
 
 /**
- * <p>
- * Java-Klasse f�r NetworkInterfaceSetConfiguration complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ * <p>Java class for NetworkInterfaceSetConfiguration complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType name="NetworkInterfaceSetConfiguration">
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -39,168 +32,221 @@ import javax.xml.namespace.QName;
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "NetworkInterfaceSetConfiguration", propOrder = { "enabled", "link", "mtu", "iPv4", "iPv6", "extension" })
+@XmlType(name = "NetworkInterfaceSetConfiguration", propOrder = {
+    "enabled",
+    "link",
+    "mtu",
+    "iPv4",
+    "iPv6",
+    "extension"
+})
 public class NetworkInterfaceSetConfiguration {
 
-	@XmlElement(name = "Enabled")
-	protected Boolean enabled;
-	@XmlElement(name = "Link")
-	protected NetworkInterfaceConnectionSetting link;
-	@XmlElement(name = "MTU")
-	protected Integer mtu;
-	@XmlElement(name = "IPv4")
-	protected IPv4NetworkInterfaceSetConfiguration iPv4;
-	@XmlElement(name = "IPv6")
-	protected IPv6NetworkInterfaceSetConfiguration iPv6;
-	@XmlElement(name = "Extension")
-	protected NetworkInterfaceSetConfigurationExtension extension;
-	@XmlAnyAttribute
-	private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    /**
+     * Indicates whether or not an interface is enabled.
+     *
+     */
+    @XmlElement(name = "Enabled")
+    protected Boolean enabled;
+    /**
+     * Link configuration.
+     *
+     */
+    @XmlElement(name = "Link")
+    protected NetworkInterfaceConnectionSetting link;
+    /**
+     * Maximum transmission unit.
+     *
+     */
+    @XmlElement(name = "MTU")
+    protected Integer mtu;
+    /**
+     * IPv4 network interface configuration.
+     *
+     */
+    @XmlElement(name = "IPv4")
+    protected IPv4NetworkInterfaceSetConfiguration iPv4;
+    /**
+     * IPv6 network interface configuration.
+     *
+     */
+    @XmlElement(name = "IPv6")
+    protected IPv6NetworkInterfaceSetConfiguration iPv6;
+    @XmlElement(name = "Extension")
+    protected NetworkInterfaceSetConfigurationExtension extension;
+    @XmlAnyAttribute
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
-	/**
-	 * Ruft den Wert der enabled-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link Boolean }
-	 * 
-	 */
-	public Boolean isEnabled() {
-		return enabled;
-	}
+    /**
+     * Indicates whether or not an interface is enabled.
+     *
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *
+     */
+    public Boolean isEnabled() {
+        return enabled;
+    }
 
-	/**
-	 * Legt den Wert der enabled-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Boolean }
-	 * 
-	 */
-	public void setEnabled(Boolean value) {
-		this.enabled = value;
-	}
+    /**
+     * Sets the value of the enabled property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *
+     * @see #isEnabled()
+     */
+    public void setEnabled(Boolean value) {
+        this.enabled = value;
+    }
 
-	/**
-	 * Ruft den Wert der link-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link NetworkInterfaceConnectionSetting }
-	 * 
-	 */
-	public NetworkInterfaceConnectionSetting getLink() {
-		return link;
-	}
+    /**
+     * Link configuration.
+     *
+     * @return
+     *     possible object is
+     *     {@link NetworkInterfaceConnectionSetting }
+     *
+     */
+    public NetworkInterfaceConnectionSetting getLink() {
+        return link;
+    }
 
-	/**
-	 * Legt den Wert der link-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link NetworkInterfaceConnectionSetting }
-	 * 
-	 */
-	public void setLink(NetworkInterfaceConnectionSetting value) {
-		this.link = value;
-	}
+    /**
+     * Sets the value of the link property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link NetworkInterfaceConnectionSetting }
+     *
+     * @see #getLink()
+     */
+    public void setLink(NetworkInterfaceConnectionSetting value) {
+        this.link = value;
+    }
 
-	/**
-	 * Ruft den Wert der mtu-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link Integer }
-	 * 
-	 */
-	public Integer getMTU() {
-		return mtu;
-	}
+    /**
+     * Maximum transmission unit.
+     *
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *
+     */
+    public Integer getMTU() {
+        return mtu;
+    }
 
-	/**
-	 * Legt den Wert der mtu-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Integer }
-	 * 
-	 */
-	public void setMTU(Integer value) {
-		this.mtu = value;
-	}
+    /**
+     * Sets the value of the mtu property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *
+     * @see #getMTU()
+     */
+    public void setMTU(Integer value) {
+        this.mtu = value;
+    }
 
-	/**
-	 * Ruft den Wert der iPv4-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link IPv4NetworkInterfaceSetConfiguration }
-	 * 
-	 */
-	public IPv4NetworkInterfaceSetConfiguration getIPv4() {
-		return iPv4;
-	}
+    /**
+     * IPv4 network interface configuration.
+     *
+     * @return
+     *     possible object is
+     *     {@link IPv4NetworkInterfaceSetConfiguration }
+     *
+     */
+    public IPv4NetworkInterfaceSetConfiguration getIPv4() {
+        return iPv4;
+    }
 
-	/**
-	 * Legt den Wert der iPv4-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link IPv4NetworkInterfaceSetConfiguration }
-	 * 
-	 */
-	public void setIPv4(IPv4NetworkInterfaceSetConfiguration value) {
-		this.iPv4 = value;
-	}
+    /**
+     * Sets the value of the iPv4 property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link IPv4NetworkInterfaceSetConfiguration }
+     *
+     * @see #getIPv4()
+     */
+    public void setIPv4(IPv4NetworkInterfaceSetConfiguration value) {
+        this.iPv4 = value;
+    }
 
-	/**
-	 * Ruft den Wert der iPv6-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link IPv6NetworkInterfaceSetConfiguration }
-	 * 
-	 */
-	public IPv6NetworkInterfaceSetConfiguration getIPv6() {
-		return iPv6;
-	}
+    /**
+     * IPv6 network interface configuration.
+     *
+     * @return
+     *     possible object is
+     *     {@link IPv6NetworkInterfaceSetConfiguration }
+     *
+     */
+    public IPv6NetworkInterfaceSetConfiguration getIPv6() {
+        return iPv6;
+    }
 
-	/**
-	 * Legt den Wert der iPv6-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link IPv6NetworkInterfaceSetConfiguration }
-	 * 
-	 */
-	public void setIPv6(IPv6NetworkInterfaceSetConfiguration value) {
-		this.iPv6 = value;
-	}
+    /**
+     * Sets the value of the iPv6 property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link IPv6NetworkInterfaceSetConfiguration }
+     *
+     * @see #getIPv6()
+     */
+    public void setIPv6(IPv6NetworkInterfaceSetConfiguration value) {
+        this.iPv6 = value;
+    }
 
-	/**
-	 * Ruft den Wert der extension-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link NetworkInterfaceSetConfigurationExtension }
-	 * 
-	 */
-	public NetworkInterfaceSetConfigurationExtension getExtension() {
-		return extension;
-	}
+    /**
+     * Gets the value of the extension property.
+     *
+     * @return
+     *     possible object is
+     *     {@link NetworkInterfaceSetConfigurationExtension }
+     *
+     */
+    public NetworkInterfaceSetConfigurationExtension getExtension() {
+        return extension;
+    }
 
-	/**
-	 * Legt den Wert der extension-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link NetworkInterfaceSetConfigurationExtension }
-	 * 
-	 */
-	public void setExtension(NetworkInterfaceSetConfigurationExtension value) {
-		this.extension = value;
-	}
+    /**
+     * Sets the value of the extension property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link NetworkInterfaceSetConfigurationExtension }
+     *
+     */
+    public void setExtension(NetworkInterfaceSetConfigurationExtension value) {
+        this.extension = value;
+    }
 
-	/**
-	 * Gets a map that contains attributes that aren't bound to any typed property on this class.
-	 * 
-	 * <p>
-	 * the map is keyed by the name of the attribute and the value is the string value of the attribute.
-	 * 
-	 * the map returned by this method is live, and you can add new attribute by updating the map directly. Because of this design, there's no setter.
-	 * 
-	 * 
-	 * @return always non-null
-	 */
-	public Map<QName, String> getOtherAttributes() {
-		return otherAttributes;
-	}
+    /**
+     * Gets a map that contains attributes that aren't bound to any typed property on this class.
+     *
+     * <p>
+     * the map is keyed by the name of the attribute and
+     * the value is the string value of the attribute.
+     *
+     * the map returned by this method is live, and you can add new attribute
+     * by updating the map directly. Because of this design, there's no setter.
+     *
+     *
+     * @return
+     *     always non-null
+     */
+    public Map<QName, String> getOtherAttributes() {
+        return otherAttributes;
+    }
 
 }

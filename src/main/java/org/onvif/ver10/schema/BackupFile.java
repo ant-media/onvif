@@ -1,9 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.04 um 12:22:03 PM CET 
-//
 
 package org.onvif.ver10.schema;
 
@@ -12,14 +6,13 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
 
+
 /**
- * <p>
- * Java-Klasse f�r BackupFile complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ * <p>Java class for BackupFile complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType name="BackupFile">
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -30,59 +23,68 @@ import jakarta.xml.bind.annotation.XmlType;
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "BackupFile", propOrder = { "name", "data" })
+@XmlType(name = "BackupFile", propOrder = {
+    "name",
+    "data"
+})
 public class BackupFile {
 
-	@XmlElement(name = "Name", required = true)
-	protected String name;
-	@XmlElement(name = "Data", required = true)
-	protected AttachmentData data;
+    @XmlElement(name = "Name", required = true)
+    protected String name;
+    @XmlElement(name = "Data", required = true)
+    protected AttachmentData data;
 
-	/**
-	 * Ruft den Wert der name-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getName() {
-		return name;
-	}
+    /**
+     * Gets the value of the name property.
+     *
+     * @return
+     *     possible object is
+     *     {@link String }
+     *
+     */
+    public String getName() {
+        return name;
+    }
 
-	/**
-	 * Legt den Wert der name-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setName(String value) {
-		this.name = value;
-	}
+    /**
+     * Sets the value of the name property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *
+     */
+    public void setName(String value) {
+        this.name = value;
+    }
 
-	/**
-	 * Ruft den Wert der data-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link AttachmentData }
-	 * 
-	 */
-	public AttachmentData getData() {
-		return data;
-	}
+    /**
+     * Gets the value of the data property.
+     *
+     * @return
+     *     possible object is
+     *     {@link AttachmentData }
+     *
+     */
+    public AttachmentData getData() {
+        return data;
+    }
 
-	/**
-	 * Legt den Wert der data-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link AttachmentData }
-	 * 
-	 */
-	public void setData(AttachmentData value) {
-		this.data = value;
-	}
+    /**
+     * Sets the value of the data property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link AttachmentData }
+     *
+     */
+    public void setData(AttachmentData value) {
+        this.data = value;
+    }
 
 }

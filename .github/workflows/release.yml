@@ -1,0 +1,46 @@
+name: Publish Maven package
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Release version committed to master (for example, 1.3.0)
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: publish-maven-package
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '17'
+          server-id: github
+      - name: Check the release version
+        env:
+          RELEASE_VERSION: ${{ inputs.version }}
+        run: |
+          version=$(python3 -c 'import xml.etree.ElementTree as ET; print(ET.parse("pom.xml").findtext("{*}version"))')
+          if [[ "$version" != "$RELEASE_VERSION" || "$version" == *-SNAPSHOT ]]; then
+            echo "::error::Enter the release version from the merged POM ($version). Snapshot releases are disabled."
+            exit 1
+          fi
+      - name: Test and publish to GitHub Packages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: mvn --batch-mode --no-transfer-progress deploy -DskipTests=false -Dgpg.skip -Dmaven.javadoc.skip=true

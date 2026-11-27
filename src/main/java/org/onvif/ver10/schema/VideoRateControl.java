@@ -1,9 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.04 um 12:22:03 PM CET 
-//
 
 package org.onvif.ver10.schema;
 
@@ -12,14 +6,13 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
 
+
 /**
- * <p>
- * Java-Klasse f�r VideoRateControl complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ * <p>Java class for VideoRateControl complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType name="VideoRateControl">
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -31,67 +24,83 @@ import jakarta.xml.bind.annotation.XmlType;
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "VideoRateControl", propOrder = { "frameRateLimit", "encodingInterval", "bitrateLimit" })
+@XmlType(name = "VideoRateControl", propOrder = {
+    "frameRateLimit",
+    "encodingInterval",
+    "bitrateLimit"
+})
 public class VideoRateControl {
 
-	@XmlElement(name = "FrameRateLimit")
-	protected int frameRateLimit;
-	@XmlElement(name = "EncodingInterval")
-	protected int encodingInterval;
-	@XmlElement(name = "BitrateLimit")
-	protected int bitrateLimit;
+    /**
+     * Maximum output framerate in fps. If an EncodingInterval is provided the resulting encoded framerate will be reduced by the given factor.
+     *
+     */
+    @XmlElement(name = "FrameRateLimit")
+    protected int frameRateLimit;
+    /**
+     * Interval at which images are encoded and transmitted. (A value of 1 means that every frame is encoded, a value of 2 means that every 2nd frame is encoded ...)
+     *
+     */
+    @XmlElement(name = "EncodingInterval")
+    protected int encodingInterval;
+    /**
+     * The maximum output bitrate in kbps.
+     *
+     */
+    @XmlElement(name = "BitrateLimit")
+    protected int bitrateLimit;
 
-	/**
-	 * Ruft den Wert der frameRateLimit-Eigenschaft ab.
-	 * 
-	 */
-	public int getFrameRateLimit() {
-		return frameRateLimit;
-	}
+    /**
+     * Maximum output framerate in fps. If an EncodingInterval is provided the resulting encoded framerate will be reduced by the given factor.
+     *
+     */
+    public int getFrameRateLimit() {
+        return frameRateLimit;
+    }
 
-	/**
-	 * Legt den Wert der frameRateLimit-Eigenschaft fest.
-	 * 
-	 */
-	public void setFrameRateLimit(int value) {
-		this.frameRateLimit = value;
-	}
+    /**
+     * Sets the value of the frameRateLimit property.
+     *
+     */
+    public void setFrameRateLimit(int value) {
+        this.frameRateLimit = value;
+    }
 
-	/**
-	 * Ruft den Wert der encodingInterval-Eigenschaft ab.
-	 * 
-	 */
-	public int getEncodingInterval() {
-		return encodingInterval;
-	}
+    /**
+     * Interval at which images are encoded and transmitted. (A value of 1 means that every frame is encoded, a value of 2 means that every 2nd frame is encoded ...)
+     *
+     */
+    public int getEncodingInterval() {
+        return encodingInterval;
+    }
 
-	/**
-	 * Legt den Wert der encodingInterval-Eigenschaft fest.
-	 * 
-	 */
-	public void setEncodingInterval(int value) {
-		this.encodingInterval = value;
-	}
+    /**
+     * Sets the value of the encodingInterval property.
+     *
+     */
+    public void setEncodingInterval(int value) {
+        this.encodingInterval = value;
+    }
 
-	/**
-	 * Ruft den Wert der bitrateLimit-Eigenschaft ab.
-	 * 
-	 */
-	public int getBitrateLimit() {
-		return bitrateLimit;
-	}
+    /**
+     * The maximum output bitrate in kbps.
+     *
+     */
+    public int getBitrateLimit() {
+        return bitrateLimit;
+    }
 
-	/**
-	 * Legt den Wert der bitrateLimit-Eigenschaft fest.
-	 * 
-	 */
-	public void setBitrateLimit(int value) {
-		this.bitrateLimit = value;
-	}
+    /**
+     * Sets the value of the bitrateLimit property.
+     *
+     */
+    public void setBitrateLimit(int value) {
+        this.bitrateLimit = value;
+    }
 
 }

@@ -1,9 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.04 um 12:22:03 PM CET 
-//
 
 package org.onvif.ver10.schema;
 
@@ -12,17 +6,17 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAttribute;
 import jakarta.xml.bind.annotation.XmlSeeAlso;
 import jakarta.xml.bind.annotation.XmlType;
+import org.onvif.ver10.device.wsdl.StorageConfiguration;
+
 
 /**
  * Base class for physical entities like inputs and outputs.
- * 
- * <p>
- * Java-Klasse f�r DeviceEntity complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ *
+ * <p>Java class for DeviceEntity complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType name="DeviceEntity">
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -30,38 +24,56 @@ import jakarta.xml.bind.annotation.XmlType;
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "DeviceEntity")
-@XmlSeeAlso({ RelayOutput.class, NetworkInterface.class, VideoOutput.class, AudioSource.class, OSDConfiguration.class, AudioOutput.class, VideoSource.class,
-		DigitalInput.class, PTZNode.class })
+@XmlSeeAlso({
+    VideoSource.class,
+    AudioSource.class,
+    VideoOutput.class,
+    AudioOutput.class,
+    NetworkInterface.class,
+    RelayOutput.class,
+    DigitalInput.class,
+    PTZNode.class,
+    OSDConfiguration.class,
+    StorageConfiguration.class
+})
 public class DeviceEntity {
 
-	@XmlAttribute(name = "token", required = true)
-	protected String token;
+    /**
+     * Unique identifier referencing the physical entity.
+     *
+     */
+    @XmlAttribute(name = "token", required = true)
+    protected String token;
 
-	/**
-	 * Ruft den Wert der token-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getToken() {
-		return token;
-	}
+    /**
+     * Unique identifier referencing the physical entity.
+     *
+     * @return
+     *     possible object is
+     *     {@link String }
+     *
+     */
+    public String getToken() {
+        return token;
+    }
 
-	/**
-	 * Legt den Wert der token-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setToken(String value) {
-		this.token = value;
-	}
+    /**
+     * Sets the value of the token property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *
+     * @see #getToken()
+     */
+    public void setToken(String value) {
+        this.token = value;
+    }
 
 }

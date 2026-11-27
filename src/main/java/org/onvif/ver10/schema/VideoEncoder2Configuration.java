@@ -1,10 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2016.02.05 um 06:25:30 PM CET 
-//
-
 
 package org.onvif.ver10.schema;
 
@@ -12,6 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.xml.namespace.QName;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAnyAttribute;
@@ -19,36 +13,39 @@ import jakarta.xml.bind.annotation.XmlAnyElement;
 import jakarta.xml.bind.annotation.XmlAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
-import javax.xml.namespace.QName;
 import org.w3c.dom.Element;
 
 
 /**
- * <p>Java-Klasse f�r VideoEncoder2Configuration complex type.
- * 
- * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
- * &lt;complexType name="VideoEncoder2Configuration">
- *   &lt;complexContent>
- *     &lt;extension base="{http://www.onvif.org/ver10/schema}ConfigurationEntity">
- *       &lt;sequence>
- *         &lt;element name="Encoding" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="Resolution" type="{http://www.onvif.org/ver10/schema}VideoResolution2"/>
- *         &lt;element name="RateControl" type="{http://www.onvif.org/ver10/schema}VideoRateControl2" minOccurs="0"/>
- *         &lt;element name="Multicast" type="{http://www.onvif.org/ver10/schema}MulticastConfiguration" minOccurs="0"/>
- *         &lt;element name="Quality" type="{http://www.w3.org/2001/XMLSchema}float"/>
- *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="GovLength" type="{http://www.w3.org/2001/XMLSchema}int" />
- *       &lt;attribute name="Profile" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;anyAttribute processContents='lax'/>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * <p>Java class for VideoEncoder2Configuration complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
+ * <complexType name="VideoEncoder2Configuration">
+ *   <complexContent>
+ *     <extension base="{http://www.onvif.org/ver10/schema}ConfigurationEntity">
+ *       <sequence>
+ *         <element name="Encoding" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         <element name="Resolution" type="{http://www.onvif.org/ver10/schema}VideoResolution2"/>
+ *         <element name="RateControl" type="{http://www.onvif.org/ver10/schema}VideoRateControl2" minOccurs="0"/>
+ *         <element name="Multicast" type="{http://www.onvif.org/ver10/schema}MulticastConfiguration" minOccurs="0"/>
+ *         <element name="Quality" type="{http://www.w3.org/2001/XMLSchema}float"/>
+ *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
+ *       </sequence>
+ *       <attribute name="GovLength" type="{http://www.w3.org/2001/XMLSchema}int" />
+ *       <attribute name="AnchorFrameDistance" type="{http://www.w3.org/2001/XMLSchema}int" />
+ *       <attribute name="Profile" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *       <attribute name="GuaranteedFrameRate" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <attribute name="Signed" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <attribute name="SecureStreamingProtocolAlgorithm" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *       <anyAttribute processContents='lax'/>
+ *     </extension>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "VideoEncoder2Configuration", propOrder = {
@@ -63,132 +60,198 @@ public class VideoEncoder2Configuration
     extends ConfigurationEntity
 {
 
+    /**
+     * Video Media Subtype for the video format. For definitions see tt:VideoEncodingMimeNames and
+     * <pre>
+     * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;a xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope" xmlns:tt="http://www.onvif.org/ver10/schema" xmlns:wsnt="http://docs.oasis-open.org/wsn/b-2" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xop="http://www.w3.org/2004/08/xop/include" xmlns:xs="http://www.w3.org/2001/XMLSchema" href="https://www.iana.org/assignments/media-types/media-types.xhtml#video"&gt; IANA Media Types&lt;/a&gt;
+     * </pre>
+     * .
+     *
+     */
     @XmlElement(name = "Encoding", required = true)
     protected String encoding;
+    /**
+     * Configured video resolution
+     *
+     */
     @XmlElement(name = "Resolution", required = true)
     protected VideoResolution2 resolution;
+    /**
+     * Optional element to configure rate control related parameters.
+     *
+     */
     @XmlElement(name = "RateControl")
     protected VideoRateControl2 rateControl;
+    /**
+     * Defines the multicast settings that could be used for video streaming.
+     *
+     */
     @XmlElement(name = "Multicast")
     protected MulticastConfiguration multicast;
+    /**
+     * Relative value for the video quantizers and the quality of the video. A high value within supported quality range means higher quality
+     *
+     */
     @XmlElement(name = "Quality")
     protected float quality;
     @XmlAnyElement(lax = true)
     protected List<java.lang.Object> any;
+    /**
+     * Group of Video frames length. Determines typically the interval in which the I-Frames will be coded. An entry of 1 indicates I-Frames are continuously generated. An entry of 2 indicates that every 2nd image is an I-Frame, and 3 only every 3rd frame, etc. The frames in between are coded as P or B Frames.
+     *
+     */
     @XmlAttribute(name = "GovLength")
     protected Integer govLength;
+    /**
+     * Distance between anchor frames of type I-Frame and P-Frame. '1' indicates no B-Frames, '2' indicates that every 2nd frame is encoded as B-Frame, '3' indicates a structure like IBBPBBP..., etc.
+     *
+     */
+    @XmlAttribute(name = "AnchorFrameDistance")
+    protected Integer anchorFrameDistance;
+    /**
+     * The encoder profile as defined in tt:VideoEncodingProfiles.
+     *
+     */
     @XmlAttribute(name = "Profile")
     protected String profile;
+    /**
+     * A value of true indicates that frame rate is a fixed value rather than an upper limit,
+     * 							and that the video encoder shall prioritize frame rate over all other adaptable
+     * 							configuration values such as bitrate.  Default is false.
+     *
+     */
+    @XmlAttribute(name = "GuaranteedFrameRate")
+    protected Boolean guaranteedFrameRate;
+    /**
+     * Indicates if this stream will be signed according to the Media Signing Specification.
+     *
+     */
+    @XmlAttribute(name = "Signed")
+    protected Boolean signed;
+    /**
+     * Defines the cryptographic algorithm to use as defined by tt:SrtpSecurityAlgorithms
+     *
+     */
+    @XmlAttribute(name = "SecureStreamingProtocolAlgorithm")
+    protected String secureStreamingProtocolAlgorithm;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Ruft den Wert der encoding-Eigenschaft ab.
-     * 
+     * Video Media Subtype for the video format. For definitions see tt:VideoEncodingMimeNames and
+     * <pre>
+     * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;a xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope" xmlns:tt="http://www.onvif.org/ver10/schema" xmlns:wsnt="http://docs.oasis-open.org/wsn/b-2" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xop="http://www.w3.org/2004/08/xop/include" xmlns:xs="http://www.w3.org/2001/XMLSchema" href="https://www.iana.org/assignments/media-types/media-types.xhtml#video"&gt; IANA Media Types&lt;/a&gt;
+     * </pre>
+     * .
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getEncoding() {
         return encoding;
     }
 
     /**
-     * Legt den Wert der encoding-Eigenschaft fest.
-     * 
+     * Sets the value of the encoding property.
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
+     * @see #getEncoding()
      */
     public void setEncoding(String value) {
         this.encoding = value;
     }
 
     /**
-     * Ruft den Wert der resolution-Eigenschaft ab.
-     * 
+     * Configured video resolution
+     *
      * @return
      *     possible object is
      *     {@link VideoResolution2 }
-     *     
+     *
      */
     public VideoResolution2 getResolution() {
         return resolution;
     }
 
     /**
-     * Legt den Wert der resolution-Eigenschaft fest.
-     * 
+     * Sets the value of the resolution property.
+     *
      * @param value
      *     allowed object is
      *     {@link VideoResolution2 }
-     *     
+     *
+     * @see #getResolution()
      */
     public void setResolution(VideoResolution2 value) {
         this.resolution = value;
     }
 
     /**
-     * Ruft den Wert der rateControl-Eigenschaft ab.
-     * 
+     * Optional element to configure rate control related parameters.
+     *
      * @return
      *     possible object is
      *     {@link VideoRateControl2 }
-     *     
+     *
      */
     public VideoRateControl2 getRateControl() {
         return rateControl;
     }
 
     /**
-     * Legt den Wert der rateControl-Eigenschaft fest.
-     * 
+     * Sets the value of the rateControl property.
+     *
      * @param value
      *     allowed object is
      *     {@link VideoRateControl2 }
-     *     
+     *
+     * @see #getRateControl()
      */
     public void setRateControl(VideoRateControl2 value) {
         this.rateControl = value;
     }
 
     /**
-     * Ruft den Wert der multicast-Eigenschaft ab.
-     * 
+     * Defines the multicast settings that could be used for video streaming.
+     *
      * @return
      *     possible object is
      *     {@link MulticastConfiguration }
-     *     
+     *
      */
     public MulticastConfiguration getMulticast() {
         return multicast;
     }
 
     /**
-     * Legt den Wert der multicast-Eigenschaft fest.
-     * 
+     * Sets the value of the multicast property.
+     *
      * @param value
      *     allowed object is
      *     {@link MulticastConfiguration }
-     *     
+     *
+     * @see #getMulticast()
      */
     public void setMulticast(MulticastConfiguration value) {
         this.multicast = value;
     }
 
     /**
-     * Ruft den Wert der quality-Eigenschaft ab.
-     * 
+     * Relative value for the video quantizers and the quality of the video. A high value within supported quality range means higher quality
+     *
      */
     public float getQuality() {
         return quality;
     }
 
     /**
-     * Legt den Wert der quality-Eigenschaft fest.
-     * 
+     * Sets the value of the quality property.
+     *
      */
     public void setQuality(float value) {
         this.quality = value;
@@ -196,93 +259,200 @@ public class VideoEncoder2Configuration
 
     /**
      * Gets the value of the any property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     *
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
-     * 
+     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
+     *
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAny().add(newItem);
+     * getAny().add(newItem);
      * </pre>
-     * 
-     * 
+     *
+     *
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Element }
      * {@link java.lang.Object }
-     * 
-     * 
+     * {@link Element }
+     * </p>
+     *
+     *
+     * @return
+     *     The value of the any property.
      */
     public List<java.lang.Object> getAny() {
         if (any == null) {
-            any = new ArrayList<java.lang.Object>();
+            any = new ArrayList<>();
         }
         return this.any;
     }
 
     /**
-     * Ruft den Wert der govLength-Eigenschaft ab.
-     * 
+     * Group of Video frames length. Determines typically the interval in which the I-Frames will be coded. An entry of 1 indicates I-Frames are continuously generated. An entry of 2 indicates that every 2nd image is an I-Frame, and 3 only every 3rd frame, etc. The frames in between are coded as P or B Frames.
+     *
      * @return
      *     possible object is
      *     {@link Integer }
-     *     
+     *
      */
     public Integer getGovLength() {
         return govLength;
     }
 
     /**
-     * Legt den Wert der govLength-Eigenschaft fest.
-     * 
+     * Sets the value of the govLength property.
+     *
      * @param value
      *     allowed object is
      *     {@link Integer }
-     *     
+     *
+     * @see #getGovLength()
      */
     public void setGovLength(Integer value) {
         this.govLength = value;
     }
 
     /**
-     * Ruft den Wert der profile-Eigenschaft ab.
-     * 
+     * Distance between anchor frames of type I-Frame and P-Frame. '1' indicates no B-Frames, '2' indicates that every 2nd frame is encoded as B-Frame, '3' indicates a structure like IBBPBBP..., etc.
+     *
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *
+     */
+    public Integer getAnchorFrameDistance() {
+        return anchorFrameDistance;
+    }
+
+    /**
+     * Sets the value of the anchorFrameDistance property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *
+     * @see #getAnchorFrameDistance()
+     */
+    public void setAnchorFrameDistance(Integer value) {
+        this.anchorFrameDistance = value;
+    }
+
+    /**
+     * The encoder profile as defined in tt:VideoEncodingProfiles.
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getProfile() {
         return profile;
     }
 
     /**
-     * Legt den Wert der profile-Eigenschaft fest.
-     * 
+     * Sets the value of the profile property.
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
+     * @see #getProfile()
      */
     public void setProfile(String value) {
         this.profile = value;
     }
 
     /**
+     * A value of true indicates that frame rate is a fixed value rather than an upper limit,
+     * 							and that the video encoder shall prioritize frame rate over all other adaptable
+     * 							configuration values such as bitrate.  Default is false.
+     *
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *
+     */
+    public Boolean isGuaranteedFrameRate() {
+        return guaranteedFrameRate;
+    }
+
+    /**
+     * Sets the value of the guaranteedFrameRate property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *
+     * @see #isGuaranteedFrameRate()
+     */
+    public void setGuaranteedFrameRate(Boolean value) {
+        this.guaranteedFrameRate = value;
+    }
+
+    /**
+     * Indicates if this stream will be signed according to the Media Signing Specification.
+     *
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *
+     */
+    public Boolean isSigned() {
+        return signed;
+    }
+
+    /**
+     * Sets the value of the signed property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *
+     * @see #isSigned()
+     */
+    public void setSigned(Boolean value) {
+        this.signed = value;
+    }
+
+    /**
+     * Defines the cryptographic algorithm to use as defined by tt:SrtpSecurityAlgorithms
+     *
+     * @return
+     *     possible object is
+     *     {@link String }
+     *
+     */
+    public String getSecureStreamingProtocolAlgorithm() {
+        return secureStreamingProtocolAlgorithm;
+    }
+
+    /**
+     * Sets the value of the secureStreamingProtocolAlgorithm property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *
+     * @see #getSecureStreamingProtocolAlgorithm()
+     */
+    public void setSecureStreamingProtocolAlgorithm(String value) {
+        this.secureStreamingProtocolAlgorithm = value;
+    }
+
+    /**
      * Gets a map that contains attributes that aren't bound to any typed property on this class.
-     * 
+     *
      * <p>
-     * the map is keyed by the name of the attribute and 
+     * the map is keyed by the name of the attribute and
      * the value is the string value of the attribute.
-     * 
+     *
      * the map returned by this method is live, and you can add new attribute
      * by updating the map directly. Because of this design, there's no setter.
-     * 
-     * 
+     *
+     *
      * @return
      *     always non-null
      */

@@ -1,12 +1,7 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.04 um 12:22:03 PM CET 
-//
 
 package org.onvif.ver10.device.wsdl;
 
+import javax.xml.datatype.XMLGregorianCalendar;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
@@ -15,16 +10,14 @@ import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+
 
 /**
- * <p>
- * Java-Klasse f�r anonymous complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ * <p>Java class for anonymous complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType>
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -37,110 +30,147 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = { "certificateID", "subject", "validNotBefore", "validNotAfter" })
+@XmlType(name = "", propOrder = {
+    "certificateID",
+    "subject",
+    "validNotBefore",
+    "validNotAfter"
+})
 @XmlRootElement(name = "CreateCertificate")
 public class CreateCertificate {
 
-	@XmlElement(name = "CertificateID")
-	@XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-	@XmlSchemaType(name = "token")
-	protected String certificateID;
-	@XmlElement(name = "Subject")
-	protected String subject;
-	@XmlElement(name = "ValidNotBefore")
-	@XmlSchemaType(name = "dateTime")
-	protected XMLGregorianCalendar validNotBefore;
-	@XmlElement(name = "ValidNotAfter")
-	@XmlSchemaType(name = "dateTime")
-	protected XMLGregorianCalendar validNotAfter;
+    /**
+     * Certificate id.
+     *
+     */
+    @XmlElement(name = "CertificateID")
+    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
+    @XmlSchemaType(name = "token")
+    protected String certificateID;
+    /**
+     * Identification of the entity associated with the public-key.
+     *
+     */
+    @XmlElement(name = "Subject")
+    protected String subject;
+    /**
+     * Certificate validity start date.
+     *
+     */
+    @XmlElement(name = "ValidNotBefore")
+    @XmlSchemaType(name = "dateTime")
+    protected XMLGregorianCalendar validNotBefore;
+    /**
+     * Certificate expiry start date.
+     *
+     */
+    @XmlElement(name = "ValidNotAfter")
+    @XmlSchemaType(name = "dateTime")
+    protected XMLGregorianCalendar validNotAfter;
 
-	/**
-	 * Ruft den Wert der certificateID-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getCertificateID() {
-		return certificateID;
-	}
+    /**
+     * Certificate id.
+     *
+     * @return
+     *     possible object is
+     *     {@link String }
+     *
+     */
+    public String getCertificateID() {
+        return certificateID;
+    }
 
-	/**
-	 * Legt den Wert der certificateID-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setCertificateID(String value) {
-		this.certificateID = value;
-	}
+    /**
+     * Sets the value of the certificateID property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *
+     * @see #getCertificateID()
+     */
+    public void setCertificateID(String value) {
+        this.certificateID = value;
+    }
 
-	/**
-	 * Ruft den Wert der subject-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getSubject() {
-		return subject;
-	}
+    /**
+     * Identification of the entity associated with the public-key.
+     *
+     * @return
+     *     possible object is
+     *     {@link String }
+     *
+     */
+    public String getSubject() {
+        return subject;
+    }
 
-	/**
-	 * Legt den Wert der subject-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setSubject(String value) {
-		this.subject = value;
-	}
+    /**
+     * Sets the value of the subject property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *
+     * @see #getSubject()
+     */
+    public void setSubject(String value) {
+        this.subject = value;
+    }
 
-	/**
-	 * Ruft den Wert der validNotBefore-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link XMLGregorianCalendar }
-	 * 
-	 */
-	public XMLGregorianCalendar getValidNotBefore() {
-		return validNotBefore;
-	}
+    /**
+     * Certificate validity start date.
+     *
+     * @return
+     *     possible object is
+     *     {@link XMLGregorianCalendar }
+     *
+     */
+    public XMLGregorianCalendar getValidNotBefore() {
+        return validNotBefore;
+    }
 
-	/**
-	 * Legt den Wert der validNotBefore-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link XMLGregorianCalendar }
-	 * 
-	 */
-	public void setValidNotBefore(XMLGregorianCalendar value) {
-		this.validNotBefore = value;
-	}
+    /**
+     * Sets the value of the validNotBefore property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link XMLGregorianCalendar }
+     *
+     * @see #getValidNotBefore()
+     */
+    public void setValidNotBefore(XMLGregorianCalendar value) {
+        this.validNotBefore = value;
+    }
 
-	/**
-	 * Ruft den Wert der validNotAfter-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link XMLGregorianCalendar }
-	 * 
-	 */
-	public XMLGregorianCalendar getValidNotAfter() {
-		return validNotAfter;
-	}
+    /**
+     * Certificate expiry start date.
+     *
+     * @return
+     *     possible object is
+     *     {@link XMLGregorianCalendar }
+     *
+     */
+    public XMLGregorianCalendar getValidNotAfter() {
+        return validNotAfter;
+    }
 
-	/**
-	 * Legt den Wert der validNotAfter-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link XMLGregorianCalendar }
-	 * 
-	 */
-	public void setValidNotAfter(XMLGregorianCalendar value) {
-		this.validNotAfter = value;
-	}
+    /**
+     * Sets the value of the validNotAfter property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link XMLGregorianCalendar }
+     *
+     * @see #getValidNotAfter()
+     */
+    public void setValidNotAfter(XMLGregorianCalendar value) {
+        this.validNotAfter = value;
+    }
 
 }

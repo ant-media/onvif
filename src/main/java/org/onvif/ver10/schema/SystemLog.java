@@ -1,9 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.04 um 12:22:03 PM CET 
-//
 
 package org.onvif.ver10.schema;
 
@@ -12,14 +6,13 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
 
+
 /**
- * <p>
- * Java-Klasse f�r SystemLog complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ * <p>Java class for SystemLog complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType name="SystemLog">
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -30,59 +23,78 @@ import jakarta.xml.bind.annotation.XmlType;
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "SystemLog", propOrder = { "binary", "string" })
+@XmlType(name = "SystemLog", propOrder = {
+    "binary",
+    "string"
+})
 public class SystemLog {
 
-	@XmlElement(name = "Binary")
-	protected AttachmentData binary;
-	@XmlElement(name = "String")
-	protected String string;
+    /**
+     * The log information as attachment data.
+     *
+     */
+    @XmlElement(name = "Binary")
+    protected AttachmentData binary;
+    /**
+     * The log information as character data.
+     *
+     */
+    @XmlElement(name = "String")
+    protected String string;
 
-	/**
-	 * Ruft den Wert der binary-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link AttachmentData }
-	 * 
-	 */
-	public AttachmentData getBinary() {
-		return binary;
-	}
+    /**
+     * The log information as attachment data.
+     *
+     * @return
+     *     possible object is
+     *     {@link AttachmentData }
+     *
+     */
+    public AttachmentData getBinary() {
+        return binary;
+    }
 
-	/**
-	 * Legt den Wert der binary-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link AttachmentData }
-	 * 
-	 */
-	public void setBinary(AttachmentData value) {
-		this.binary = value;
-	}
+    /**
+     * Sets the value of the binary property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link AttachmentData }
+     *
+     * @see #getBinary()
+     */
+    public void setBinary(AttachmentData value) {
+        this.binary = value;
+    }
 
-	/**
-	 * Ruft den Wert der string-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getString() {
-		return string;
-	}
+    /**
+     * The log information as character data.
+     *
+     * @return
+     *     possible object is
+     *     {@link String }
+     *
+     */
+    public String getString() {
+        return string;
+    }
 
-	/**
-	 * Legt den Wert der string-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setString(String value) {
-		this.string = value;
-	}
+    /**
+     * Sets the value of the string property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *
+     * @see #getString()
+     */
+    public void setString(String value) {
+        this.string = value;
+    }
 
 }

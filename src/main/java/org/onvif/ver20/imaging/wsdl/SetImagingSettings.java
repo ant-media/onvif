@@ -1,10 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.04.25 um 04:22:13 PM CEST 
-//
-
 
 package org.onvif.ver20.imaging.wsdl;
 
@@ -17,25 +10,25 @@ import org.onvif.ver10.schema.ImagingSettings20;
 
 
 /**
- * <p>Java-Klasse f�r anonymous complex type.
- * 
- * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="VideoSourceToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/>
- *         &lt;element name="ImagingSettings" type="{http://www.onvif.org/ver10/schema}ImagingSettings20"/>
- *         &lt;element name="ForcePersistence" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * <p>Java class for anonymous complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="VideoSourceToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/>
+ *         <element name="ImagingSettings" type="{http://www.onvif.org/ver10/schema}ImagingSettings20"/>
+ *         <element name="ForcePersistence" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -54,72 +47,72 @@ public class SetImagingSettings {
     protected Boolean forcePersistence;
 
     /**
-     * Ruft den Wert der videoSourceToken-Eigenschaft ab.
-     * 
+     * Gets the value of the videoSourceToken property.
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getVideoSourceToken() {
         return videoSourceToken;
     }
 
     /**
-     * Legt den Wert der videoSourceToken-Eigenschaft fest.
-     * 
+     * Sets the value of the videoSourceToken property.
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setVideoSourceToken(String value) {
         this.videoSourceToken = value;
     }
 
     /**
-     * Ruft den Wert der imagingSettings-Eigenschaft ab.
-     * 
+     * Gets the value of the imagingSettings property.
+     *
      * @return
      *     possible object is
      *     {@link ImagingSettings20 }
-     *     
+     *
      */
     public ImagingSettings20 getImagingSettings() {
         return imagingSettings;
     }
 
     /**
-     * Legt den Wert der imagingSettings-Eigenschaft fest.
-     * 
+     * Sets the value of the imagingSettings property.
+     *
      * @param value
      *     allowed object is
      *     {@link ImagingSettings20 }
-     *     
+     *
      */
     public void setImagingSettings(ImagingSettings20 value) {
         this.imagingSettings = value;
     }
 
     /**
-     * Ruft den Wert der forcePersistence-Eigenschaft ab.
-     * 
+     * Gets the value of the forcePersistence property.
+     *
      * @return
      *     possible object is
      *     {@link Boolean }
-     *     
+     *
      */
     public Boolean isForcePersistence() {
         return forcePersistence;
     }
 
     /**
-     * Legt den Wert der forcePersistence-Eigenschaft fest.
-     * 
+     * Sets the value of the forcePersistence property.
+     *
      * @param value
      *     allowed object is
      *     {@link Boolean }
-     *     
+     *
      */
     public void setForcePersistence(Boolean value) {
         this.forcePersistence = value;

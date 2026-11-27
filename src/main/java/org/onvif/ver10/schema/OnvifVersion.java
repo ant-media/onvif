@@ -1,9 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.04 um 12:22:03 PM CET 
-//
 
 package org.onvif.ver10.schema;
 
@@ -12,14 +6,13 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
 
+
 /**
- * <p>
- * Java-Klasse f�r OnvifVersion complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ * <p>Java class for OnvifVersion complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType name="OnvifVersion">
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -30,49 +23,64 @@ import jakarta.xml.bind.annotation.XmlType;
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "OnvifVersion", propOrder = { "major", "minor" })
+@XmlType(name = "OnvifVersion", propOrder = {
+    "major",
+    "minor"
+})
 public class OnvifVersion {
 
-	@XmlElement(name = "Major")
-	protected int major;
-	@XmlElement(name = "Minor")
-	protected int minor;
+    /**
+     * Major version number.
+     *
+     */
+    @XmlElement(name = "Major")
+    protected int major;
+    /**
+     * Two digit minor version number.
+     * 						If major version number is less than "16", X.0.1 maps to "01" and X.2.1 maps to "21" where X stands for Major version number.
+     * 						Otherwise, minor number is month of release, such as "06" for June.
+     *
+     */
+    @XmlElement(name = "Minor")
+    protected int minor;
 
-	/**
-	 * Ruft den Wert der major-Eigenschaft ab.
-	 * 
-	 */
-	public int getMajor() {
-		return major;
-	}
+    /**
+     * Major version number.
+     *
+     */
+    public int getMajor() {
+        return major;
+    }
 
-	/**
-	 * Legt den Wert der major-Eigenschaft fest.
-	 * 
-	 */
-	public void setMajor(int value) {
-		this.major = value;
-	}
+    /**
+     * Sets the value of the major property.
+     *
+     */
+    public void setMajor(int value) {
+        this.major = value;
+    }
 
-	/**
-	 * Ruft den Wert der minor-Eigenschaft ab.
-	 * 
-	 */
-	public int getMinor() {
-		return minor;
-	}
+    /**
+     * Two digit minor version number.
+     * 						If major version number is less than "16", X.0.1 maps to "01" and X.2.1 maps to "21" where X stands for Major version number.
+     * 						Otherwise, minor number is month of release, such as "06" for June.
+     *
+     */
+    public int getMinor() {
+        return minor;
+    }
 
-	/**
-	 * Legt den Wert der minor-Eigenschaft fest.
-	 * 
-	 */
-	public void setMinor(int value) {
-		this.minor = value;
-	}
+    /**
+     * Sets the value of the minor property.
+     *
+     */
+    public void setMinor(int value) {
+        this.minor = value;
+    }
 
 }

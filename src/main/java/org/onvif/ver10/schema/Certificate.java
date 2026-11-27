@@ -1,9 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.04 um 12:22:03 PM CET 
-//
 
 package org.onvif.ver10.schema;
 
@@ -15,14 +9,13 @@ import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
+
 /**
- * <p>
- * Java-Klasse f�r Certificate complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ * <p>Java class for Certificate complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType name="Certificate">
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -33,61 +26,80 @@ import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Certificate", propOrder = { "certificateID", "certificate" })
+@XmlType(name = "Certificate", propOrder = {
+    "certificateID",
+    "certificate"
+})
 public class Certificate {
 
-	@XmlElement(name = "CertificateID", required = true)
-	@XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-	@XmlSchemaType(name = "token")
-	protected String certificateID;
-	@XmlElement(name = "Certificate", required = true)
-	protected BinaryData certificate;
+    /**
+     * Certificate id.
+     *
+     */
+    @XmlElement(name = "CertificateID", required = true)
+    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
+    @XmlSchemaType(name = "token")
+    protected String certificateID;
+    /**
+     * base64 encoded DER representation of certificate.
+     *
+     */
+    @XmlElement(name = "Certificate", required = true)
+    protected BinaryData certificate;
 
-	/**
-	 * Ruft den Wert der certificateID-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getCertificateID() {
-		return certificateID;
-	}
+    /**
+     * Certificate id.
+     *
+     * @return
+     *     possible object is
+     *     {@link String }
+     *
+     */
+    public String getCertificateID() {
+        return certificateID;
+    }
 
-	/**
-	 * Legt den Wert der certificateID-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setCertificateID(String value) {
-		this.certificateID = value;
-	}
+    /**
+     * Sets the value of the certificateID property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *
+     * @see #getCertificateID()
+     */
+    public void setCertificateID(String value) {
+        this.certificateID = value;
+    }
 
-	/**
-	 * Ruft den Wert der certificate-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link BinaryData }
-	 * 
-	 */
-	public BinaryData getCertificate() {
-		return certificate;
-	}
+    /**
+     * base64 encoded DER representation of certificate.
+     *
+     * @return
+     *     possible object is
+     *     {@link BinaryData }
+     *
+     */
+    public BinaryData getCertificate() {
+        return certificate;
+    }
 
-	/**
-	 * Legt den Wert der certificate-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link BinaryData }
-	 * 
-	 */
-	public void setCertificate(BinaryData value) {
-		this.certificate = value;
-	}
+    /**
+     * Sets the value of the certificate property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link BinaryData }
+     *
+     * @see #getCertificate()
+     */
+    public void setCertificate(BinaryData value) {
+        this.certificate = value;
+    }
 
 }

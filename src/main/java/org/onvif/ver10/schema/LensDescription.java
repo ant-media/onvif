@@ -1,10 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2016.02.05 um 06:25:30 PM CET 
-//
-
 
 package org.onvif.ver10.schema;
 
@@ -12,6 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.xml.namespace.QName;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAnyAttribute;
@@ -19,33 +13,32 @@ import jakarta.xml.bind.annotation.XmlAnyElement;
 import jakarta.xml.bind.annotation.XmlAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
-import javax.xml.namespace.QName;
 import org.w3c.dom.Element;
 
 
 /**
- * <p>Java-Klasse f�r LensDescription complex type.
- * 
- * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
- * &lt;complexType name="LensDescription">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Offset" type="{http://www.onvif.org/ver10/schema}LensOffset"/>
- *         &lt;element name="Projection" type="{http://www.onvif.org/ver10/schema}LensProjection" maxOccurs="unbounded"/>
- *         &lt;element name="XFactor" type="{http://www.w3.org/2001/XMLSchema}float"/>
- *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="FocalLength" type="{http://www.w3.org/2001/XMLSchema}float" />
- *       &lt;anyAttribute processContents='lax'/>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * <p>Java class for LensDescription complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
+ * <complexType name="LensDescription">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Offset" type="{http://www.onvif.org/ver10/schema}LensOffset"/>
+ *         <element name="Projection" type="{http://www.onvif.org/ver10/schema}LensProjection" maxOccurs="unbounded"/>
+ *         <element name="XFactor" type="{http://www.w3.org/2001/XMLSchema}float"/>
+ *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
+ *       </sequence>
+ *       <attribute name="FocalLength" type="{http://www.w3.org/2001/XMLSchema}float" />
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "LensDescription", propOrder = {
@@ -56,83 +49,109 @@ import org.w3c.dom.Element;
 })
 public class LensDescription {
 
+    /**
+     * Offset of the lens center to the imager center in normalized coordinates.
+     *
+     */
     @XmlElement(name = "Offset", required = true)
     protected LensOffset offset;
+    /**
+     * Radial description of the projection characteristics. The resulting curve is defined by the B-Spline interpolation
+     * 					over the given elements. The element for Radius zero shall not be provided. The projection points shall be ordered with ascending Radius.
+     * 					Items outside the last projection Radius shall be assumed to be invisible (black).
+     *
+     */
     @XmlElement(name = "Projection", required = true)
     protected List<LensProjection> projection;
+    /**
+     * Compensation of the x coordinate needed for the ONVIF normalized coordinate system.
+     *
+     */
     @XmlElement(name = "XFactor")
     protected float xFactor;
     @XmlAnyElement(lax = true)
     protected List<java.lang.Object> any;
+    /**
+     * Optional focal length of the optical system.
+     *
+     */
     @XmlAttribute(name = "FocalLength")
     protected Float focalLength;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Ruft den Wert der offset-Eigenschaft ab.
-     * 
+     * Offset of the lens center to the imager center in normalized coordinates.
+     *
      * @return
      *     possible object is
      *     {@link LensOffset }
-     *     
+     *
      */
     public LensOffset getOffset() {
         return offset;
     }
 
     /**
-     * Legt den Wert der offset-Eigenschaft fest.
-     * 
+     * Sets the value of the offset property.
+     *
      * @param value
      *     allowed object is
      *     {@link LensOffset }
-     *     
+     *
+     * @see #getOffset()
      */
     public void setOffset(LensOffset value) {
         this.offset = value;
     }
 
     /**
+     * Radial description of the projection characteristics. The resulting curve is defined by the B-Spline interpolation
+     * 					over the given elements. The element for Radius zero shall not be provided. The projection points shall be ordered with ascending Radius.
+     * 					Items outside the last projection Radius shall be assumed to be invisible (black).
+     *
      * Gets the value of the projection property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     *
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the projection property.
-     * 
+     * This is why there is not a <CODE>set</CODE> method for the projection property.</p>
+     *
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getProjection().add(newItem);
+     * getProjection().add(newItem);
      * </pre>
-     * 
-     * 
+     *
+     *
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link LensProjection }
-     * 
-     * 
+     * </p>
+     *
+     *
+     * @return
+     *     The value of the projection property.
      */
     public List<LensProjection> getProjection() {
         if (projection == null) {
-            projection = new ArrayList<LensProjection>();
+            projection = new ArrayList<>();
         }
         return this.projection;
     }
 
     /**
-     * Ruft den Wert der xFactor-Eigenschaft ab.
-     * 
+     * Compensation of the x coordinate needed for the ONVIF normalized coordinate system.
+     *
      */
     public float getXFactor() {
         return xFactor;
     }
 
     /**
-     * Legt den Wert der xFactor-Eigenschaft fest.
-     * 
+     * Sets the value of the xFactor property.
+     *
      */
     public void setXFactor(float value) {
         this.xFactor = value;
@@ -140,53 +159,57 @@ public class LensDescription {
 
     /**
      * Gets the value of the any property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     *
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
-     * 
+     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
+     *
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAny().add(newItem);
+     * getAny().add(newItem);
      * </pre>
-     * 
-     * 
+     *
+     *
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Element }
      * {@link java.lang.Object }
-     * 
-     * 
+     * {@link Element }
+     * </p>
+     *
+     *
+     * @return
+     *     The value of the any property.
      */
     public List<java.lang.Object> getAny() {
         if (any == null) {
-            any = new ArrayList<java.lang.Object>();
+            any = new ArrayList<>();
         }
         return this.any;
     }
 
     /**
-     * Ruft den Wert der focalLength-Eigenschaft ab.
-     * 
+     * Optional focal length of the optical system.
+     *
      * @return
      *     possible object is
      *     {@link Float }
-     *     
+     *
      */
     public Float getFocalLength() {
         return focalLength;
     }
 
     /**
-     * Legt den Wert der focalLength-Eigenschaft fest.
-     * 
+     * Sets the value of the focalLength property.
+     *
      * @param value
      *     allowed object is
      *     {@link Float }
-     *     
+     *
+     * @see #getFocalLength()
      */
     public void setFocalLength(Float value) {
         this.focalLength = value;
@@ -194,15 +217,15 @@ public class LensDescription {
 
     /**
      * Gets a map that contains attributes that aren't bound to any typed property on this class.
-     * 
+     *
      * <p>
-     * the map is keyed by the name of the attribute and 
+     * the map is keyed by the name of the attribute and
      * the value is the string value of the attribute.
-     * 
+     *
      * the map returned by this method is live, and you can add new attribute
      * by updating the map directly. Because of this design, there's no setter.
-     * 
-     * 
+     *
+     *
      * @return
      *     always non-null
      */

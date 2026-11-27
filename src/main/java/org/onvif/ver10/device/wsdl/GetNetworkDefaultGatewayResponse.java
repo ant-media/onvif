@@ -1,9 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.04 um 12:22:03 PM CET 
-//
 
 package org.onvif.ver10.device.wsdl;
 
@@ -14,14 +8,13 @@ import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
 import org.onvif.ver10.schema.NetworkGateway;
 
+
 /**
- * <p>
- * Java-Klasse f�r anonymous complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ * <p>Java class for anonymous complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType>
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -31,37 +24,47 @@ import org.onvif.ver10.schema.NetworkGateway;
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = { "networkGateway" })
+@XmlType(name = "", propOrder = {
+    "networkGateway"
+})
 @XmlRootElement(name = "GetNetworkDefaultGatewayResponse")
 public class GetNetworkDefaultGatewayResponse {
 
-	@XmlElement(name = "NetworkGateway", required = true)
-	protected NetworkGateway networkGateway;
+    /**
+     * Gets the default IPv4 and IPv6 gateway settings from the device.
+     *
+     */
+    @XmlElement(name = "NetworkGateway", required = true)
+    protected NetworkGateway networkGateway;
 
-	/**
-	 * Ruft den Wert der networkGateway-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link NetworkGateway }
-	 * 
-	 */
-	public NetworkGateway getNetworkGateway() {
-		return networkGateway;
-	}
+    /**
+     * Gets the default IPv4 and IPv6 gateway settings from the device.
+     *
+     * @return
+     *     possible object is
+     *     {@link NetworkGateway }
+     *
+     */
+    public NetworkGateway getNetworkGateway() {
+        return networkGateway;
+    }
 
-	/**
-	 * Legt den Wert der networkGateway-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link NetworkGateway }
-	 * 
-	 */
-	public void setNetworkGateway(NetworkGateway value) {
-		this.networkGateway = value;
-	}
+    /**
+     * Sets the value of the networkGateway property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link NetworkGateway }
+     *
+     * @see #getNetworkGateway()
+     */
+    public void setNetworkGateway(NetworkGateway value) {
+        this.networkGateway = value;
+    }
 
 }

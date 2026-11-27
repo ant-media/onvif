@@ -1,28 +1,21 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.17 um 11:33:29 AM CET 
-//
 
 package org.onvif.ver20.ptz.wsdl;
 
+import javax.xml.datatype.Duration;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
-import javax.xml.datatype.Duration;
 import org.onvif.ver10.schema.PTZSpeed;
 
+
 /**
- * <p>
- * Java-Klasse f�r anonymous complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ * <p>Java class for anonymous complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType>
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -34,83 +27,111 @@ import org.onvif.ver10.schema.PTZSpeed;
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = { "profileToken", "velocity", "timeout" })
+@XmlType(name = "", propOrder = {
+    "profileToken",
+    "velocity",
+    "timeout"
+})
 @XmlRootElement(name = "ContinuousMove")
 public class ContinuousMove {
 
-	@XmlElement(name = "ProfileToken", required = true)
-	protected String profileToken;
-	@XmlElement(name = "Velocity", required = true)
-	protected PTZSpeed velocity;
-	@XmlElement(name = "Timeout")
-	protected Duration timeout;
+    /**
+     * A reference to the MediaProfile.
+     *
+     */
+    @XmlElement(name = "ProfileToken", required = true)
+    protected String profileToken;
+    /**
+     * A Velocity vector specifying the velocity of pan, tilt and zoom.
+     *
+     */
+    @XmlElement(name = "Velocity", required = true)
+    protected PTZSpeed velocity;
+    /**
+     * An optional Timeout parameter.
+     *
+     */
+    @XmlElement(name = "Timeout")
+    protected Duration timeout;
 
-	/**
-	 * Ruft den Wert der profileToken-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getProfileToken() {
-		return profileToken;
-	}
+    /**
+     * A reference to the MediaProfile.
+     *
+     * @return
+     *     possible object is
+     *     {@link String }
+     *
+     */
+    public String getProfileToken() {
+        return profileToken;
+    }
 
-	/**
-	 * Legt den Wert der profileToken-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setProfileToken(String value) {
-		this.profileToken = value;
-	}
+    /**
+     * Sets the value of the profileToken property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *
+     * @see #getProfileToken()
+     */
+    public void setProfileToken(String value) {
+        this.profileToken = value;
+    }
 
-	/**
-	 * Ruft den Wert der velocity-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link PTZSpeed }
-	 * 
-	 */
-	public PTZSpeed getVelocity() {
-		return velocity;
-	}
+    /**
+     * A Velocity vector specifying the velocity of pan, tilt and zoom.
+     *
+     * @return
+     *     possible object is
+     *     {@link PTZSpeed }
+     *
+     */
+    public PTZSpeed getVelocity() {
+        return velocity;
+    }
 
-	/**
-	 * Legt den Wert der velocity-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link PTZSpeed }
-	 * 
-	 */
-	public void setVelocity(PTZSpeed value) {
-		this.velocity = value;
-	}
+    /**
+     * Sets the value of the velocity property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link PTZSpeed }
+     *
+     * @see #getVelocity()
+     */
+    public void setVelocity(PTZSpeed value) {
+        this.velocity = value;
+    }
 
-	/**
-	 * Ruft den Wert der timeout-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link Duration }
-	 * 
-	 */
-	public Duration getTimeout() {
-		return timeout;
-	}
+    /**
+     * An optional Timeout parameter.
+     *
+     * @return
+     *     possible object is
+     *     {@link Duration }
+     *
+     */
+    public Duration getTimeout() {
+        return timeout;
+    }
 
-	/**
-	 * Legt den Wert der timeout-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Duration }
-	 * 
-	 */
-	public void setTimeout(Duration value) {
-		this.timeout = value;
-	}
+    /**
+     * Sets the value of the timeout property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Duration }
+     *
+     * @see #getTimeout()
+     */
+    public void setTimeout(Duration value) {
+        this.timeout = value;
+    }
 
 }

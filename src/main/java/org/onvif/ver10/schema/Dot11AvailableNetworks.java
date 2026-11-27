@@ -1,9 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.04 um 12:22:03 PM CET 
-//
 
 package org.onvif.ver10.schema;
 
@@ -11,23 +5,23 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.xml.namespace.QName;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.HexBinaryAdapter;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.namespace.QName;
+
 
 /**
- * <p>
- * Java-Klasse f�r Dot11AvailableNetworks complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ * <p>Java class for Dot11AvailableNetworks complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType name="Dot11AvailableNetworks">
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -44,210 +38,259 @@ import javax.xml.namespace.QName;
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Dot11AvailableNetworks", propOrder = { "ssid", "bssid", "authAndMangementSuite", "pairCipher", "groupCipher", "signalStrength", "extension" })
+@XmlType(name = "Dot11AvailableNetworks", propOrder = {
+    "ssid",
+    "bssid",
+    "authAndMangementSuite",
+    "pairCipher",
+    "groupCipher",
+    "signalStrength",
+    "extension"
+})
 public class Dot11AvailableNetworks {
 
-	@XmlElement(name = "SSID", required = true, type = String.class)
-	@XmlJavaTypeAdapter(HexBinaryAdapter.class)
-	protected byte[] ssid;
-	@XmlElement(name = "BSSID")
-	protected String bssid;
-	@XmlElement(name = "AuthAndMangementSuite")
-	protected List<Dot11AuthAndMangementSuite> authAndMangementSuite;
-	@XmlElement(name = "PairCipher")
-	protected List<Dot11Cipher> pairCipher;
-	@XmlElement(name = "GroupCipher")
-	protected List<Dot11Cipher> groupCipher;
-	@XmlElement(name = "SignalStrength")
-	protected Dot11SignalStrength signalStrength;
-	@XmlElement(name = "Extension")
-	protected Dot11AvailableNetworksExtension extension;
-	@XmlAnyAttribute
-	private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    @XmlElement(name = "SSID", required = true, type = String.class)
+    @XmlJavaTypeAdapter(HexBinaryAdapter.class)
+    @XmlSchemaType(name = "hexBinary")
+    protected byte[] ssid;
+    @XmlElement(name = "BSSID")
+    protected String bssid;
+    /**
+     * See IEEE802.11 7.3.2.25.2 for details.
+     *
+     */
+    @XmlElement(name = "AuthAndMangementSuite")
+    @XmlSchemaType(name = "string")
+    protected List<Dot11AuthAndMangementSuite> authAndMangementSuite;
+    @XmlElement(name = "PairCipher")
+    @XmlSchemaType(name = "string")
+    protected List<Dot11Cipher> pairCipher;
+    @XmlElement(name = "GroupCipher")
+    @XmlSchemaType(name = "string")
+    protected List<Dot11Cipher> groupCipher;
+    @XmlElement(name = "SignalStrength")
+    @XmlSchemaType(name = "string")
+    protected Dot11SignalStrength signalStrength;
+    @XmlElement(name = "Extension")
+    protected Dot11AvailableNetworksExtension extension;
+    @XmlAnyAttribute
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
-	/**
-	 * Ruft den Wert der ssid-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public byte[] getSSID() {
-		return ssid;
-	}
+    /**
+     * Gets the value of the ssid property.
+     *
+     * @return
+     *     possible object is
+     *     {@link String }
+     *
+     */
+    public byte[] getSSID() {
+        return ssid;
+    }
 
-	/**
-	 * Legt den Wert der ssid-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setSSID(byte[] value) {
-		this.ssid = value;
-	}
+    /**
+     * Sets the value of the ssid property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *
+     */
+    public void setSSID(byte[] value) {
+        this.ssid = value;
+    }
 
-	/**
-	 * Ruft den Wert der bssid-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getBSSID() {
-		return bssid;
-	}
+    /**
+     * Gets the value of the bssid property.
+     *
+     * @return
+     *     possible object is
+     *     {@link String }
+     *
+     */
+    public String getBSSID() {
+        return bssid;
+    }
 
-	/**
-	 * Legt den Wert der bssid-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setBSSID(String value) {
-		this.bssid = value;
-	}
+    /**
+     * Sets the value of the bssid property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *
+     */
+    public void setBSSID(String value) {
+        this.bssid = value;
+    }
 
-	/**
-	 * Gets the value of the authAndMangementSuite property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a snapshot. Therefore any modification you make to the returned list will be present inside the JAXB object.
-	 * This is why there is not a <CODE>set</CODE> method for the authAndMangementSuite property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getAuthAndMangementSuite().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list {@link Dot11AuthAndMangementSuite }
-	 * 
-	 * 
-	 */
-	public List<Dot11AuthAndMangementSuite> getAuthAndMangementSuite() {
-		if (authAndMangementSuite == null) {
-			authAndMangementSuite = new ArrayList<Dot11AuthAndMangementSuite>();
-		}
-		return this.authAndMangementSuite;
-	}
+    /**
+     * See IEEE802.11 7.3.2.25.2 for details.
+     *
+     * Gets the value of the authAndMangementSuite property.
+     *
+     * <p>This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the authAndMangementSuite property.</p>
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * </p>
+     * <pre>
+     * getAuthAndMangementSuite().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link Dot11AuthAndMangementSuite }
+     * </p>
+     *
+     *
+     * @return
+     *     The value of the authAndMangementSuite property.
+     */
+    public List<Dot11AuthAndMangementSuite> getAuthAndMangementSuite() {
+        if (authAndMangementSuite == null) {
+            authAndMangementSuite = new ArrayList<>();
+        }
+        return this.authAndMangementSuite;
+    }
 
-	/**
-	 * Gets the value of the pairCipher property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a snapshot. Therefore any modification you make to the returned list will be present inside the JAXB object.
-	 * This is why there is not a <CODE>set</CODE> method for the pairCipher property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getPairCipher().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list {@link Dot11Cipher }
-	 * 
-	 * 
-	 */
-	public List<Dot11Cipher> getPairCipher() {
-		if (pairCipher == null) {
-			pairCipher = new ArrayList<Dot11Cipher>();
-		}
-		return this.pairCipher;
-	}
+    /**
+     * Gets the value of the pairCipher property.
+     *
+     * <p>This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the pairCipher property.</p>
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * </p>
+     * <pre>
+     * getPairCipher().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link Dot11Cipher }
+     * </p>
+     *
+     *
+     * @return
+     *     The value of the pairCipher property.
+     */
+    public List<Dot11Cipher> getPairCipher() {
+        if (pairCipher == null) {
+            pairCipher = new ArrayList<>();
+        }
+        return this.pairCipher;
+    }
 
-	/**
-	 * Gets the value of the groupCipher property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a snapshot. Therefore any modification you make to the returned list will be present inside the JAXB object.
-	 * This is why there is not a <CODE>set</CODE> method for the groupCipher property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getGroupCipher().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list {@link Dot11Cipher }
-	 * 
-	 * 
-	 */
-	public List<Dot11Cipher> getGroupCipher() {
-		if (groupCipher == null) {
-			groupCipher = new ArrayList<Dot11Cipher>();
-		}
-		return this.groupCipher;
-	}
+    /**
+     * Gets the value of the groupCipher property.
+     *
+     * <p>This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the groupCipher property.</p>
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * </p>
+     * <pre>
+     * getGroupCipher().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link Dot11Cipher }
+     * </p>
+     *
+     *
+     * @return
+     *     The value of the groupCipher property.
+     */
+    public List<Dot11Cipher> getGroupCipher() {
+        if (groupCipher == null) {
+            groupCipher = new ArrayList<>();
+        }
+        return this.groupCipher;
+    }
 
-	/**
-	 * Ruft den Wert der signalStrength-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link Dot11SignalStrength }
-	 * 
-	 */
-	public Dot11SignalStrength getSignalStrength() {
-		return signalStrength;
-	}
+    /**
+     * Gets the value of the signalStrength property.
+     *
+     * @return
+     *     possible object is
+     *     {@link Dot11SignalStrength }
+     *
+     */
+    public Dot11SignalStrength getSignalStrength() {
+        return signalStrength;
+    }
 
-	/**
-	 * Legt den Wert der signalStrength-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Dot11SignalStrength }
-	 * 
-	 */
-	public void setSignalStrength(Dot11SignalStrength value) {
-		this.signalStrength = value;
-	}
+    /**
+     * Sets the value of the signalStrength property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Dot11SignalStrength }
+     *
+     */
+    public void setSignalStrength(Dot11SignalStrength value) {
+        this.signalStrength = value;
+    }
 
-	/**
-	 * Ruft den Wert der extension-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link Dot11AvailableNetworksExtension }
-	 * 
-	 */
-	public Dot11AvailableNetworksExtension getExtension() {
-		return extension;
-	}
+    /**
+     * Gets the value of the extension property.
+     *
+     * @return
+     *     possible object is
+     *     {@link Dot11AvailableNetworksExtension }
+     *
+     */
+    public Dot11AvailableNetworksExtension getExtension() {
+        return extension;
+    }
 
-	/**
-	 * Legt den Wert der extension-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Dot11AvailableNetworksExtension }
-	 * 
-	 */
-	public void setExtension(Dot11AvailableNetworksExtension value) {
-		this.extension = value;
-	}
+    /**
+     * Sets the value of the extension property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Dot11AvailableNetworksExtension }
+     *
+     */
+    public void setExtension(Dot11AvailableNetworksExtension value) {
+        this.extension = value;
+    }
 
-	/**
-	 * Gets a map that contains attributes that aren't bound to any typed property on this class.
-	 * 
-	 * <p>
-	 * the map is keyed by the name of the attribute and the value is the string value of the attribute.
-	 * 
-	 * the map returned by this method is live, and you can add new attribute by updating the map directly. Because of this design, there's no setter.
-	 * 
-	 * 
-	 * @return always non-null
-	 */
-	public Map<QName, String> getOtherAttributes() {
-		return otherAttributes;
-	}
+    /**
+     * Gets a map that contains attributes that aren't bound to any typed property on this class.
+     *
+     * <p>
+     * the map is keyed by the name of the attribute and
+     * the value is the string value of the attribute.
+     *
+     * the map returned by this method is live, and you can add new attribute
+     * by updating the map directly. Because of this design, there's no setter.
+     *
+     *
+     * @return
+     *     always non-null
+     */
+    public Map<QName, String> getOtherAttributes() {
+        return otherAttributes;
+    }
 
 }

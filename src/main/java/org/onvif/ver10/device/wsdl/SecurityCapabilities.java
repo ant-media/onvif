@@ -1,9 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.04 um 12:22:03 PM CET 
-//
 
 package org.onvif.ver10.device.wsdl;
 
@@ -11,21 +5,20 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.xml.namespace.QName;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlAttribute;
 import jakarta.xml.bind.annotation.XmlType;
-import javax.xml.namespace.QName;
+
 
 /**
- * <p>
- * Java-Klasse f�r SecurityCapabilities complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ * <p>Java class for SecurityCapabilities complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType name="SecurityCapabilities">
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -43,410 +36,794 @@ import javax.xml.namespace.QName;
  *       <attribute name="UsernameToken" type="{http://www.w3.org/2001/XMLSchema}boolean" />
  *       <attribute name="HttpDigest" type="{http://www.w3.org/2001/XMLSchema}boolean" />
  *       <attribute name="RELToken" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       <attribute name="SupportedEAPMethods" type="{http://www.onvif.org/ver10/device/wsdl}EAPMethodTypes" />
+ *       <attribute name="JsonWebToken" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <attribute name="SupportedEAPMethods" type="{http://www.onvif.org/ver10/schema}IntList" />
  *       <attribute name="MaxUsers" type="{http://www.w3.org/2001/XMLSchema}int" />
+ *       <attribute name="MaxUserNameLength" type="{http://www.w3.org/2001/XMLSchema}int" />
+ *       <attribute name="MaxPasswordLength" type="{http://www.w3.org/2001/XMLSchema}int" />
+ *       <attribute name="SecurityPolicies" type="{http://www.onvif.org/ver10/schema}StringList" />
+ *       <attribute name="MaxPasswordHistory" type="{http://www.w3.org/2001/XMLSchema}int" />
+ *       <attribute name="HashingAlgorithms" type="{http://www.onvif.org/ver10/schema}StringList" />
+ *       <attribute name="MaxUserRoles" type="{http://www.w3.org/2001/XMLSchema}int" />
  *       <anyAttribute processContents='lax'/>
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "SecurityCapabilities")
 public class SecurityCapabilities {
 
-	@XmlAttribute(name = "TLS1.0")
-	protected Boolean tls10;
-	@XmlAttribute(name = "TLS1.1")
-	protected Boolean tls11;
-	@XmlAttribute(name = "TLS1.2")
-	protected Boolean tls12;
-	@XmlAttribute(name = "OnboardKeyGeneration")
-	protected Boolean onboardKeyGeneration;
-	@XmlAttribute(name = "AccessPolicyConfig")
-	protected Boolean accessPolicyConfig;
-	@XmlAttribute(name = "DefaultAccessPolicy")
-	protected Boolean defaultAccessPolicy;
-	@XmlAttribute(name = "Dot1X")
-	protected Boolean dot1X;
-	@XmlAttribute(name = "RemoteUserHandling")
-	protected Boolean remoteUserHandling;
-	@XmlAttribute(name = "X.509Token")
-	protected Boolean x509Token;
-	@XmlAttribute(name = "SAMLToken")
-	protected Boolean samlToken;
-	@XmlAttribute(name = "KerberosToken")
-	protected Boolean kerberosToken;
-	@XmlAttribute(name = "UsernameToken")
-	protected Boolean usernameToken;
-	@XmlAttribute(name = "HttpDigest")
-	protected Boolean httpDigest;
-	@XmlAttribute(name = "RELToken")
-	protected Boolean relToken;
-	@XmlAttribute(name = "SupportedEAPMethods")
-	protected List<Integer> supportedEAPMethods;
-	@XmlAttribute(name = "MaxUsers")
-	protected Integer maxUsers;
-	@XmlAnyAttribute
-	private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    /**
+     * Indicates support for TLS 1.0.
+     *
+     */
+    @XmlAttribute(name = "TLS1.0")
+    protected Boolean tls10;
+    /**
+     * Indicates support for TLS 1.1.
+     *
+     */
+    @XmlAttribute(name = "TLS1.1")
+    protected Boolean tls11;
+    /**
+     * Indicates support for TLS 1.2.
+     *
+     */
+    @XmlAttribute(name = "TLS1.2")
+    protected Boolean tls12;
+    /**
+     * Indicates support for onboard key generation.
+     *
+     */
+    @XmlAttribute(name = "OnboardKeyGeneration")
+    protected Boolean onboardKeyGeneration;
+    /**
+     * Indicates support for access policy configuration.
+     *
+     */
+    @XmlAttribute(name = "AccessPolicyConfig")
+    protected Boolean accessPolicyConfig;
+    /**
+     * Indicates support for the ONVIF default access policy.
+     *
+     */
+    @XmlAttribute(name = "DefaultAccessPolicy")
+    protected Boolean defaultAccessPolicy;
+    /**
+     * Indicates support for IEEE 802.1X configuration.
+     *
+     */
+    @XmlAttribute(name = "Dot1X")
+    protected Boolean dot1X;
+    /**
+     * Indicates support for remote user configuration. Used when accessing another device.
+     *
+     */
+    @XmlAttribute(name = "RemoteUserHandling")
+    protected Boolean remoteUserHandling;
+    /**
+     * Indicates support for WS-Security X.509 token.
+     *
+     */
+    @XmlAttribute(name = "X.509Token")
+    protected Boolean x509Token;
+    /**
+     * Indicates support for WS-Security SAML token.
+     *
+     */
+    @XmlAttribute(name = "SAMLToken")
+    protected Boolean samlToken;
+    /**
+     * Indicates support for WS-Security Kerberos token.
+     *
+     */
+    @XmlAttribute(name = "KerberosToken")
+    protected Boolean kerberosToken;
+    /**
+     * Indicates support for WS-Security Username token.
+     *
+     */
+    @XmlAttribute(name = "UsernameToken")
+    protected Boolean usernameToken;
+    /**
+     * Indicates support for WS over HTTP digest authenticated communication layer.
+     *
+     */
+    @XmlAttribute(name = "HttpDigest")
+    protected Boolean httpDigest;
+    /**
+     * Indicates support for WS-Security REL token.
+     *
+     */
+    @XmlAttribute(name = "RELToken")
+    protected Boolean relToken;
+    /**
+     * Indicates support for JWT-based authentication with WS-Security Binary Security token.
+     *
+     */
+    @XmlAttribute(name = "JsonWebToken")
+    protected Boolean jsonWebToken;
+    /**
+     * EAP Methods supported by the device. The int values refer to the
+     * <pre>
+     * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;a xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tds="http://www.onvif.org/ver10/device/wsdl" xmlns:tt="http://www.onvif.org/ver10/schema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" href="http://www.iana.org/assignments/eap-numbers/eap-numbers.xhtml"&gt;IANA EAP Registry&lt;/a&gt;
+     * </pre>
+     * .
+     *
+     */
+    @XmlAttribute(name = "SupportedEAPMethods")
+    protected List<Integer> supportedEAPMethods;
+    /**
+     * The maximum number of users that the device supports.
+     *
+     */
+    @XmlAttribute(name = "MaxUsers")
+    protected Integer maxUsers;
+    /**
+     * Maximum number of characters supported for the username by CreateUsers.
+     *
+     */
+    @XmlAttribute(name = "MaxUserNameLength")
+    protected Integer maxUserNameLength;
+    /**
+     * Maximum number of characters supported for the password by CreateUsers and SetUser.
+     *
+     */
+    @XmlAttribute(name = "MaxPasswordLength")
+    protected Integer maxPasswordLength;
+    /**
+     * Indicates which security policies are supported. Options are: ModifyPassword, PasswordComplexity, AuthFailureWarnings
+     *
+     */
+    @XmlAttribute(name = "SecurityPolicies")
+    protected List<String> securityPolicies;
+    /**
+     * Maximum number of passwords that the device can remember for each user
+     *
+     */
+    @XmlAttribute(name = "MaxPasswordHistory")
+    protected Integer maxPasswordHistory;
+    /**
+     * Supported hashing algorithms as part of HTTP and RTSP Digest authentication.Example: MD5,SHA-256
+     *
+     */
+    @XmlAttribute(name = "HashingAlgorithms")
+    protected List<String> hashingAlgorithms;
+    /**
+     * Whenever set to an integer greater than zero, it signals that the device supports editable user roles. It indicates the maximum number of editable user roles.
+     *
+     */
+    @XmlAttribute(name = "MaxUserRoles")
+    protected Integer maxUserRoles;
+    @XmlAnyAttribute
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
-	/**
-	 * Ruft den Wert der tls10-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link Boolean }
-	 * 
-	 */
-	public Boolean isTLS10() {
-		return tls10;
-	}
+    /**
+     * Indicates support for TLS 1.0.
+     *
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *
+     */
+    public Boolean isTLS10() {
+        return tls10;
+    }
 
-	/**
-	 * Legt den Wert der tls10-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Boolean }
-	 * 
-	 */
-	public void setTLS10(Boolean value) {
-		this.tls10 = value;
-	}
+    /**
+     * Sets the value of the tls10 property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *
+     * @see #isTLS10()
+     */
+    public void setTLS10(Boolean value) {
+        this.tls10 = value;
+    }
 
-	/**
-	 * Ruft den Wert der tls11-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link Boolean }
-	 * 
-	 */
-	public Boolean isTLS11() {
-		return tls11;
-	}
+    /**
+     * Indicates support for TLS 1.1.
+     *
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *
+     */
+    public Boolean isTLS11() {
+        return tls11;
+    }
 
-	/**
-	 * Legt den Wert der tls11-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Boolean }
-	 * 
-	 */
-	public void setTLS11(Boolean value) {
-		this.tls11 = value;
-	}
+    /**
+     * Sets the value of the tls11 property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *
+     * @see #isTLS11()
+     */
+    public void setTLS11(Boolean value) {
+        this.tls11 = value;
+    }
 
-	/**
-	 * Ruft den Wert der tls12-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link Boolean }
-	 * 
-	 */
-	public Boolean isTLS12() {
-		return tls12;
-	}
+    /**
+     * Indicates support for TLS 1.2.
+     *
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *
+     */
+    public Boolean isTLS12() {
+        return tls12;
+    }
 
-	/**
-	 * Legt den Wert der tls12-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Boolean }
-	 * 
-	 */
-	public void setTLS12(Boolean value) {
-		this.tls12 = value;
-	}
+    /**
+     * Sets the value of the tls12 property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *
+     * @see #isTLS12()
+     */
+    public void setTLS12(Boolean value) {
+        this.tls12 = value;
+    }
 
-	/**
-	 * Ruft den Wert der onboardKeyGeneration-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link Boolean }
-	 * 
-	 */
-	public Boolean isOnboardKeyGeneration() {
-		return onboardKeyGeneration;
-	}
+    /**
+     * Indicates support for onboard key generation.
+     *
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *
+     */
+    public Boolean isOnboardKeyGeneration() {
+        return onboardKeyGeneration;
+    }
 
-	/**
-	 * Legt den Wert der onboardKeyGeneration-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Boolean }
-	 * 
-	 */
-	public void setOnboardKeyGeneration(Boolean value) {
-		this.onboardKeyGeneration = value;
-	}
+    /**
+     * Sets the value of the onboardKeyGeneration property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *
+     * @see #isOnboardKeyGeneration()
+     */
+    public void setOnboardKeyGeneration(Boolean value) {
+        this.onboardKeyGeneration = value;
+    }
 
-	/**
-	 * Ruft den Wert der accessPolicyConfig-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link Boolean }
-	 * 
-	 */
-	public Boolean isAccessPolicyConfig() {
-		return accessPolicyConfig;
-	}
+    /**
+     * Indicates support for access policy configuration.
+     *
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *
+     */
+    public Boolean isAccessPolicyConfig() {
+        return accessPolicyConfig;
+    }
 
-	/**
-	 * Legt den Wert der accessPolicyConfig-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Boolean }
-	 * 
-	 */
-	public void setAccessPolicyConfig(Boolean value) {
-		this.accessPolicyConfig = value;
-	}
+    /**
+     * Sets the value of the accessPolicyConfig property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *
+     * @see #isAccessPolicyConfig()
+     */
+    public void setAccessPolicyConfig(Boolean value) {
+        this.accessPolicyConfig = value;
+    }
 
-	/**
-	 * Ruft den Wert der defaultAccessPolicy-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link Boolean }
-	 * 
-	 */
-	public Boolean isDefaultAccessPolicy() {
-		return defaultAccessPolicy;
-	}
+    /**
+     * Indicates support for the ONVIF default access policy.
+     *
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *
+     */
+    public Boolean isDefaultAccessPolicy() {
+        return defaultAccessPolicy;
+    }
 
-	/**
-	 * Legt den Wert der defaultAccessPolicy-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Boolean }
-	 * 
-	 */
-	public void setDefaultAccessPolicy(Boolean value) {
-		this.defaultAccessPolicy = value;
-	}
+    /**
+     * Sets the value of the defaultAccessPolicy property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *
+     * @see #isDefaultAccessPolicy()
+     */
+    public void setDefaultAccessPolicy(Boolean value) {
+        this.defaultAccessPolicy = value;
+    }
 
-	/**
-	 * Ruft den Wert der dot1X-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link Boolean }
-	 * 
-	 */
-	public Boolean isDot1X() {
-		return dot1X;
-	}
+    /**
+     * Indicates support for IEEE 802.1X configuration.
+     *
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *
+     */
+    public Boolean isDot1X() {
+        return dot1X;
+    }
 
-	/**
-	 * Legt den Wert der dot1X-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Boolean }
-	 * 
-	 */
-	public void setDot1X(Boolean value) {
-		this.dot1X = value;
-	}
+    /**
+     * Sets the value of the dot1X property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *
+     * @see #isDot1X()
+     */
+    public void setDot1X(Boolean value) {
+        this.dot1X = value;
+    }
 
-	/**
-	 * Ruft den Wert der remoteUserHandling-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link Boolean }
-	 * 
-	 */
-	public Boolean isRemoteUserHandling() {
-		return remoteUserHandling;
-	}
+    /**
+     * Indicates support for remote user configuration. Used when accessing another device.
+     *
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *
+     */
+    public Boolean isRemoteUserHandling() {
+        return remoteUserHandling;
+    }
 
-	/**
-	 * Legt den Wert der remoteUserHandling-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Boolean }
-	 * 
-	 */
-	public void setRemoteUserHandling(Boolean value) {
-		this.remoteUserHandling = value;
-	}
+    /**
+     * Sets the value of the remoteUserHandling property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *
+     * @see #isRemoteUserHandling()
+     */
+    public void setRemoteUserHandling(Boolean value) {
+        this.remoteUserHandling = value;
+    }
 
-	/**
-	 * Ruft den Wert der x509Token-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link Boolean }
-	 * 
-	 */
-	public Boolean isX509Token() {
-		return x509Token;
-	}
+    /**
+     * Indicates support for WS-Security X.509 token.
+     *
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *
+     */
+    public Boolean isX509Token() {
+        return x509Token;
+    }
 
-	/**
-	 * Legt den Wert der x509Token-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Boolean }
-	 * 
-	 */
-	public void setX509Token(Boolean value) {
-		this.x509Token = value;
-	}
+    /**
+     * Sets the value of the x509Token property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *
+     * @see #isX509Token()
+     */
+    public void setX509Token(Boolean value) {
+        this.x509Token = value;
+    }
 
-	/**
-	 * Ruft den Wert der samlToken-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link Boolean }
-	 * 
-	 */
-	public Boolean isSAMLToken() {
-		return samlToken;
-	}
+    /**
+     * Indicates support for WS-Security SAML token.
+     *
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *
+     */
+    public Boolean isSAMLToken() {
+        return samlToken;
+    }
 
-	/**
-	 * Legt den Wert der samlToken-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Boolean }
-	 * 
-	 */
-	public void setSAMLToken(Boolean value) {
-		this.samlToken = value;
-	}
+    /**
+     * Sets the value of the samlToken property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *
+     * @see #isSAMLToken()
+     */
+    public void setSAMLToken(Boolean value) {
+        this.samlToken = value;
+    }
 
-	/**
-	 * Ruft den Wert der kerberosToken-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link Boolean }
-	 * 
-	 */
-	public Boolean isKerberosToken() {
-		return kerberosToken;
-	}
+    /**
+     * Indicates support for WS-Security Kerberos token.
+     *
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *
+     */
+    public Boolean isKerberosToken() {
+        return kerberosToken;
+    }
 
-	/**
-	 * Legt den Wert der kerberosToken-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Boolean }
-	 * 
-	 */
-	public void setKerberosToken(Boolean value) {
-		this.kerberosToken = value;
-	}
+    /**
+     * Sets the value of the kerberosToken property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *
+     * @see #isKerberosToken()
+     */
+    public void setKerberosToken(Boolean value) {
+        this.kerberosToken = value;
+    }
 
-	/**
-	 * Ruft den Wert der usernameToken-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link Boolean }
-	 * 
-	 */
-	public Boolean isUsernameToken() {
-		return usernameToken;
-	}
+    /**
+     * Indicates support for WS-Security Username token.
+     *
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *
+     */
+    public Boolean isUsernameToken() {
+        return usernameToken;
+    }
 
-	/**
-	 * Legt den Wert der usernameToken-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Boolean }
-	 * 
-	 */
-	public void setUsernameToken(Boolean value) {
-		this.usernameToken = value;
-	}
+    /**
+     * Sets the value of the usernameToken property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *
+     * @see #isUsernameToken()
+     */
+    public void setUsernameToken(Boolean value) {
+        this.usernameToken = value;
+    }
 
-	/**
-	 * Ruft den Wert der httpDigest-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link Boolean }
-	 * 
-	 */
-	public Boolean isHttpDigest() {
-		return httpDigest;
-	}
+    /**
+     * Indicates support for WS over HTTP digest authenticated communication layer.
+     *
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *
+     */
+    public Boolean isHttpDigest() {
+        return httpDigest;
+    }
 
-	/**
-	 * Legt den Wert der httpDigest-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Boolean }
-	 * 
-	 */
-	public void setHttpDigest(Boolean value) {
-		this.httpDigest = value;
-	}
+    /**
+     * Sets the value of the httpDigest property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *
+     * @see #isHttpDigest()
+     */
+    public void setHttpDigest(Boolean value) {
+        this.httpDigest = value;
+    }
 
-	/**
-	 * Ruft den Wert der relToken-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link Boolean }
-	 * 
-	 */
-	public Boolean isRELToken() {
-		return relToken;
-	}
+    /**
+     * Indicates support for WS-Security REL token.
+     *
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *
+     */
+    public Boolean isRELToken() {
+        return relToken;
+    }
 
-	/**
-	 * Legt den Wert der relToken-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Boolean }
-	 * 
-	 */
-	public void setRELToken(Boolean value) {
-		this.relToken = value;
-	}
+    /**
+     * Sets the value of the relToken property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *
+     * @see #isRELToken()
+     */
+    public void setRELToken(Boolean value) {
+        this.relToken = value;
+    }
 
-	/**
-	 * Gets the value of the supportedEAPMethods property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a snapshot. Therefore any modification you make to the returned list will be present inside the JAXB object.
-	 * This is why there is not a <CODE>set</CODE> method for the supportedEAPMethods property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getSupportedEAPMethods().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list {@link Integer }
-	 * 
-	 * 
-	 */
-	public List<Integer> getSupportedEAPMethods() {
-		if (supportedEAPMethods == null) {
-			supportedEAPMethods = new ArrayList<Integer>();
-		}
-		return this.supportedEAPMethods;
-	}
+    /**
+     * Indicates support for JWT-based authentication with WS-Security Binary Security token.
+     *
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *
+     */
+    public Boolean isJsonWebToken() {
+        return jsonWebToken;
+    }
 
-	/**
-	 * Ruft den Wert der maxUsers-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link Integer }
-	 * 
-	 */
-	public Integer getMaxUsers() {
-		return maxUsers;
-	}
+    /**
+     * Sets the value of the jsonWebToken property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *
+     * @see #isJsonWebToken()
+     */
+    public void setJsonWebToken(Boolean value) {
+        this.jsonWebToken = value;
+    }
 
-	/**
-	 * Legt den Wert der maxUsers-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Integer }
-	 * 
-	 */
-	public void setMaxUsers(Integer value) {
-		this.maxUsers = value;
-	}
+    /**
+     * EAP Methods supported by the device. The int values refer to the
+     * <pre>
+     * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;a xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tds="http://www.onvif.org/ver10/device/wsdl" xmlns:tt="http://www.onvif.org/ver10/schema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" href="http://www.iana.org/assignments/eap-numbers/eap-numbers.xhtml"&gt;IANA EAP Registry&lt;/a&gt;
+     * </pre>
+     * .
+     *
+     * Gets the value of the supportedEAPMethods property.
+     *
+     * <p>This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the supportedEAPMethods property.</p>
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * </p>
+     * <pre>
+     * getSupportedEAPMethods().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link Integer }
+     * </p>
+     *
+     *
+     * @return
+     *     The value of the supportedEAPMethods property.
+     */
+    public List<Integer> getSupportedEAPMethods() {
+        if (supportedEAPMethods == null) {
+            supportedEAPMethods = new ArrayList<>();
+        }
+        return this.supportedEAPMethods;
+    }
 
-	/**
-	 * Gets a map that contains attributes that aren't bound to any typed property on this class.
-	 * 
-	 * <p>
-	 * the map is keyed by the name of the attribute and the value is the string value of the attribute.
-	 * 
-	 * the map returned by this method is live, and you can add new attribute by updating the map directly. Because of this design, there's no setter.
-	 * 
-	 * 
-	 * @return always non-null
-	 */
-	public Map<QName, String> getOtherAttributes() {
-		return otherAttributes;
-	}
+    /**
+     * The maximum number of users that the device supports.
+     *
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *
+     */
+    public Integer getMaxUsers() {
+        return maxUsers;
+    }
+
+    /**
+     * Sets the value of the maxUsers property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *
+     * @see #getMaxUsers()
+     */
+    public void setMaxUsers(Integer value) {
+        this.maxUsers = value;
+    }
+
+    /**
+     * Maximum number of characters supported for the username by CreateUsers.
+     *
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *
+     */
+    public Integer getMaxUserNameLength() {
+        return maxUserNameLength;
+    }
+
+    /**
+     * Sets the value of the maxUserNameLength property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *
+     * @see #getMaxUserNameLength()
+     */
+    public void setMaxUserNameLength(Integer value) {
+        this.maxUserNameLength = value;
+    }
+
+    /**
+     * Maximum number of characters supported for the password by CreateUsers and SetUser.
+     *
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *
+     */
+    public Integer getMaxPasswordLength() {
+        return maxPasswordLength;
+    }
+
+    /**
+     * Sets the value of the maxPasswordLength property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *
+     * @see #getMaxPasswordLength()
+     */
+    public void setMaxPasswordLength(Integer value) {
+        this.maxPasswordLength = value;
+    }
+
+    /**
+     * Indicates which security policies are supported. Options are: ModifyPassword, PasswordComplexity, AuthFailureWarnings
+     *
+     * Gets the value of the securityPolicies property.
+     *
+     * <p>This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the securityPolicies property.</p>
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * </p>
+     * <pre>
+     * getSecurityPolicies().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link String }
+     * </p>
+     *
+     *
+     * @return
+     *     The value of the securityPolicies property.
+     */
+    public List<String> getSecurityPolicies() {
+        if (securityPolicies == null) {
+            securityPolicies = new ArrayList<>();
+        }
+        return this.securityPolicies;
+    }
+
+    /**
+     * Maximum number of passwords that the device can remember for each user
+     *
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *
+     */
+    public Integer getMaxPasswordHistory() {
+        return maxPasswordHistory;
+    }
+
+    /**
+     * Sets the value of the maxPasswordHistory property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *
+     * @see #getMaxPasswordHistory()
+     */
+    public void setMaxPasswordHistory(Integer value) {
+        this.maxPasswordHistory = value;
+    }
+
+    /**
+     * Supported hashing algorithms as part of HTTP and RTSP Digest authentication.Example: MD5,SHA-256
+     *
+     * Gets the value of the hashingAlgorithms property.
+     *
+     * <p>This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the hashingAlgorithms property.</p>
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * </p>
+     * <pre>
+     * getHashingAlgorithms().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link String }
+     * </p>
+     *
+     *
+     * @return
+     *     The value of the hashingAlgorithms property.
+     */
+    public List<String> getHashingAlgorithms() {
+        if (hashingAlgorithms == null) {
+            hashingAlgorithms = new ArrayList<>();
+        }
+        return this.hashingAlgorithms;
+    }
+
+    /**
+     * Whenever set to an integer greater than zero, it signals that the device supports editable user roles. It indicates the maximum number of editable user roles.
+     *
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *
+     */
+    public Integer getMaxUserRoles() {
+        return maxUserRoles;
+    }
+
+    /**
+     * Sets the value of the maxUserRoles property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *
+     * @see #getMaxUserRoles()
+     */
+    public void setMaxUserRoles(Integer value) {
+        this.maxUserRoles = value;
+    }
+
+    /**
+     * Gets a map that contains attributes that aren't bound to any typed property on this class.
+     *
+     * <p>
+     * the map is keyed by the name of the attribute and
+     * the value is the string value of the attribute.
+     *
+     * the map returned by this method is live, and you can add new attribute
+     * by updating the map directly. Because of this design, there's no setter.
+     *
+     *
+     * @return
+     *     always non-null
+     */
+    public Map<QName, String> getOtherAttributes() {
+        return otherAttributes;
+    }
 
 }

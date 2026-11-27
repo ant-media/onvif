@@ -1,9 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.04 um 12:22:03 PM CET 
-//
 
 package org.onvif.ver10.device.wsdl;
 
@@ -11,19 +5,19 @@ import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import org.onvif.ver10.schema.DateTime;
 import org.onvif.ver10.schema.SetDateTimeType;
 import org.onvif.ver10.schema.TimeZone;
 
+
 /**
- * <p>
- * Java-Klasse f�r anonymous complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ * <p>Java class for anonymous complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType>
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -36,101 +30,135 @@ import org.onvif.ver10.schema.TimeZone;
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = { "dateTimeType", "daylightSavings", "timeZone", "utcDateTime" })
+@XmlType(name = "", propOrder = {
+    "dateTimeType",
+    "daylightSavings",
+    "timeZone",
+    "utcDateTime"
+})
 @XmlRootElement(name = "SetSystemDateAndTime")
 public class SetSystemDateAndTime {
 
-	@XmlElement(name = "DateTimeType", required = true)
-	protected SetDateTimeType dateTimeType;
-	@XmlElement(name = "DaylightSavings")
-	protected boolean daylightSavings;
-	@XmlElement(name = "TimeZone")
-	protected TimeZone timeZone;
-	@XmlElement(name = "UTCDateTime")
-	protected DateTime utcDateTime;
+    /**
+     * Defines if the date and time is set via NTP or manually.
+     *
+     */
+    @XmlElement(name = "DateTimeType", required = true)
+    @XmlSchemaType(name = "string")
+    protected SetDateTimeType dateTimeType;
+    /**
+     * Automatically adjust Daylight savings if defined in TimeZone.
+     *
+     */
+    @XmlElement(name = "DaylightSavings")
+    protected boolean daylightSavings;
+    /**
+     * The time zone in POSIX 1003.1 format
+     *
+     */
+    @XmlElement(name = "TimeZone")
+    protected TimeZone timeZone;
+    /**
+     * Date and time in UTC. If time is obtained via NTP, UTCDateTime has no meaning
+     *
+     */
+    @XmlElement(name = "UTCDateTime")
+    protected DateTime utcDateTime;
 
-	/**
-	 * Ruft den Wert der dateTimeType-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link SetDateTimeType }
-	 * 
-	 */
-	public SetDateTimeType getDateTimeType() {
-		return dateTimeType;
-	}
+    /**
+     * Defines if the date and time is set via NTP or manually.
+     *
+     * @return
+     *     possible object is
+     *     {@link SetDateTimeType }
+     *
+     */
+    public SetDateTimeType getDateTimeType() {
+        return dateTimeType;
+    }
 
-	/**
-	 * Legt den Wert der dateTimeType-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link SetDateTimeType }
-	 * 
-	 */
-	public void setDateTimeType(SetDateTimeType value) {
-		this.dateTimeType = value;
-	}
+    /**
+     * Sets the value of the dateTimeType property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link SetDateTimeType }
+     *
+     * @see #getDateTimeType()
+     */
+    public void setDateTimeType(SetDateTimeType value) {
+        this.dateTimeType = value;
+    }
 
-	/**
-	 * Ruft den Wert der daylightSavings-Eigenschaft ab.
-	 * 
-	 */
-	public boolean isDaylightSavings() {
-		return daylightSavings;
-	}
+    /**
+     * Automatically adjust Daylight savings if defined in TimeZone.
+     *
+     */
+    public boolean isDaylightSavings() {
+        return daylightSavings;
+    }
 
-	/**
-	 * Legt den Wert der daylightSavings-Eigenschaft fest.
-	 * 
-	 */
-	public void setDaylightSavings(boolean value) {
-		this.daylightSavings = value;
-	}
+    /**
+     * Sets the value of the daylightSavings property.
+     *
+     */
+    public void setDaylightSavings(boolean value) {
+        this.daylightSavings = value;
+    }
 
-	/**
-	 * Ruft den Wert der timeZone-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link TimeZone }
-	 * 
-	 */
-	public TimeZone getTimeZone() {
-		return timeZone;
-	}
+    /**
+     * The time zone in POSIX 1003.1 format
+     *
+     * @return
+     *     possible object is
+     *     {@link TimeZone }
+     *
+     */
+    public TimeZone getTimeZone() {
+        return timeZone;
+    }
 
-	/**
-	 * Legt den Wert der timeZone-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link TimeZone }
-	 * 
-	 */
-	public void setTimeZone(TimeZone value) {
-		this.timeZone = value;
-	}
+    /**
+     * Sets the value of the timeZone property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link TimeZone }
+     *
+     * @see #getTimeZone()
+     */
+    public void setTimeZone(TimeZone value) {
+        this.timeZone = value;
+    }
 
-	/**
-	 * Ruft den Wert der utcDateTime-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link DateTime }
-	 * 
-	 */
-	public DateTime getUTCDateTime() {
-		return utcDateTime;
-	}
+    /**
+     * Date and time in UTC. If time is obtained via NTP, UTCDateTime has no meaning
+     *
+     * @return
+     *     possible object is
+     *     {@link DateTime }
+     *
+     */
+    public DateTime getUTCDateTime() {
+        return utcDateTime;
+    }
 
-	/**
-	 * Legt den Wert der utcDateTime-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link DateTime }
-	 * 
-	 */
-	public void setUTCDateTime(DateTime value) {
-		this.utcDateTime = value;
-	}
+    /**
+     * Sets the value of the utcDateTime property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link DateTime }
+     *
+     * @see #getUTCDateTime()
+     */
+    public void setUTCDateTime(DateTime value) {
+        this.utcDateTime = value;
+    }
 
 }

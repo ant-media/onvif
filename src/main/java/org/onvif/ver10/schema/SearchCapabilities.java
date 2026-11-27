@@ -1,9 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2014.02.04 um 12:22:03 PM CET 
-//
 
 package org.onvif.ver10.schema;
 
@@ -11,6 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.xml.namespace.QName;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAnyAttribute;
@@ -18,124 +13,204 @@ import jakarta.xml.bind.annotation.XmlAnyElement;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
-import javax.xml.namespace.QName;
 import org.w3c.dom.Element;
 
+
 /**
- * <p>
- * Java-Klasse f�r SearchCapabilities complex type.
- * 
- * <p>
- * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
+ * <p>Java class for SearchCapabilities complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
  * <complexType name="SearchCapabilities">
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       <sequence>
  *         <element name="XAddr" type="{http://www.w3.org/2001/XMLSchema}anyURI"/>
  *         <element name="MetadataSearch" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *         <element name="NLSearch" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+ *         <element name="ImageSearch" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
  *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
  *       </sequence>
  *       <anyAttribute processContents='lax'/>
  *     </restriction>
  *   </complexContent>
  * </complexType>
- * </pre>
- * 
- * 
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "SearchCapabilities", propOrder = { "xAddr", "metadataSearch", "any" })
+@XmlType(name = "SearchCapabilities", propOrder = {
+    "xAddr",
+    "metadataSearch",
+    "nlSearch",
+    "imageSearch",
+    "any"
+})
 public class SearchCapabilities {
 
-	@XmlElement(name = "XAddr", required = true)
-	@XmlSchemaType(name = "anyURI")
-	protected String xAddr;
-	@XmlElement(name = "MetadataSearch")
-	protected boolean metadataSearch;
-	@XmlAnyElement(lax = true)
-	protected List<java.lang.Object> any;
-	@XmlAnyAttribute
-	private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    @XmlElement(name = "XAddr", required = true)
+    @XmlSchemaType(name = "anyURI")
+    protected String xAddr;
+    @XmlElement(name = "MetadataSearch")
+    protected boolean metadataSearch;
+    /**
+     * Indicates support for natural language based search.
+     *
+     */
+    @XmlElement(name = "NLSearch")
+    protected Boolean nlSearch;
+    /**
+     * Indicates support for image based search.
+     *
+     */
+    @XmlElement(name = "ImageSearch")
+    protected Boolean imageSearch;
+    @XmlAnyElement(lax = true)
+    protected List<java.lang.Object> any;
+    @XmlAnyAttribute
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
-	/**
-	 * Ruft den Wert der xAddr-Eigenschaft ab.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getXAddr() {
-		return xAddr;
-	}
+    /**
+     * Gets the value of the xAddr property.
+     *
+     * @return
+     *     possible object is
+     *     {@link String }
+     *
+     */
+    public String getXAddr() {
+        return xAddr;
+    }
 
-	/**
-	 * Legt den Wert der xAddr-Eigenschaft fest.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setXAddr(String value) {
-		this.xAddr = value;
-	}
+    /**
+     * Sets the value of the xAddr property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *
+     */
+    public void setXAddr(String value) {
+        this.xAddr = value;
+    }
 
-	/**
-	 * Ruft den Wert der metadataSearch-Eigenschaft ab.
-	 * 
-	 */
-	public boolean isMetadataSearch() {
-		return metadataSearch;
-	}
+    /**
+     * Gets the value of the metadataSearch property.
+     *
+     */
+    public boolean isMetadataSearch() {
+        return metadataSearch;
+    }
 
-	/**
-	 * Legt den Wert der metadataSearch-Eigenschaft fest.
-	 * 
-	 */
-	public void setMetadataSearch(boolean value) {
-		this.metadataSearch = value;
-	}
+    /**
+     * Sets the value of the metadataSearch property.
+     *
+     */
+    public void setMetadataSearch(boolean value) {
+        this.metadataSearch = value;
+    }
 
-	/**
-	 * Gets the value of the any property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a snapshot. Therefore any modification you make to the returned list will be present inside the JAXB object.
-	 * This is why there is not a <CODE>set</CODE> method for the any property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getAny().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list {@link Element } {@link java.lang.Object }
-	 * 
-	 * 
-	 */
-	public List<java.lang.Object> getAny() {
-		if (any == null) {
-			any = new ArrayList<java.lang.Object>();
-		}
-		return this.any;
-	}
+    /**
+     * Indicates support for natural language based search.
+     *
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *
+     */
+    public Boolean isNLSearch() {
+        return nlSearch;
+    }
 
-	/**
-	 * Gets a map that contains attributes that aren't bound to any typed property on this class.
-	 * 
-	 * <p>
-	 * the map is keyed by the name of the attribute and the value is the string value of the attribute.
-	 * 
-	 * the map returned by this method is live, and you can add new attribute by updating the map directly. Because of this design, there's no setter.
-	 * 
-	 * 
-	 * @return always non-null
-	 */
-	public Map<QName, String> getOtherAttributes() {
-		return otherAttributes;
-	}
+    /**
+     * Sets the value of the nlSearch property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *
+     * @see #isNLSearch()
+     */
+    public void setNLSearch(Boolean value) {
+        this.nlSearch = value;
+    }
+
+    /**
+     * Indicates support for image based search.
+     *
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *
+     */
+    public Boolean isImageSearch() {
+        return imageSearch;
+    }
+
+    /**
+     * Sets the value of the imageSearch property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *
+     * @see #isImageSearch()
+     */
+    public void setImageSearch(Boolean value) {
+        this.imageSearch = value;
+    }
+
+    /**
+     * Gets the value of the any property.
+     *
+     * <p>This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * </p>
+     * <pre>
+     * getAny().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link java.lang.Object }
+     * {@link Element }
+     * </p>
+     *
+     *
+     * @return
+     *     The value of the any property.
+     */
+    public List<java.lang.Object> getAny() {
+        if (any == null) {
+            any = new ArrayList<>();
+        }
+        return this.any;
+    }
+
+    /**
+     * Gets a map that contains attributes that aren't bound to any typed property on this class.
+     *
+     * <p>
+     * the map is keyed by the name of the attribute and
+     * the value is the string value of the attribute.
+     *
+     * the map returned by this method is live, and you can add new attribute
+     * by updating the map directly. Because of this design, there's no setter.
+     *
+     *
+     * @return
+     *     always non-null
+     */
+    public Map<QName, String> getOtherAttributes() {
+        return otherAttributes;
+    }
 
 }

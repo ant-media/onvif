@@ -1,10 +1,3 @@
-//
-// Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.5-2 generiert 
-// Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// �nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2016.02.05 um 06:25:30 PM CET 
-//
-
 
 package org.onvif.ver20.media.wsdl;
 
@@ -16,23 +9,23 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java-Klasse f�r anonymous complex type.
- * 
- * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="ConfigurationToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * <p>Java class for anonymous complex type</p>.
+ *
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ *
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="ConfigurationToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -41,28 +34,33 @@ import jakarta.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "GetOSDOptions")
 public class GetOSDOptions {
 
+    /**
+     * Video Source Configuration Token that specifies an existing video source configuration that the options shall be compatible with.
+     *
+     */
     @XmlElement(name = "ConfigurationToken", required = true)
     protected String configurationToken;
 
     /**
-     * Ruft den Wert der configurationToken-Eigenschaft ab.
-     * 
+     * Video Source Configuration Token that specifies an existing video source configuration that the options shall be compatible with.
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getConfigurationToken() {
         return configurationToken;
     }
 
     /**
-     * Legt den Wert der configurationToken-Eigenschaft fest.
-     * 
+     * Sets the value of the configurationToken property.
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
+     * @see #getConfigurationToken()
      */
     public void setConfigurationToken(String value) {
         this.configurationToken = value;
